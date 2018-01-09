@@ -24,13 +24,13 @@ namespace PVMTrading_v1.Models
 
         public string Email { get; set; }
 
-        public int Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
 
         public int CivilStatusid { get; set; }
 
         public int Sexid { get; set; }
 
-        public int DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         public string PlaceOfBirth { get; set; }
 

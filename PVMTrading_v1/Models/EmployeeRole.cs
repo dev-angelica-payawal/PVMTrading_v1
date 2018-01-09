@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PVMTrading_v1.Models
 {
-    public class CivilStatus
+    public class EmployeeRole
     {
 
         public int Id { get; set; }

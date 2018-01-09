@@ -7,5 +7,14 @@ namespace PVMTrading_v1.Models
 {
     public class Warranty
     {
+
+        public int Id { get; set; }
+
+        public string Label { get; set; }
+
+        public int Order { get; set; }
+
+        public int Is_Active { get; set; }
+
     }
 }
