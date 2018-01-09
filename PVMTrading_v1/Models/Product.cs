@@ -5,13 +5,7 @@ using System.Web;
 
 namespace PVMTrading_v1.Models
 {
-    public class Customer
+    public class Product
     {
-
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-
     }
 }
