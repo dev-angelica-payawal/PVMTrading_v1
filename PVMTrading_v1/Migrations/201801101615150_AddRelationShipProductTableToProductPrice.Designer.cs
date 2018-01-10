@@ -7,13 +7,13 @@ namespace PVMTrading_v1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCommitModel : IMigrationMetadata
+    public sealed partial class AddRelationShipProductTableToProductPrice : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCommitModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddRelationShipProductTableToProductPrice));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801101228153_InitialCommitModel"; }
+            get { return "201801101615150_AddRelationShipProductTableToProductPrice"; }
         }
         
         string IMigrationMetadata.Source

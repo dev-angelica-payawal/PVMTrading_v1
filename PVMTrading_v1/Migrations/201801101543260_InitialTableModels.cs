@@ -3,10 +3,36 @@ namespace PVMTrading_v1.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCommitModel : DbMigration
+    public partial class InitialTableModels : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.ProductPrices",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ProductId = c.Int(nullable: false),
+                        SellingPrice = c.Int(nullable: false),
+                        Remarks = c.String(),
+                        DateCreated = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        SerialNumber = c.Int(nullable: false),
+                        Model = c.String(),
+                        DateCreated = c.DateTime(nullable: false),
+                        IsReturned = c.Boolean(nullable: false),
+                        UnitPrice = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -94,6 +120,8 @@ namespace PVMTrading_v1.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Products");
+            DropTable("dbo.ProductPrices");
         }
     }
 }
