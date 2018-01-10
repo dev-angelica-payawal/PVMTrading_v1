@@ -14,7 +14,7 @@ namespace PVMTrading_v1.Models
 
         public int Order { get; set; }
 
-        public int Is_Active { get; set; }
+        public int IsActive { get; set; }
 
     }
 }

@@ -20,7 +20,7 @@ namespace PVMTrading_v1.Models
 
         public int Mobile { get; set; }
 
-        public int Telephone { get; set; }
+       // public int Telephone { get; set; }
 
         public string Email { get; set; }
 

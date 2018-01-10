@@ -193,6 +193,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
@@ -206,10 +207,7 @@
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\Productinclusion.cs" />
     <Compile Include="Models\ProductPrice.cs" />
-    <Compile Include="Models\ServiceCenter.cs" />
     <Compile Include="Models\Sex.cs" />
-    <Compile Include="Models\Supplier.cs" />
-    <Compile Include="Models\SupplierContact.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\TransactionCreated.cs" />
     <Compile Include="Models\Transactionitem.cs" />

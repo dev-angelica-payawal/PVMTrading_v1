@@ -16,19 +16,18 @@ namespace PVMTrading_v1.Models
 
         public string Name { get; set; }
 
-        public int WarrantyId { get; set; }
+ //      public int WarrantyId { get; set; }
 
         public string Manufacturer { get; set; }
 
         public int SupplierId { get; set; }
 
-        public int Barcode { get; set; }
+//        public int Barcode { get; set; }
 
         public int SerialNumber { get; set; }
 
         public string Model { get; set; }
-
-        public int ServiceCenterId { get; set; }
+ //     public int ServiceCenterId { get; set; }
 
         public DateTime DateCreated { get; set; }
 
@@ -36,9 +35,11 @@ namespace PVMTrading_v1.Models
 
         public int LastChangeByEmployeeId { get; set; }
 
-        public int IsReturned { get; set; }
+        public bool IsReturned { get; set; }
 
         public int UnitPrice { get; set; }
+
+        public int SellingPrice { get; set; }
 
     }
 }
