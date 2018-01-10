@@ -9,6 +9,13 @@ namespace PVMTrading_v1.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<BrandType> BrandTypes { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Productinclusion> Productinclusions { get; set; }
+        public DbSet<ProductPrice> ProductPrices { get; set; }
+        public DbSet<Product> Products { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
