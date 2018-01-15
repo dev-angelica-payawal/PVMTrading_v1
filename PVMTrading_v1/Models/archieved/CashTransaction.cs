@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PVMTrading_v1.Models
 {
-    public class Transaction
+    public class CashTransaction
     {
 
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace PVMTrading_v1.Models
 
         public int OriginalTotalAmount { get; set; }
 
-        public DateTime TransactionDate { get; set; }
+        public DateTime CashTransactionDate { get; set; }
 
         public int TotalAmount { get; set; }
 
@@ -22,13 +22,11 @@ namespace PVMTrading_v1.Models
 
         public int CustomerId { get; set; }
 
-        public int TransactionTypeId { get; set; }
-
         public int IsVoid { get; set; }
 
         public string Remarks { get; set; }
 
-        public int TransactionCreatedId { get; set; }
+        public int DeliveryChargedId { get; set; }
 
     }
 }

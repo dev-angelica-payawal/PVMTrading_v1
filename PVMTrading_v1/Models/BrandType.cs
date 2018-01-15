@@ -12,9 +12,7 @@ namespace PVMTrading_v1.Models
 
         public string Label { get; set; }
 
-        public int Order { get; set; }
 
-        public int Is_Active { get; set; }
 
     }
 }

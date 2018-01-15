@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
+using GitSharp;
 
 namespace PVMTrading_v1.Models
 {
@@ -20,7 +22,7 @@ namespace PVMTrading_v1.Models
 
         public int Mobile { get; set; }
 
-       // public int Telephone { get; set; }
+        public int Telephone { get; set; }
 
         public string Email { get; set; }
 
@@ -30,32 +32,17 @@ namespace PVMTrading_v1.Models
 
         public int Sexid { get; set; }
 
-        public DateTime DateCreated { get; set; }
+        public DateTime RegisteredDateCreated { get; set; }
 
         public string PlaceOfBirth { get; set; }
 
         public string Nationality { get; set; }
 
-        public int TaxidentificationNumber { get; set; }
+        public int TaxIdentificationNumber { get; set; }
 
-        public string UnitRoomFloor { get; set; }
+        public int CustomerTypeId { get; set; }
 
-        public string BuildingName { get; set; }
+        //     public Blob Photo { get; set; }
 
-        public int LotBlockHouseNumber { get; set; }
-
-        public string Street { get; set; }
-
-        public string SubdivisionVillage { get; set; }
-
-        public string Barangay { get; set; }
-
-        public string CityMunicipality { get; set; }
-
-        public string Province { get; set; }
-
-        public string Country { get; set; }
-
-        public int ZipCode { get; set; }
     }
 }

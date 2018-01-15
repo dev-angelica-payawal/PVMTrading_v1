@@ -5,20 +5,12 @@ using System.Web;
 
 namespace PVMTrading_v1.Models
 {
-    public class Productinclusion
+    public class LoadProductItem
     {
-
         public int Id { get; set; }
-
+        public int LoanId { get; set; }
         public int ProductId { get; set; }
-
-        public string FreeItem { get; set; }
-
         public int Quantity { get; set; }
-
-        public int CreatedByEmployeeId { get; set; }
-
-        public int LastChangeByEmployeeId { get; set; }
-
+        public double TotalAmount { get; set; }
     }
 }

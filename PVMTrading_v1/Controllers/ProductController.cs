@@ -25,9 +25,9 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Index()
         {
 
-            var products = _context.Products.ToList(); 
 
-            return View(products);
+
+            return View();
         }
     }
 }
