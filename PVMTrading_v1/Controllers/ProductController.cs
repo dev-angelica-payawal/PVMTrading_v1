@@ -55,17 +55,56 @@ namespace PVMTrading_v1.Controllers
             return View(viewModels);
         }
 
-
+        [HttpPost]
         public ActionResult Save(Product product)
         {
 
 
             product.DateCreated = DateTime.Now;
             _context.Products.AddOrUpdate(product);
+            //    _context.Products.Add(product);
 
             _context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var product = _context.Products.SingleOrDefault(p => p.Id == id);
+
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new ProductViewModel
+            {
+                Product = product,
+                Brands = _context.Brands.ToList(),
+                Branches = _context.Branches.ToList(),
+                ProductConditions = _context.ProductConditions.ToList(),
+                ProductCategories = _context.ProductCategories.ToList()
+
+            };
+
+            return View("New", viewModel);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var product = _context.Products.Single(p => p.Id == id);
+            if (product.Id != 0)
+                _context.Products.Remove(product);
+
+
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            return Content("Not yet Available");
         }
     }
 }

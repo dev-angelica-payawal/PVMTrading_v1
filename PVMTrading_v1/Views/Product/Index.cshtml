@@ -31,21 +31,24 @@ else
     </tr>
     </thead>
     <tbody>
-    @foreach (var a in Model)
+    @foreach (var product in Model)
     {
         <tr>
-            <td>@a.Name</td>
-            <td>@a.Description</td>
-            <td>@a.SerialNumber</td>
-            <td>@a.Model</td>
-            <td>@a.DateCreated</td>
-            <td>@a.IsReturned</td>
-            <td>@a.OriginalPrice</td>
-            <td>@a.Barcode</td>
-            <td>@a.Branch.BranchName</td>
-            <td>@a.Brand.BrandName</td>
-            <td>@a.ProductCategory.Name</td>
-            <td>@a.ProductCondition.Label</td>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.SerialNumber</td>
+            <td>@product.Model</td>
+            <td>@product.DateCreated</td>
+            <td>@product.IsReturned</td>
+            <td>@product.OriginalPrice</td>
+            <td>@product.Barcode</td>
+            <td>@product.Branch.BranchName</td>
+            <td>@product.Brand.BrandName</td>
+            <td>@product.ProductCategory.Name</td>
+            <td>@product.ProductCondition.Label</td>
+            <td>@Html.ActionLink("Edit","Edit", new {id = product.Id},null)</td>
+            <td>@Html.ActionLink("Delete","Delete", new {id = product.Id},null)</td>
+            <td>@Html.ActionLink("Details","Details", new {id = product.Id},null)</td>
 
 
         </tr>
