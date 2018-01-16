@@ -194,27 +194,54 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801160226120_InitialModel.cs" />
+    <Compile Include="Migrations\201801160226120_InitialModel.Designer.cs">
+      <DependentUpon>201801160226120_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801160254439_PopulateBranchesTable.cs" />
+    <Compile Include="Migrations\201801160254439_PopulateBranchesTable.Designer.cs">
+      <DependentUpon>201801160254439_PopulateBranchesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801160359275_AddForeignKeysToProductTable.cs" />
+    <Compile Include="Migrations\201801160359275_AddForeignKeysToProductTable.Designer.cs">
+      <DependentUpon>201801160359275_AddForeignKeysToProductTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\archieved\AddressType.cs" />
+    <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\archieved\CustomerAddress.cs" />
+    <Compile Include="Models\archieved\CustomerType.cs" />
+    <Compile Include="Models\archieved\Delivery.cs" />
+    <Compile Include="Models\archieved\DeliveryStatus.cs" />
+    <Compile Include="Models\archieved\Employee.cs" />
+    <Compile Include="Models\archieved\LoadApplicant.cs" />
+    <Compile Include="Models\archieved\LoadApplicantSouceOfIncom.cs" />
+    <Compile Include="Models\archieved\LoadDuePayment.cs" />
+    <Compile Include="Models\archieved\LoadStatus.cs" />
+    <Compile Include="Models\archieved\ModeOfPayment.cs" />
+    <Compile Include="Models\archieved\Preferences.cs" />
+    <Compile Include="Models\ProductCondition.cs" />
+    <Compile Include="Models\archieved\ProductReturn.cs" />
+    <Compile Include="Models\archieved\ProductReturnReason.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\archieved\CivilStatus.cs" />
-    <Compile Include="Models\Classification.cs" />
     <Compile Include="Models\archieved\Customer.cs" />
     <Compile Include="Models\archieved\EmployeeRole.cs" />
+    <Compile Include="Models\archieved\DeliveryCharge.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\archieved\ManageViewModels.cs" />
+    <Compile Include="Models\archieved\LoadProductItem.cs" />
+    <Compile Include="Models\archieved\Loan.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\Productinclusion.cs" />
+    <Compile Include="Models\ProductInventory.cs" />
     <Compile Include="Models\ProductPrice.cs" />
     <Compile Include="Models\archieved\Sex.cs" />
-    <Compile Include="Models\archieved\Transaction.cs" />
-    <Compile Include="Models\archieved\TransactionCreated.cs" />
-    <Compile Include="Models\archieved\Transactionitem.cs" />
-    <Compile Include="Models\archieved\TransactionType.cs" />
+    <Compile Include="Models\archieved\CashTransaction.cs" />
+    <Compile Include="Models\archieved\CashTransactionitem.cs" />
     <Compile Include="Models\archieved\Warranty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -279,6 +306,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ConvertedIndex.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +319,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801160226120_InitialModel.resx">
+      <DependentUpon>201801160226120_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801160254439_PopulateBranchesTable.resx">
+      <DependentUpon>201801160254439_PopulateBranchesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801160359275_AddForeignKeysToProductTable.resx">
+      <DependentUpon>201801160359275_AddForeignKeysToProductTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

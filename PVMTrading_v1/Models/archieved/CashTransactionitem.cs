@@ -10,7 +10,7 @@ namespace PVMTrading_v1.Models
 
         public int Id { get; set; }
 
-        public int TransactionId { get; set; }
+        public int CashTransactionId { get; set; }
 
         public int ProductId { get; set; }
 

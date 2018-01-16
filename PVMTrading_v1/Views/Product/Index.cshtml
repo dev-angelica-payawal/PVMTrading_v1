@@ -1,8 +1,57 @@
 ﻿
+@model List<PVMTrading_v1.Models.Product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Product List</h2>
+@if (!Model.Any())
+{
+    <p>We don't have any customers yet.</p>
+}
+else
+{
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Serial Number</th>
+        <th>Model</th>
+        <th>Date Created</th>
+        <th>Return</th>
+        <th>Price</th>
+        <th>Barcode</th>
+        <th>Branch</th>
+        <th>Brand</th>
+        <th>Product Category</th>
+        <th>Product Condition</th>
 
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Name</td>
+            <td>@a.Description</td>
+            <td>@a.SerialNumber</td>
+            <td>@a.Model</td>
+            <td>@a.DateCreated</td>
+            <td>@a.IsReturned</td>
+            <td>@a.OriginalPrice</td>
+            <td>@a.Barcode</td>
+            <td>@a.Branch.BranchName</td>
+            <td>@a.Brand.BrandName</td>
+            <td>@a.ProductCategory.Name</td>
+            <td>@a.ProductCondition.Label</td>
+
+
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+}
