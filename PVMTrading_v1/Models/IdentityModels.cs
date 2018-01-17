@@ -31,6 +31,7 @@ namespace PVMTrading_v1.Models
         public DbSet<Branch> Branches { get; set; }
         public DbSet<ProductCondition> ProductConditions { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<BrandType> BrandTypes { get; set; }
 
 
         public ApplicationDbContext()
@@ -43,6 +44,6 @@ namespace PVMTrading_v1.Models
             return new ApplicationDbContext();
         }
 
-        
+
     }
 }

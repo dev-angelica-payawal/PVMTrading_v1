@@ -7,9 +7,9 @@ namespace PVMTrading_v1.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO Branches VALUES(1,'Branch 1','Arayat')");
-            Sql("INSERT INTO Branches VALUES(2,'Main Branch','Arayat')");
-            Sql("INSERT INTO Branches VALUES(3,'Branch 3','Mexico')");
+            Sql("INSERT INTO Branches VALUES('Branch 1','Arayat')");
+            Sql("INSERT INTO Branches VALUES('Main Branch','Arayat')");
+            Sql("INSERT INTO Branches VALUES('Branch 3','Mexico')");
         }
 
         public override void Down()
