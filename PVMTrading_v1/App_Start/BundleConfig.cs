@@ -26,6 +26,40 @@ namespace PVMTrading_v1
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //css and js from temps
+
+            bundles.Add(new ScriptBundle("~/bundles/core")
+                .Include("~/Content/vendor/jquery/jquery.min.js",
+                "~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/coreplugin")
+                .Include("~/Content/vendor/jquery-easing/jquery.easing.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/pageplugin")
+               .Include("~/Content/vendor/chart.js/Chart.min.js",
+               "~/Content/vendor/datatables/jquery.dataTables.js",
+               "~/Content/vendor/datatables/dataTables.bootstrap4.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/customscriptsallpages")
+                .Include("~/Content/js/sb-admin.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/customscriptspage")
+                .Include("~/Content/js/sb-admin-datatables.min.js",
+                "~/Content/js/sb-admin-charts.min.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/corecss")
+                .Include("~/Content/vendor/bootstrap/css/bootstrap.min.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/font-awesome")
+                .Include("~/Content/vendor/font-awesome/css/font-awesome.min.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/plugincss")
+                .Include("~/Content/vendor/datatables/dataTables.bootstrap4.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/customstyle")
+                .Include("~/Content/css/sb-admin.css"));
+
         }
     }
 }
