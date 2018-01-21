@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 
@@ -28,7 +30,8 @@ namespace PVMTrading_v1.Models
         public bool IsReturned { get; set; }
 
         [Required]
-        public double OriginalPrice { get; set; }
+        [DataType(DataType.Currency)]
+        public decimal OriginalPrice { get; set; }
         //   public int LastChangeByEmployeeId { get; set; }
         public int Barcode { get; set; }
         //   public int WarrantyId { get; set; }

@@ -72,9 +72,22 @@ namespace PVMTrading_v1.Controllers
 
                 return View("New", viewModel);
             }
-            _context.Brands.AddOrUpdate(brand);
-            _context.SaveChanges();
 
+
+
+            if (brand.Id == 0)
+            {
+
+                _context.Brands.Add(brand);
+            }
+            else
+            {
+                var brandInDb = _context.Brands.Single(p => p.Id == brand.Id);
+                brandInDb.BrandName = brand.BrandName;
+                brandInDb.BrandTypeId = brand.BrandTypeId;
+            }
+
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 

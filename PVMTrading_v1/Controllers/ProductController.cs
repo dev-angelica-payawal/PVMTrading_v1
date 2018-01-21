@@ -58,11 +58,44 @@ namespace PVMTrading_v1.Controllers
         [HttpPost]
         public ActionResult Save(Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new ProductViewModel
+                {
+                    Product = product,
+                    Brands = _context.Brands.ToList(),
+                    Branches = _context.Branches.ToList(),
+                    ProductCategories = _context.ProductCategories.ToList(),
+                    ProductConditions = _context.ProductConditions.ToList(),
+                };
+
+                return View("New", viewModel);
+            }
+
+            if (product.Id == 0)
+            {
+                product.DateCreated = DateTime.Now;
+                _context.Products.Add(product);
+            }
+            else
+            {
+                var productInDb = _context.Products.Single(p => p.Id == product.Id);
+                productInDb.Name = product.Name;
+                productInDb.Description = product.Description;
+                productInDb.Barcode = product.Barcode;
+                productInDb.BranchId = product.BranchId;
+                productInDb.BrandId = product.BrandId;
+                productInDb.ProductCategoryId = product.ProductCategoryId;
+                productInDb.IsReturned = product.IsReturned;
+                productInDb.Model = product.Model;
+                productInDb.OriginalPrice = product.OriginalPrice;
+                productInDb.ProductConditionId = product.ProductConditionId;
+                productInDb.SerialNumber = product.SerialNumber;
 
 
-            product.DateCreated = DateTime.Now;
-            _context.Products.AddOrUpdate(product);
-            //    _context.Products.Add(product);
+            }
+
+
 
             _context.SaveChanges();
 

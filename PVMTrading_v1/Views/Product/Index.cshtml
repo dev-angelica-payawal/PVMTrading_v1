@@ -8,7 +8,9 @@
     <div class="container-fluid">
         <h2>Product List</h2>
 
-
+        <p>
+            @Html.ActionLink("Add Product", "New")
+        </p>
 
         @if (!Model.Any())
         {
