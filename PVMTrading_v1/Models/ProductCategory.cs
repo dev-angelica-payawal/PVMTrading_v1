@@ -11,6 +11,6 @@ namespace PVMTrading_v1.Models
 
         public string Name { get; set; }
 
-        //   public string BufferStock { get; set; }
+        //  public string BufferStock { get; set; }
     }
 }
