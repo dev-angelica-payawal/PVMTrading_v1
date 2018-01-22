@@ -39,6 +39,7 @@
                                             <th>Brand</th>
                                             <th>Product Category</th>
                                             <th>Product Condition</th>
+                                           
 
                                         </tr>
                                     </thead>
@@ -56,6 +57,8 @@
                                                 <td>@product.Barcode</td>
                                                 <td>@product.Branch.BranchName</td>
                                                 <td>@product.Brand.BrandName</td>
+                                                <td>@product.ProductCategory.Name</td>
+                                                <td>@product.ProductCondition.Label</td>
                                                 <td>@product.ProductCategory.Name</td>
                                                 <td>@product.ProductCondition.Label</td>
                                                 <td>@Html.ActionLink("Edit", "Edit", new { id = product.Id }, null)</td>

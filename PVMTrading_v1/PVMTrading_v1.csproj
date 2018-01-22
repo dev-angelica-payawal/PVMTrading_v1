@@ -197,6 +197,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductPriceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -299,6 +300,14 @@
     <Compile Include="Migrations\201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.cs" />
     <Compile Include="Migrations\201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.Designer.cs">
       <DependentUpon>201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221356331_ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation.cs" />
+    <Compile Include="Migrations\201801221356331_ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation.Designer.cs">
+      <DependentUpon>201801221356331_ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.cs" />
+    <Compile Include="Migrations\201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.Designer.cs">
+      <DependentUpon>201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -502,6 +511,8 @@
     <Content Include="Views\ProductCategory\Index.cshtml" />
     <Content Include="Views\Brand\New.cshtml" />
     <Content Include="Views\ProductCategory\New.cshtml" />
+    <Content Include="Views\ProductPrice\Index.cshtml" />
+    <Content Include="Views\ProductPrice\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -590,6 +601,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.resx">
       <DependentUpon>201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221356331_ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation.resx">
+      <DependentUpon>201801221356331_ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.resx">
+      <DependentUpon>201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

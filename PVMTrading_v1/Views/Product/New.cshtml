@@ -125,16 +125,31 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+               <div class="form-group">
                     @Html.LabelFor(model => model.ProductInclusion.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.ProductInclusion.Quantity, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.ProductInclusion.Quantity, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            
+                
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProductPrice.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ProductPrice.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductPrice.UnitPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProductPrice.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ProductPrice.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductPrice.Remarks, "", new { @class = "text-danger" })
+                </div>
+            </div>
                        
-                <div class="form-group">
+            <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         @Html.HiddenFor(m => m.Product.Id)
                         <input type="submit" value="Save" class="btn btn-default"/>
