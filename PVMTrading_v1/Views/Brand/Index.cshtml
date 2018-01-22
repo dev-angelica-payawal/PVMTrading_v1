@@ -9,30 +9,24 @@
         <h2>BrandName</h2>
 
         <p>
-            @Html.ActionLink("Create New", "New")
+            @Html.ActionLink("Create New", "Create")
         </p>
-    @if (!Model.Any())
-    {
-        <p>No Available Product Category.</p>
-    }
-    else
-    {
         <table class="table">
             <tr>
-
+       
                 <th>
                     Brand Name
                 </th>
                 <th>
                     Brand Type
                 </th>
-
+    
             </tr>
 
             @foreach (var item in Model)
             {
                 <tr>
-
+           
                     <td>
                         @item.BrandName
                     </td>
@@ -40,15 +34,14 @@
                         @item.BrandType.Label
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-                        @Html.ActionLink("Details", "Details", new {id = item.Id}) |
-                        @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                     </td>
                 </tr>
             }
 
 
         </table>
-    }
     </div>
 </div>

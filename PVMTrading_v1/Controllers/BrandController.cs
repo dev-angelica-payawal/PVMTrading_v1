@@ -1,6 +1,9 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using PVMTrading_v1.Models;
 using PVMTrading_v1.ViewModels;
@@ -44,20 +47,7 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult Edit(int id)
         {
-            var brand = _context.Brands.SingleOrDefault(p => p.Id == id);
-
-            if (brand == null)
-            {
-                return HttpNotFound();
-            }
-
-            var viewModel = new BrandViewModel
-            {
-                Brand = brand,
-                BrandTypes = _context.BrandTypes.ToList(),
-            };
-
-            return View("New", viewModel);
+            return View();
         }
         [HttpPost]
         public ActionResult Save(Brand brand)
@@ -89,22 +79,6 @@ namespace PVMTrading_v1.Controllers
 
             _context.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        public ActionResult Delete(int id)
-        {
-            var brand = _context.Brands.Single(p => p.Id == id);
-            if (brand.Id != 0)
-                _context.Brands.Remove(brand);
-
-
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult Details(int id)
-        {
-            return Content("Not yet Available");
         }
     }
 }
