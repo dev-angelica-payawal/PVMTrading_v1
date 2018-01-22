@@ -296,6 +296,10 @@
     <Compile Include="Migrations\201801220618437_AddPopulateWarrantyTable.Designer.cs">
       <DependentUpon>201801220618437_AddPopulateWarrantyTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.cs" />
+    <Compile Include="Migrations\201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.Designer.cs">
+      <DependentUpon>201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddressType.cs" />
@@ -326,7 +330,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
-    <Compile Include="Models\Productinclusion.cs" />
+    <Compile Include="Models\ProductInclusion.cs" />
     <Compile Include="Models\ProductInventory.cs" />
     <Compile Include="Models\ProductPrice.cs" />
     <Compile Include="Models\Sex.cs" />
@@ -583,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801220618437_AddPopulateWarrantyTable.resx">
       <DependentUpon>201801220618437_AddPopulateWarrantyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.resx">
+      <DependentUpon>201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

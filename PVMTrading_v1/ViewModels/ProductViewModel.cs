@@ -16,6 +16,8 @@ namespace PVMTrading_v1.ViewModels
         public List<ProductCondition> ProductConditions { get; set; }
         public Product Product { get; set; }
 
+        public ProductInclusion ProductInclusion { get; set; }
+
 
 
 

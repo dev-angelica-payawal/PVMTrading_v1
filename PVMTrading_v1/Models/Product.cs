@@ -21,7 +21,6 @@ namespace PVMTrading_v1.Models
 
         public int SerialNumber { get; set; }
 
-
         public string Model { get; set; }
 
         public DateTime DateCreated { get; set; }

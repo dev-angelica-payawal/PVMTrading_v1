@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace PVMTrading_v1.Models
 {
-    public class Productinclusion
+    public class ProductInclusion
     {
 
         public int Id { get; set; }
 
-
+        public Product Product { get; set; }
         public int ProductId { get; set; }
 
+        [Display(Name = "Free Item")]
         public string FreeItem { get; set; }
 
-        public int Quantity { get; set; }
+        [Display(Name = "Quantity of Free Item")]
+        public int? Quantity { get; set; }
 
         //  public int CreatedByEmployeeId { get; set; }
 

@@ -56,24 +56,26 @@ namespace PVMTrading_v1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Product product)
+        public ActionResult Save(Product product, ProductInclusion productInclusion)
         {
-            if (!ModelState.IsValid)
-            {
-                var viewModel = new ProductViewModel
-                {
-                    Product = product,
-                    Brands = _context.Brands.ToList(),
-                    Branches = _context.Branches.ToList(),
-                    ProductCategories = _context.ProductCategories.ToList(),
-                    ProductConditions = _context.ProductConditions.ToList(),
-                };
+            /* if (!ModelState.IsValid)
+             {
+                 var viewModel = new ProductViewModel
+                 {
+                     Product = product,
+                     Brands = _context.Brands.ToList(),
+                     Branches = _context.Branches.ToList(),
+                     ProductCategories = _context.ProductCategories.ToList(),
+                     ProductConditions = _context.ProductConditions.ToList(),
+                 };
 
-                return View("New", viewModel);
-            }
+                 return View("New", viewModel);
+             }*/
 
             if (product.Id == 0)
             {
+                productInclusion.ProductId = product.Id;
+                _context.ProductInclusions.Add(productInclusion);
                 product.DateCreated = DateTime.Now;
                 _context.Products.Add(product);
             }
@@ -91,8 +93,11 @@ namespace PVMTrading_v1.Controllers
                 productInDb.OriginalPrice = product.OriginalPrice;
                 productInDb.ProductConditionId = product.ProductConditionId;
                 productInDb.SerialNumber = product.SerialNumber;
+                productInDb.Quantity = product.Quantity;
 
-
+                var productInclusionInDb = _context.ProductInclusions.Single(p => p.ProductId == product.Id);
+                productInclusionInDb.FreeItem = productInclusion.FreeItem;
+                productInclusion.Quantity = productInclusion.Quantity;
             }
 
 
@@ -106,6 +111,7 @@ namespace PVMTrading_v1.Controllers
         {
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
 
+            var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -114,6 +120,7 @@ namespace PVMTrading_v1.Controllers
             var viewModel = new ProductViewModel
             {
                 Product = product,
+                ProductInclusion = productInclsion,
                 Brands = _context.Brands.ToList(),
                 Branches = _context.Branches.ToList(),
                 ProductConditions = _context.ProductConditions.ToList(),
@@ -127,8 +134,12 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Delete(int id)
         {
             var product = _context.Products.Single(p => p.Id == id);
+            var productInclusion = _context.ProductInclusions.Single(p => p.ProductId == id);
             if (product.Id != 0)
+            {
+                _context.ProductInclusions.Remove(productInclusion);
                 _context.Products.Remove(product);
+            }
 
 
             _context.SaveChanges();

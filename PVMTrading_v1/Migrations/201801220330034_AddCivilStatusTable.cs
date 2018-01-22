@@ -17,7 +17,7 @@ namespace PVMTrading_v1.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Productinclusions",
+                "dbo.ProductInclusions",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -31,7 +31,7 @@ namespace PVMTrading_v1.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Productinclusions");
+            DropTable("dbo.ProductInclusions");
             DropTable("dbo.CivilStatus");
         }
     }
