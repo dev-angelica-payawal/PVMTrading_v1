@@ -32,6 +32,10 @@ namespace PVMTrading_v1.Models
         public DbSet<ProductCondition> ProductConditions { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<BrandType> BrandTypes { get; set; }
+        public DbSet<Productinclusion> Productinclusions { get; set; }
+
+
+
 
 
         public ApplicationDbContext()

@@ -10,6 +10,7 @@ namespace PVMTrading_v1.Models
 
         public int Id { get; set; }
 
+        
         public int ProductId { get; set; }
         public int UnitPrice { get; set; }
 

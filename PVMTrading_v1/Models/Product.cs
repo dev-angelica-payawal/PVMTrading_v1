@@ -49,6 +49,8 @@ namespace PVMTrading_v1.Models
         public Branch Branch { get; set; }
         public int BranchId { get; set; }
 
+        [Required]
+        public int Quantity { get; set; }
         //public blob Photo { get; set; }
     }
 }
