@@ -4,65 +4,76 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="content-wrapper">
-    <div class="container-fluid">
-        <h2>Product List</h2>
+<div>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h2>Product List</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                            <p>
+                                @Html.ActionLink("Add Product", "New")
+                            </p>
 
-        <p>
-            @Html.ActionLink("Add Product", "New")
-        </p>
+                            @if (!Model.Any())
+            {
+                                <p>We don't have any customers yet.</p>
+                            }
+                            else
+                            {
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Description</th>
+                                            <th>Serial Number</th>
+                                            <th>Model</th>
+                                            <th>Date Created</th>
+                                            <th>Return</th>
+                                            <th>Price</th>
+                                            <th>Barcode</th>
+                                            <th>Branch</th>
+                                            <th>Brand</th>
+                                            <th>Product Category</th>
+                                            <th>Product Condition</th>
 
-        @if (!Model.Any())
-        {
-            <p>We don't have any customers yet.</p>
-        }
-        else
-        {
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Description</th>
-                        <th>Serial Number</th>
-                        <th>Model</th>
-                        <th>Date Created</th>
-                        <th>Return</th>
-                        <th>Price</th>
-                        <th>Barcode</th>
-                        <th>Branch</th>
-                        <th>Brand</th>
-                        <th>Product Category</th>
-                        <th>Product Condition</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var product in Model)
-                    {
-                        <tr>
-                            <td>@product.Name</td>
-                            <td>@product.Description</td>
-                            <td>@product.SerialNumber</td>
-                            <td>@product.Model</td>
-                            <td>@product.DateCreated</td>
-                            <td>@product.IsReturned</td>
-                            <td>@product.OriginalPrice</td>
-                            <td>@product.Barcode</td>
-                            <td>@product.Branch.BranchName</td>
-                            <td>@product.Brand.BrandName</td>
-                            <td>@product.ProductCategory.Name</td>
-                            <td>@product.ProductCondition.Label</td>
-                            <td>@Html.ActionLink("Edit", "Edit", new { id = product.Id }, null)</td>
-                            <td>@Html.ActionLink("Delete", "Delete", new { id = product.Id }, null)</td>
-                            <td>@Html.ActionLink("Details", "Details", new { id = product.Id }, null)</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var product in Model)
+                                        {
+                                            <tr>
+                                                <td>@product.Name</td>
+                                                <td>@product.Description</td>
+                                                <td>@product.SerialNumber</td>
+                                                <td>@product.Model</td>
+                                                <td>@product.DateCreated</td>
+                                                <td>@product.IsReturned</td>
+                                                <td>@product.OriginalPrice</td>
+                                                <td>@product.Barcode</td>
+                                                <td>@product.Branch.BranchName</td>
+                                                <td>@product.Brand.BrandName</td>
+                                                <td>@product.ProductCategory.Name</td>
+                                                <td>@product.ProductCondition.Label</td>
+                                                <td>@Html.ActionLink("Edit", "Edit", new { id = product.Id }, null)</td>
+                                                <td>@Html.ActionLink("Delete", "Delete", new { id = product.Id }, null)</td>
+                                                <td>@Html.ActionLink("Details", "Details", new { id = product.Id }, null)</td>
 
 
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
 
 
-        }
+                            }
+                            </div>
+                        </div>
+                </div>
+            </div>
         </div>
+    </div>
 </div>
