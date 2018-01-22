@@ -248,9 +248,57 @@
     <Compile Include="Migrations\201801220331298_AddPopulateCivilStatusTable.Designer.cs">
       <DependentUpon>201801220331298_AddPopulateCivilStatusTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801220351316_AddAddressTypeTable.cs" />
+    <Compile Include="Migrations\201801220351316_AddAddressTypeTable.Designer.cs">
+      <DependentUpon>201801220351316_AddAddressTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220352313_AddPopulateAddressTypeTable.cs" />
+    <Compile Include="Migrations\201801220352313_AddPopulateAddressTypeTable.Designer.cs">
+      <DependentUpon>201801220352313_AddPopulateAddressTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220418503_AddEmployeeRoleTable.cs" />
+    <Compile Include="Migrations\201801220418503_AddEmployeeRoleTable.Designer.cs">
+      <DependentUpon>201801220418503_AddEmployeeRoleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220420305_AddPopulateEmployeeRoleTable.cs" />
+    <Compile Include="Migrations\201801220420305_AddPopulateEmployeeRoleTable.Designer.cs">
+      <DependentUpon>201801220420305_AddPopulateEmployeeRoleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220450398_AddLoanStatusTable.cs" />
+    <Compile Include="Migrations\201801220450398_AddLoanStatusTable.Designer.cs">
+      <DependentUpon>201801220450398_AddLoanStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220452171_AddPopulateLoanStatusTable.cs" />
+    <Compile Include="Migrations\201801220452171_AddPopulateLoanStatusTable.Designer.cs">
+      <DependentUpon>201801220452171_AddPopulateLoanStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220459183_AddModeOfPaymentTable.cs" />
+    <Compile Include="Migrations\201801220459183_AddModeOfPaymentTable.Designer.cs">
+      <DependentUpon>201801220459183_AddModeOfPaymentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220459456_AddPopulateModeOfPaymentTable.cs" />
+    <Compile Include="Migrations\201801220459456_AddPopulateModeOfPaymentTable.Designer.cs">
+      <DependentUpon>201801220459456_AddPopulateModeOfPaymentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220600184_AddSexTable.cs" />
+    <Compile Include="Migrations\201801220600184_AddSexTable.Designer.cs">
+      <DependentUpon>201801220600184_AddSexTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220600447_AddPopulateSexTable.cs" />
+    <Compile Include="Migrations\201801220600447_AddPopulateSexTable.Designer.cs">
+      <DependentUpon>201801220600447_AddPopulateSexTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220616432_AddWarrantyTable.cs" />
+    <Compile Include="Migrations\201801220616432_AddWarrantyTable.Designer.cs">
+      <DependentUpon>201801220616432_AddWarrantyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220618437_AddPopulateWarrantyTable.cs" />
+    <Compile Include="Migrations\201801220618437_AddPopulateWarrantyTable.Designer.cs">
+      <DependentUpon>201801220618437_AddPopulateWarrantyTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\archieved\AddressType.cs" />
+    <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\archieved\CustomerAddress.cs" />
     <Compile Include="Models\archieved\CustomerType.cs" />
@@ -499,6 +547,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801220331298_AddPopulateCivilStatusTable.resx">
       <DependentUpon>201801220331298_AddPopulateCivilStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220351316_AddAddressTypeTable.resx">
+      <DependentUpon>201801220351316_AddAddressTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220352313_AddPopulateAddressTypeTable.resx">
+      <DependentUpon>201801220352313_AddPopulateAddressTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220418503_AddEmployeeRoleTable.resx">
+      <DependentUpon>201801220418503_AddEmployeeRoleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220420305_AddPopulateEmployeeRoleTable.resx">
+      <DependentUpon>201801220420305_AddPopulateEmployeeRoleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220450398_AddLoanStatusTable.resx">
+      <DependentUpon>201801220450398_AddLoanStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220452171_AddPopulateLoanStatusTable.resx">
+      <DependentUpon>201801220452171_AddPopulateLoanStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220459183_AddModeOfPaymentTable.resx">
+      <DependentUpon>201801220459183_AddModeOfPaymentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220459456_AddPopulateModeOfPaymentTable.resx">
+      <DependentUpon>201801220459456_AddPopulateModeOfPaymentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220600184_AddSexTable.resx">
+      <DependentUpon>201801220600184_AddSexTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220600447_AddPopulateSexTable.resx">
+      <DependentUpon>201801220600447_AddPopulateSexTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220616432_AddWarrantyTable.resx">
+      <DependentUpon>201801220616432_AddWarrantyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220618437_AddPopulateWarrantyTable.resx">
+      <DependentUpon>201801220618437_AddPopulateWarrantyTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

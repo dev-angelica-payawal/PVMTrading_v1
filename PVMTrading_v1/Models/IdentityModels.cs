@@ -35,17 +35,12 @@ namespace PVMTrading_v1.Models
         public DbSet<Productinclusion> Productinclusions { get; set; }
         public DbSet<CivilStatus> CivilStatus { get; set; }
 
-        /*
-        
+        public DbSet<AddressType> AddressType { get; set; }
         public DbSet<EmployeeRole> EmployeeRoles { get; set; }
         public DbSet<LoanStatus> LoanStatus { get; set; }
-        public DbSet<ModeOfPayment> ModeOfPayments { get; set; }
-        public DbSet<ProductCondition> ProductCondition { get; set; }
-        public DbSet<ProductInventory> ProductInventory { get; set; }
-        public DbSet<ProductPrice> ProductPrice { get; set; }
+        public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Sex> Sex { get; set; }
         public DbSet<Warranty> Warranty { get; set; }
-        */
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
