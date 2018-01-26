@@ -56,24 +56,36 @@ namespace PVMTrading_v1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Product product)
+        public ActionResult Save(Product product, ProductInclusion productInclusion, ProductPrice productPrice)
         {
-            if (!ModelState.IsValid)
+            /* if (!ModelState.IsValid)
+             {
+                 var viewModel = new ProductViewModel
+                 {
+                     Product = product,
+                     Brands = _context.Brands.ToList(),
+                     Branches = _context.Branches.ToList(),
+                     ProductCategories = _context.ProductCategories.ToList(),
+                     ProductConditions = _context.ProductConditions.ToList(),
+                 };
+
+                 return View("New", viewModel);
+             }*/
+            if (productInclusion.FreeItem != null &&
+                (productInclusion.Quantity != 0 || productInclusion.Quantity != null))
             {
-                var viewModel = new ProductViewModel
-                {
-                    Product = product,
-                    Brands = _context.Brands.ToList(),
-                    Branches = _context.Branches.ToList(),
-                    ProductCategories = _context.ProductCategories.ToList(),
-                    ProductConditions = _context.ProductConditions.ToList(),
-                };
-
-                return View("New", viewModel);
+                productInclusion.ProductId = product.Id;
+                _context.ProductInclusions.Add(productInclusion);
             }
-
             if (product.Id == 0)
             {
+                productPrice.ProductId = product.Id;
+                productPrice.DateCreated = DateTime.Now;
+                productPrice.SellingPrice = product.OriginalPrice;
+                _context.ProductPrices.Add(productPrice);
+
+
+
                 product.DateCreated = DateTime.Now;
                 _context.Products.Add(product);
             }
@@ -91,9 +103,17 @@ namespace PVMTrading_v1.Controllers
                 productInDb.OriginalPrice = product.OriginalPrice;
                 productInDb.ProductConditionId = product.ProductConditionId;
                 productInDb.SerialNumber = product.SerialNumber;
+                productInDb.Quantity = product.Quantity;
 
 
+                var productInclusionInDb = _context.ProductInclusions.Single(p => p.ProductId == product.Id);
+                if (productInclusionInDb != null)
+                {
+                    productInclusionInDb.FreeItem = productInclusion.FreeItem;
+                    productInclusion.Quantity = productInclusion.Quantity;
+                }
             }
+
 
 
 
@@ -102,10 +122,12 @@ namespace PVMTrading_v1.Controllers
             return RedirectToAction("Index");
         }
 
+
         public ActionResult Edit(int id)
         {
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
 
+            var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -114,6 +136,7 @@ namespace PVMTrading_v1.Controllers
             var viewModel = new ProductViewModel
             {
                 Product = product,
+                ProductInclusion = productInclsion,
                 Brands = _context.Brands.ToList(),
                 Branches = _context.Branches.ToList(),
                 ProductConditions = _context.ProductConditions.ToList(),
@@ -127,8 +150,14 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Delete(int id)
         {
             var product = _context.Products.Single(p => p.Id == id);
+            var productInclusion = _context.ProductInclusions.Single(p => p.ProductId == id);
+            var productPrices = _context.ProductPrices.SingleOrDefault(p => p.ProductId == id);
             if (product.Id != 0)
+            {
+                _context.ProductInclusions.Remove(productInclusion);
                 _context.Products.Remove(product);
+                _context.ProductPrices.Remove(productPrices);
+            }
 
 
             _context.SaveChanges();

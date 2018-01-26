@@ -21,7 +21,6 @@ namespace PVMTrading_v1.Models
 
         public int SerialNumber { get; set; }
 
-
         public string Model { get; set; }
 
         public DateTime DateCreated { get; set; }
@@ -31,7 +30,7 @@ namespace PVMTrading_v1.Models
 
         [Required]
         [DataType(DataType.Currency)]
-        public decimal OriginalPrice { get; set; }
+        public double OriginalPrice { get; set; }
         //   public int LastChangeByEmployeeId { get; set; }
         public int Barcode { get; set; }
         //   public int WarrantyId { get; set; }
