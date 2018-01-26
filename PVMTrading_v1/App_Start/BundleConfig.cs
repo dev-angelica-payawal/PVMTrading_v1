@@ -60,6 +60,34 @@ namespace PVMTrading_v1
             bundles.Add(new StyleBundle("~/bundles/customstyle")
                 .Include("~/Content/css/sb-admin.css"));
 
+            //pvmcore
+            bundles.Add(new StyleBundle("~/pvm/core")
+                .Include("~/Content/PVMcssandjs/css/bootstrap.css"));
+            //pvmjs script
+            bundles.Add(new ScriptBundle("~/pvm/plugin")
+                .Include("~/Content/PVMcssandjs/js/jquery-1.11.1.min.js"));
+
+            bundles.Add(new StyleBundle("~/pvm/customtheme")
+                .Include("~/Content/PVMcssandjs/css/style.css",
+                    "~/Content/PVMcssandjs/css/fasthover.css"));
+
+
+            bundles.Add(new StyleBundle("~/pvm/customthemess")
+                .Include("~/Content/PVMcssandjs/css/megamenu.css"));
+
+            bundles.Add(new ScriptBundle("~/pvm/pluginsss")
+                .Include("~/Content/PVMcssandjs/js/megamenu.js"));
+
+            bundles.Add(new ScriptBundle("~/pvm/plugins")
+                .Include("~/Content/PVMcssandjs/js/menu_jquery.js",
+                    "~/Content/PVMcssandjs/js/simpleCart.min.js",
+                    "~/Content/PVMcssandjs/js/responsiveslides.min.js",
+                    "~/Content/PVMcssandjs/js/script.js",
+                    "~/Content/PVMcssandjs/js/easyResponsiveTabs.js",
+                    "~/Content/PVMcssandjs/js/bootstrap-3.1.1.min.js"));
+            //Custom Theme Files
+
+
         }
     }
 }

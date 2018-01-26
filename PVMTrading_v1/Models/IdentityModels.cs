@@ -41,6 +41,8 @@ namespace PVMTrading_v1.Models
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Sex> Sex { get; set; }
         public DbSet<Warranty> Warranty { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<CustomerType> CustomerTypes { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

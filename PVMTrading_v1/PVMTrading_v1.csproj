@@ -193,6 +193,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
@@ -296,12 +297,28 @@
     <Compile Include="Migrations\201801220618437_AddPopulateWarrantyTable.Designer.cs">
       <DependentUpon>201801220618437_AddPopulateWarrantyTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801221303306_AddCustomerTable.cs" />
+    <Compile Include="Migrations\201801221303306_AddCustomerTable.Designer.cs">
+      <DependentUpon>201801221303306_AddCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221304407_AddPopulateCustomerTypeTable.cs" />
+    <Compile Include="Migrations\201801221304407_AddPopulateCustomerTypeTable.Designer.cs">
+      <DependentUpon>201801221304407_AddPopulateCustomerTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221404302_UpdateCustomerTableCivilStatusColumnId.cs" />
+    <Compile Include="Migrations\201801221404302_UpdateCustomerTableCivilStatusColumnId.Designer.cs">
+      <DependentUpon>201801221404302_UpdateCustomerTableCivilStatusColumnId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.cs" />
+    <Compile Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.Designer.cs">
+      <DependentUpon>201801221624398_ChangeDataTypePlaceOfBirthColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\archieved\CustomerAddress.cs" />
-    <Compile Include="Models\archieved\CustomerType.cs" />
+    <Compile Include="Models\CustomerType.cs" />
     <Compile Include="Models\archieved\Delivery.cs" />
     <Compile Include="Models\archieved\DeliveryStatus.cs" />
     <Compile Include="Models\archieved\Employee.cs" />
@@ -317,7 +334,7 @@
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\CivilStatus.cs" />
-    <Compile Include="Models\archieved\Customer.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\EmployeeRole.cs" />
     <Compile Include="Models\archieved\DeliveryCharge.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -336,6 +353,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +367,126 @@
     <Content Include="Content\js\sb-admin-datatables.min.js" />
     <Content Include="Content\js\sb-admin.js" />
     <Content Include="Content\js\sb-admin.min.js" />
+    <Content Include="Content\PVMcssandjs\css\bootstrap.css" />
+    <Content Include="Content\PVMcssandjs\css\etalage.css" />
+    <Content Include="Content\PVMcssandjs\css\fasthover.css" />
+    <Content Include="Content\PVMcssandjs\css\form.css" />
+    <Content Include="Content\PVMcssandjs\css\jquery-ui.css" />
+    <Content Include="Content\PVMcssandjs\css\megamenu.css" />
+    <Content Include="Content\PVMcssandjs\css\style.css" />
+    <Content Include="Content\PVMcssandjs\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\PVMcssandjs\images\1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\10.jpg" />
+    <Content Include="Content\PVMcssandjs\images\11.jpg" />
+    <Content Include="Content\PVMcssandjs\images\12.jpg" />
+    <Content Include="Content\PVMcssandjs\images\13.jpg" />
+    <Content Include="Content\PVMcssandjs\images\14.jpg" />
+    <Content Include="Content\PVMcssandjs\images\15.jpg" />
+    <Content Include="Content\PVMcssandjs\images\16.jpg" />
+    <Content Include="Content\PVMcssandjs\images\17.jpg" />
+    <Content Include="Content\PVMcssandjs\images\18.jpg" />
+    <Content Include="Content\PVMcssandjs\images\19.jpg" />
+    <Content Include="Content\PVMcssandjs\images\2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\20.jpg" />
+    <Content Include="Content\PVMcssandjs\images\21.jpg" />
+    <Content Include="Content\PVMcssandjs\images\22.jpg" />
+    <Content Include="Content\PVMcssandjs\images\23.jpg" />
+    <Content Include="Content\PVMcssandjs\images\24.jpg" />
+    <Content Include="Content\PVMcssandjs\images\25.jpg" />
+    <Content Include="Content\PVMcssandjs\images\26.jpg" />
+    <Content Include="Content\PVMcssandjs\images\27.jpg" />
+    <Content Include="Content\PVMcssandjs\images\28.jpg" />
+    <Content Include="Content\PVMcssandjs\images\29.jpg" />
+    <Content Include="Content\PVMcssandjs\images\3.jpg" />
+    <Content Include="Content\PVMcssandjs\images\30.jpg" />
+    <Content Include="Content\PVMcssandjs\images\31.jpg" />
+    <Content Include="Content\PVMcssandjs\images\32.jpg" />
+    <Content Include="Content\PVMcssandjs\images\33.jpg" />
+    <Content Include="Content\PVMcssandjs\images\34.jpg" />
+    <Content Include="Content\PVMcssandjs\images\35.jpg" />
+    <Content Include="Content\PVMcssandjs\images\36.jpg" />
+    <Content Include="Content\PVMcssandjs\images\37.jpg" />
+    <Content Include="Content\PVMcssandjs\images\38.jpg" />
+    <Content Include="Content\PVMcssandjs\images\39.jpg" />
+    <Content Include="Content\PVMcssandjs\images\4.jpg" />
+    <Content Include="Content\PVMcssandjs\images\40.jpg" />
+    <Content Include="Content\PVMcssandjs\images\41.jpg" />
+    <Content Include="Content\PVMcssandjs\images\44.jpg" />
+    <Content Include="Content\PVMcssandjs\images\45.jpg" />
+    <Content Include="Content\PVMcssandjs\images\46.jpg" />
+    <Content Include="Content\PVMcssandjs\images\47.jpg" />
+    <Content Include="Content\PVMcssandjs\images\48.jpg" />
+    <Content Include="Content\PVMcssandjs\images\49.jpg" />
+    <Content Include="Content\PVMcssandjs\images\5.jpg" />
+    <Content Include="Content\PVMcssandjs\images\50.jpg" />
+    <Content Include="Content\PVMcssandjs\images\51.jpg" />
+    <Content Include="Content\PVMcssandjs\images\52.jpg" />
+    <Content Include="Content\PVMcssandjs\images\6.jpg" />
+    <Content Include="Content\PVMcssandjs\images\7.jpg" />
+    <Content Include="Content\PVMcssandjs\images\8.jpg" />
+    <Content Include="Content\PVMcssandjs\images\9.jpg" />
+    <Content Include="Content\PVMcssandjs\images\b-arrow.png" />
+    <Content Include="Content\PVMcssandjs\images\bag.png" />
+    <Content Include="Content\PVMcssandjs\images\banner1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\banner2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\banner3.jpg" />
+    <Content Include="Content\PVMcssandjs\images\close.png" />
+    <Content Include="Content\PVMcssandjs\images\do.png" />
+    <Content Include="Content\PVMcssandjs\images\find.png" />
+    <Content Include="Content\PVMcssandjs\images\first-sample-logo.gif" />
+    <Content Include="Content\PVMcssandjs\images\img-sprite-left-right.png" />
+    <Content Include="Content\PVMcssandjs\images\img-sprite.png" />
+    <Content Include="Content\PVMcssandjs\images\left.png" />
+    <Content Include="Content\PVMcssandjs\images\logo.png" />
+    <Content Include="Content\PVMcssandjs\images\p1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p3.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p4.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p5.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p6.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p7.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p8.jpg" />
+    <Content Include="Content\PVMcssandjs\images\p9.jpg" />
+    <Content Include="Content\PVMcssandjs\images\pvm-logo_2.gif" />
+    <Content Include="Content\PVMcssandjs\images\r2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\r3.jpg" />
+    <Content Include="Content\PVMcssandjs\images\r4.jpg" />
+    <Content Include="Content\PVMcssandjs\images\r5.jpg" />
+    <Content Include="Content\PVMcssandjs\images\right.png" />
+    <Content Include="Content\PVMcssandjs\images\s1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\s2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\s3.jpg" />
+    <Content Include="Content\PVMcssandjs\images\s4.jpg" />
+    <Content Include="Content\PVMcssandjs\images\s5.jpg" />
+    <Content Include="Content\PVMcssandjs\images\s6.jpg" />
+    <Content Include="Content\PVMcssandjs\images\search1.png" />
+    <Content Include="Content\PVMcssandjs\images\social2.png" />
+    <Content Include="Content\PVMcssandjs\images\ss1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ss2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ss33.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ss4.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ss44.jpg" />
+    <Content Include="Content\PVMcssandjs\images\star.png" />
+    <Content Include="Content\PVMcssandjs\images\t1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\t2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ts1.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ts11.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ts2.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ts3.jpg" />
+    <Content Include="Content\PVMcssandjs\images\ts4.jpg" />
+    <Content Include="Content\PVMcssandjs\js\bootstrap-3.1.1.min.js" />
+    <Content Include="Content\PVMcssandjs\js\easyResponsiveTabs.js" />
+    <Content Include="Content\PVMcssandjs\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\PVMcssandjs\js\jquery.easydropdown.js" />
+    <Content Include="Content\PVMcssandjs\js\jquery.etalage.min.js" />
+    <Content Include="Content\PVMcssandjs\js\jquery.flexisel.js" />
+    <Content Include="Content\PVMcssandjs\js\jquery.jscrollpane.min.js" />
+    <Content Include="Content\PVMcssandjs\js\megamenu.js" />
+    <Content Include="Content\PVMcssandjs\js\menu_jquery.js" />
+    <Content Include="Content\PVMcssandjs\js\navbar.js" />
+    <Content Include="Content\PVMcssandjs\js\responsiveslides.min.js" />
+    <Content Include="Content\PVMcssandjs\js\script.js" />
+    <Content Include="Content\PVMcssandjs\js\simpleCart.min.js" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -443,6 +581,10 @@
     <Content Include="Content\vendor\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Content\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\PVMcssandjs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\PVMcssandjs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\PVMcssandjs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\PVMcssandjs\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -498,6 +640,11 @@
     <Content Include="Views\ProductCategory\Index.cshtml" />
     <Content Include="Views\Brand\New.cshtml" />
     <Content Include="Views\ProductCategory\New.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\New.cshtml" />
+    <Content Include="Views\Shared\_PvmWebSiteLayout.cshtml" />
+    <Content Include="Views\PVM-Website\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPVM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -583,6 +730,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801220618437_AddPopulateWarrantyTable.resx">
       <DependentUpon>201801220618437_AddPopulateWarrantyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221303306_AddCustomerTable.resx">
+      <DependentUpon>201801221303306_AddCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221304407_AddPopulateCustomerTypeTable.resx">
+      <DependentUpon>201801221304407_AddPopulateCustomerTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221404302_UpdateCustomerTableCivilStatusColumnId.resx">
+      <DependentUpon>201801221404302_UpdateCustomerTableCivilStatusColumnId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.resx">
+      <DependentUpon>201801221624398_ChangeDataTypePlaceOfBirthColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
