@@ -35,7 +35,7 @@ namespace PVMTrading_v1.Models
         public DbSet<ProductInclusion> ProductInclusions { get; set; }
         public DbSet<CivilStatus> CivilStatus { get; set; }
 
-        public DbSet<AddressType> AddressType { get; set; }
+
         public DbSet<EmployeeRole> EmployeeRoles { get; set; }
         public DbSet<LoanStatus> LoanStatus { get; set; }
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }

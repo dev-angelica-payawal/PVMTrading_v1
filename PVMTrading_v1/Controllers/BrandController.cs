@@ -36,7 +36,7 @@ namespace PVMTrading_v1.Controllers
         public ActionResult New()
         {
             var brandType = _context.BrandTypes.ToList();
-
+            
             var viewModel = new BrandViewModel
             {
                 BrandTypes = brandType
@@ -47,7 +47,19 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var brand = _context.Brands.SingleOrDefault(b => b.Id == id);
+
+            if (brand == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModels = new BrandViewModel
+            {
+                Brand = brand,
+                BrandTypes = _context.BrandTypes.ToList()
+            };
+            return View("New", viewModels);
         }
         [HttpPost]
         public ActionResult Save(Brand brand)
@@ -60,6 +72,18 @@ namespace PVMTrading_v1.Controllers
                     BrandTypes = _context.BrandTypes.ToList()
                 };
 
+                if (brand.Id == 0)
+                {
+                    _context.Brands.Add(brand);
+                }
+                else
+                {
+                    var brandInDb = _context.Brands.Single(b => b.Id == brand.Id);
+                    brandInDb.BrandName = brand.BrandName;
+                    brandInDb.BrandTypeId = brand.BrandTypeId;
+                }
+
+                _context.SaveChanges();
                 return View("New", viewModel);
             }
 

@@ -249,14 +249,6 @@
     <Compile Include="Migrations\201801220331298_AddPopulateCivilStatusTable.Designer.cs">
       <DependentUpon>201801220331298_AddPopulateCivilStatusTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801220351316_AddAddressTypeTable.cs" />
-    <Compile Include="Migrations\201801220351316_AddAddressTypeTable.Designer.cs">
-      <DependentUpon>201801220351316_AddAddressTypeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801220352313_AddPopulateAddressTypeTable.cs" />
-    <Compile Include="Migrations\201801220352313_AddPopulateAddressTypeTable.Designer.cs">
-      <DependentUpon>201801220352313_AddPopulateAddressTypeTable.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201801220418503_AddEmployeeRoleTable.cs" />
     <Compile Include="Migrations\201801220418503_AddEmployeeRoleTable.Designer.cs">
       <DependentUpon>201801220418503_AddEmployeeRoleTable.cs</DependentUpon>
@@ -313,9 +305,12 @@
     <Compile Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.Designer.cs">
       <DependentUpon>201801221624398_ChangeDataTypePlaceOfBirthColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs" />
+    <Compile Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.Designer.cs">
+      <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\archieved\CustomerAddress.cs" />
     <Compile Include="Models\CustomerType.cs" />
@@ -648,7 +643,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CivilStatus\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -695,12 +689,6 @@
     <EmbeddedResource Include="Migrations\201801220331298_AddPopulateCivilStatusTable.resx">
       <DependentUpon>201801220331298_AddPopulateCivilStatusTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801220351316_AddAddressTypeTable.resx">
-      <DependentUpon>201801220351316_AddAddressTypeTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801220352313_AddPopulateAddressTypeTable.resx">
-      <DependentUpon>201801220352313_AddPopulateAddressTypeTable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801220418503_AddEmployeeRoleTable.resx">
       <DependentUpon>201801220418503_AddEmployeeRoleTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -742,6 +730,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.resx">
       <DependentUpon>201801221624398_ChangeDataTypePlaceOfBirthColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.resx">
+      <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
