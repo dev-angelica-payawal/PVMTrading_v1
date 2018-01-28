@@ -309,6 +309,10 @@
     <Compile Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.Designer.cs">
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -733,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.resx">
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
