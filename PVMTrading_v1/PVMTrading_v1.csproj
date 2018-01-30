@@ -310,6 +310,7 @@
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </Compile>
 
+
     <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.cs" />
     <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.Designer.cs">
       <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
@@ -344,6 +345,8 @@
 
     </Compile>
  <Compile Include="Migrations\Configuration.cs" />
+
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\archieved\CustomerAddress.cs" />
@@ -769,6 +772,7 @@
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </EmbeddedResource>
 
+
     <EmbeddedResource Include="Migrations\201801280759319_AddErrorMessageToProductTables.resx">
       <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
     </EmbeddedResource>
@@ -797,6 +801,8 @@
     </EmbeddedResource>
 
  </ItemGroup>
+
+ 
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
