@@ -7,13 +7,13 @@ namespace PVMTrading_v1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddErrorMessageToProductTables : IMigrationMetadata
+    public sealed partial class AddAnnotationandForeignKeyToProductInclusionsTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddErrorMessageToProductTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAnnotationandForeignKeyToProductInclusionsTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801280759319_AddErrorMessageToProductTables"; }
+            get { return "201801221154525_AddAnnotationandForeignKeyToProductInclusionsTable"; }
         }
         
         string IMigrationMetadata.Source

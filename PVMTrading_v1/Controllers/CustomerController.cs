@@ -28,7 +28,7 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.CustomerType)
-                                              .Include(p=> p.CivilStatus)
+                                              .Include(p=>p.CivilStatus)
                                               .Include(s => s.Sex).ToList();
 
 
@@ -37,13 +37,13 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult New()
         {
-            var customersTypes = _context.CustomerTypes.ToList();
+            var customers = _context.CustomerTypes.ToList();
             var civilstatus = _context.CivilStatus.ToList();
             var sex = _context.Sex.ToList();
 
             var viewModels = new CustomerViewModel
             {
-                CustomerTypes = customersTypes,
+                CustomerTypes = customers,
                 CivilStatuses = civilstatus,
                 Sexs = sex
             };
@@ -75,16 +75,12 @@ namespace PVMTrading_v1.Controllers
                 customerInDb.Birthdate = customer.Birthdate;
                 customerInDb.CivilStatusId = customer.CivilStatusId;
                 customerInDb.Sexid = customer.Sexid;
+                customerInDb.RegisteredDateCreated = customer.RegisteredDateCreated;
                 customerInDb.PlaceOfBirth = customer.PlaceOfBirth;
                 customerInDb.Nationality = customer.Nationality;
                 customerInDb.TaxIdentificationNumber = customer.TaxIdentificationNumber;
                 customerInDb.CivilStatusId = customer.CustomerTypeId;
-                customerInDb.LotHouseNumberAndStreet = customer.LotHouseNumberAndStreet;
-                customerInDb.Barangay = customer.Barangay;
-                customerInDb.CityMunicipality= customer.CityMunicipality;
-                customerInDb.Province = customer.Province;
-                customerInDb.Country = customer.Country;
-                customerInDb.ZipCode = customer.ZipCode;
+
 
             }
 
@@ -98,6 +94,10 @@ namespace PVMTrading_v1.Controllers
                 Console.WriteLine(e);
                 throw;
             }
+                
+
+                
+
                 
 
 
@@ -117,7 +117,6 @@ namespace PVMTrading_v1.Controllers
             { 
 
                 Customer = customer,
- 
                 CustomerTypes =  _context.CustomerTypes.ToList(),
                 CivilStatuses = _context.CivilStatus.ToList(),
                 Sexs = _context.Sex.ToList()

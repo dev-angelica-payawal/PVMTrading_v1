@@ -1,6 +1,4 @@
-﻿@using System.Activities.Statements
-@using System.ComponentModel.DataAnnotations
-@model List<PVMTrading_v1.Models.Customer>
+﻿@model List<PVMTrading_v1.Models.Customer>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -28,54 +26,51 @@
                             {
                                 <table class="table table-bordered table-hover">
                                     <thead>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Last Name</th>
-                                        <th>Extension Name</th>
-                                        <th>Mobile Number</th>
-                                        <th>Telephone</th>
-                                        <th>Email Address</th>
-                                        <th>Birth Date</th>
-                                        @*  <th>Civil Status</th>*@
-                                        <th>Sex</th>
-                                        <th>Registered Date Created</th>
-                                        <th>Place Of Birth</th>
-                                        <th>Nationality</th>
-                                        <th>Tax Identification Number</th>
-                                        <th>Customer Type</th>
-                                        <th>Address</th>
-                                        <th>Zip Code</th>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Middle Name</th>
+                                            <th>Last Name</th>
+                                            <th>Extension Name</th>
+                                            <th>Mobile Number/th>
+                                            <th>Telephone</th>
+                                            <th>Email Address</th>
+                                            <th>Birth Date</th>
+                                            <th>Civil Status</th>
+                                            <th>Sex</th>
+                                            <th>Registered Date Created</th>
+                                            <th>Place Of Birth</th>
+                                            <th>Nationality</th>
+                                            <th>Tax Identification Number</th>
+                                            <th>Customer Type</th>
 
-                                    </tr>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach (var customer in Model)
-                                    {
-                                        <tr>
-                                            <td>@customer.FirstName</td>
-                                            <td>@customer.MiddleName</td>
-                                            <td>@customer.LastName</td>
-                                            <td>@customer.NameExtension</td>
-                                            <td>@customer.Mobile</td>
-                                            <td>@customer.Telephone</td>
-                                            <td>@customer.Email</td>
-                                            <td>@customer.Birthdate</td>
-                                          @*  <td>@customer.CivilStatus.Label</td> *@                                              <td>@customer.Sex.Label</td>
-                                                <td>@customer.RegisteredDateCreated.ToShortDateString()</td>
+                                        @foreach (var customer in Model)
+                                        {
+                                            <tr>
+                                                <td>@customer.FirstName</td>
+                                                <td>@customer.MiddleName</td>
+                                                <td>@customer.LastName</td>
+                                                <td>@customer.NameExtension</td>
+                                                <td>@customer.Mobile</td>
+                                                <td>@customer.Telephone</td>
+                                                <td>@customer.Email</td>
+                                                <td>@customer.Birthdate</td>
+                                                <td>@customer.CivilStatus.Label</td>
+                                                <td>@customer.Sex.Label</td>
+                                                <td>@customer.RegisteredDateCreated</td>
                                                 <td>@customer.PlaceOfBirth</td>
                                                 <td>@customer.Nationality</td>
                                                 <td>@customer.TaxIdentificationNumber</td>
                                                 <td>@customer.CustomerType.Label</td>
-                                                <td>@customer.LotHouseNumberAndStreet, @customer.Barangay, @customer.CityMunicipality, @customer.Province, @customer.Country</td>"
-
                                                 <td>@Html.ActionLink("Edit", "Edit", new { id = customer.Id }, null)</td>
                                                 <td>@Html.ActionLink("Delete", "Delete", new { id = customer.Id }, null)</td>
                                                 <td>@Html.ActionLink("Details", "Details", new { id = customer.Id }, null)</td>
 
 
                                             </tr>
-                                    }
+                                        }
                                     </tbody>
                                 </table>
 

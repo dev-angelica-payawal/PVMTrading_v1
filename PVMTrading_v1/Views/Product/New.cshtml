@@ -1,5 +1,4 @@
-﻿@using PVMTrading_v1.Models
-@model PVMTrading_v1.ViewModels.ProductViewModel
+﻿@model PVMTrading_v1.ViewModels.ProductViewModel
 
 @{
     ViewBag.Title = "New";
@@ -59,7 +58,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Product.OriginalPrice, "Original Price", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Product.OriginalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Product.OriginalPrice, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Product.OriginalPrice, "", new { @class = "text-danger" })
@@ -106,53 +105,10 @@
                 </div>
             </div>
 
-
-            <div> Free Item</div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.ProductInclusion.FreeItem, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProductInclusion.FreeItem, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProductInclusion.FreeItem, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            
-            <div class="form-group">
-                @Html.LabelFor(model => model.ProductInclusion.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProductInclusion.Quantity, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProductInclusion.Quantity, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            
-            
-            <div class="form-group">
-                @Html.LabelFor(model => model.ProductPrice.SellingPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProductPrice.SellingPrice, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProductPrice.SellingPrice, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ProductPrice.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProductPrice.Remarks, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProductPrice.Remarks,"", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Product.WarrantyId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(m => m.Product.WarrantyId, new SelectList(Model.Warranties, "Id", "Label"), "Select Warranty", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Product.WarrantyId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            @Html.HiddenFor(m => m.Product.Id)
+         @Html.HiddenFor(m => m.Product.Id)
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
         </div>
@@ -162,7 +118,7 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
-
+    
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
