@@ -7,13 +7,13 @@ namespace PVMTrading_v1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation : IMigrationMetadata
+    public sealed partial class AddColoumnsForAddressInCustomersTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddColoumnsForAddressInCustomersTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801221356331_ChangeDataTypeForProductPriceTableColumnsAndUpdateDataAnnotation"; }
+            get { return "201801300501159_AddColoumnsForAddressInCustomersTable"; }
         }
         
         string IMigrationMetadata.Source

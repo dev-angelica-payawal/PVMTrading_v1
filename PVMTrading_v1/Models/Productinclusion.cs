@@ -12,6 +12,7 @@ namespace PVMTrading_v1.Models
         public int Id { get; set; }
 
         public Product Product { get; set; }
+        [Display(Name = "Product Name")]
         public int ProductId { get; set; }
 
         [Display(Name = "Free Item")]

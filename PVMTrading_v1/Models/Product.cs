@@ -16,11 +16,15 @@ namespace PVMTrading_v1.Models
         [Required(ErrorMessage = "Input the Name of the Product.")]
         [MaxLength(255)]
         public string Name { get; set; }
+
         [MaxLength(2000)]
         public string Description { get; set; }
+
         [Required(ErrorMessage = "Input the Serial Number of the Product.")]
-        public int SerialNumber { get; set; }
+        public int? SerialNumber { get; set; }
+
         [Required(ErrorMessage = "Input the Model of the Product.")]
+        [MaxLength(255)]
         public string Model { get; set; }
         [Required]
         public DateTime DateCreated { get; set; }
@@ -31,15 +35,21 @@ namespace PVMTrading_v1.Models
         [Required(ErrorMessage = "Input the Price of the Product.")]
         [DataType(DataType.Currency)]
         public double OriginalPrice { get; set; }
+        
         //   public int LastChangeByEmployeeId { get; set; }
-        [Required(ErrorMessage = "Input the Barcode of the Product.")]
-        public int Barcode { get; set; }
-        //   public int WarrantyId { get; set; }
         //   public int CreatedByEmployeeId { get; set; }
+
+        [Required(ErrorMessage = "Input the Barcode of the Product.")]
+        public int? Barcode { get; set; }
+
+        public Warranty Warranty { get; set; }
+        [Display(Name = "Warranty")]
+        public int? WarrantyId { get; set; }
+      
 
         public Brand Brand { get; set; }
         [Required(ErrorMessage = "Choose the Brand Name.")]
-        public int BrandId { get; set; }
+        public int? BrandId { get; set; }
         
         public ProductCategory ProductCategory { get; set; }
         [Required(ErrorMessage = "Choose the Category of the Product.")]

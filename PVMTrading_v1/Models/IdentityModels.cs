@@ -44,16 +44,44 @@ namespace PVMTrading_v1.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerType> CustomerTypes { get; set; }
 
+        public DbSet<CashTransaction> CashTransactions { get; set; }
+        public DbSet<CashTransactionItem> CashTransactionItems { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
+
+       
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
+         }
 
+
+    public class ApiContext : DbContext
+    {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<CashTransactionItem>()
+                .HasRequired(c => c.Product)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Product>()
+                .HasRequired(c => c.Branch)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
+
+
 }

@@ -7,6 +7,7 @@ namespace PVMTrading_v1.Migrations
     {
         public override void Up()
         {
+            Sql("INSERT INTO Warranties VALUES('No Warranty Available For This Product')");
             Sql("INSERT INTO Warranties VALUES('7 Days')");
             Sql("INSERT INTO Warranties VALUES('1 Month')");
             Sql("INSERT INTO Warranties VALUES('3 Months')");

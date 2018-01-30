@@ -193,11 +193,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CashTransactionController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductPriceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -301,6 +303,10 @@
     <Compile Include="Migrations\201801221404302_UpdateCustomerTableCivilStatusColumnId.Designer.cs">
       <DependentUpon>201801221404302_UpdateCustomerTableCivilStatusColumnId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.cs" />
+    <Compile Include="Migrations\201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.Designer.cs">
+      <DependentUpon>201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.cs" />
     <Compile Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.Designer.cs">
       <DependentUpon>201801221624398_ChangeDataTypePlaceOfBirthColumn.cs</DependentUpon>
@@ -309,10 +315,41 @@
     <Compile Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.Designer.cs">
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.cs" />
+    <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.Designer.cs">
+      <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801300238483_UpdateAnnotationCustomersTable.cs" />
+    <Compile Include="Migrations\201801300238483_UpdateAnnotationCustomersTable.Designer.cs">
+      <DependentUpon>201801300238483_UpdateAnnotationCustomersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801300242415_ChangeCivilStatusCollumnAnnotationToNullable.cs" />
+    <Compile Include="Migrations\201801300242415_ChangeCivilStatusCollumnAnnotationToNullable.Designer.cs">
+      <DependentUpon>201801300242415_ChangeCivilStatusCollumnAnnotationToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801300501159_AddColoumnsForAddressInCustomersTable.cs" />
+    <Compile Include="Migrations\201801300501159_AddColoumnsForAddressInCustomersTable.Designer.cs">
+      <DependentUpon>201801300501159_AddColoumnsForAddressInCustomersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.cs" />
+    <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.Designer.cs">
+      <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+>>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
+=======
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+>>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
-    <Compile Include="Models\archieved\CustomerAddress.cs" />
     <Compile Include="Models\CustomerType.cs" />
     <Compile Include="Models\archieved\Delivery.cs" />
     <Compile Include="Models\archieved\DeliveryStatus.cs" />
@@ -338,20 +375,25 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
-    <Compile Include="Models\Productinclusion.cs" />
+    <Compile Include="Models\ProductInclusion.cs" />
     <Compile Include="Models\ProductInventory.cs" />
     <Compile Include="Models\ProductPrice.cs" />
     <Compile Include="Models\Sex.cs" />
-    <Compile Include="Models\archieved\CashTransaction.cs" />
-    <Compile Include="Models\archieved\CashTransactionitem.cs" />
+    <Compile Include="Models\CashTransaction.cs" />
+    <Compile Include="Models\CashTransactionItem.cs" />
     <Compile Include="Models\Warranty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
+    <Compile Include="ViewModels\CashTransactionViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-PVMTrading_v1-20180109093125.mdf" />
+    <Content Include="App_Data\aspnet-PVMTrading_v1-20180109093125_log.ldf">
+      <DependentUpon>aspnet-PVMTrading_v1-20180109093125.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\sb-admin.css" />
@@ -640,9 +682,11 @@
     <Content Include="Views\Shared\_PvmWebSiteLayout.cshtml" />
     <Content Include="Views\PVM-Website\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPVM.cshtml" />
+    <Content Include="Views\ProductPrice\Edit.cshtml" />
+    <Content Include="Views\ProductPrice\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Views\CashTransaction\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -728,11 +772,39 @@
     <EmbeddedResource Include="Migrations\201801221404302_UpdateCustomerTableCivilStatusColumnId.resx">
       <DependentUpon>201801221404302_UpdateCustomerTableCivilStatusColumnId.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.resx">
+      <DependentUpon>201801221416128_ChangeOriginalPriceColoumnOfProductTableFromDecimalToDouble.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801221624398_ChangeDataTypePlaceOfBirthColumn.resx">
       <DependentUpon>201801221624398_ChangeDataTypePlaceOfBirthColumn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.resx">
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <EmbeddedResource Include="Migrations\201801280759319_AddErrorMessageToProductTables.resx">
+      <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801300238483_UpdateAnnotationCustomersTable.resx">
+      <DependentUpon>201801300238483_UpdateAnnotationCustomersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801300242415_ChangeCivilStatusCollumnAnnotationToNullable.resx">
+      <DependentUpon>201801300242415_ChangeCivilStatusCollumnAnnotationToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801300501159_AddColoumnsForAddressInCustomersTable.resx">
+      <DependentUpon>201801300501159_AddColoumnsForAddressInCustomersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.resx">
+      <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+>>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
+=======
+    <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+>>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

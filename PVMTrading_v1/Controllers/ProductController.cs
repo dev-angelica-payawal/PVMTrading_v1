@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PVMTrading_v1.Models;
@@ -31,31 +32,37 @@ namespace PVMTrading_v1.Controllers
             var products = _context.Products.Include(c => c.Brand)
                                             .Include(q => q.Branch)
                                             .Include(w => w.ProductCategory)
-                                            .Include(e => e.ProductCondition).ToList();
+                                            .Include(e => e.ProductCondition)
+                                            .Include(w => w.Warranty).ToList();
+                        
 
             return View(products);
 
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult New()
         {
             var brands = _context.Brands.ToList();
             var branches = _context.Branches.ToList();
             var productCategories = _context.ProductCategories.ToList();
             var productConditions = _context.ProductConditions.ToList();
+            var warranties = _context.Warranty.ToList();
 
             var viewModels = new ProductViewModel
             {
                 Brands = brands,
                 Branches = branches,
                 ProductCategories = productCategories,
-                ProductConditions = productConditions
+                ProductConditions = productConditions,
+                Warranties = warranties
 
             };
             return View(viewModels);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Product product, ProductInclusion productInclusion, ProductPrice productPrice)
         {
             /* if (!ModelState.IsValid)
@@ -77,13 +84,24 @@ namespace PVMTrading_v1.Controllers
                 productInclusion.ProductId = product.Id;
                 _context.ProductInclusions.Add(productInclusion);
             }
+            else
+            {
+                var viewModel = new ProductViewModel
+                {
+                    Product = product,
+                    Brands = _context.Brands.ToList(),
+                    Branches = _context.Branches.ToList(),
+                    ProductCategories = _context.ProductCategories.ToList(),
+                    ProductConditions = _context.ProductConditions.ToList(),
+                };
+                return View("New", viewModel);
+            }
             if (product.Id == 0)
             {
                 productPrice.ProductId = product.Id;
                 productPrice.DateCreated = DateTime.Now;
-                productPrice.SellingPrice = product.OriginalPrice;
+                productPrice.UnitPrice = product.OriginalPrice;
                 _context.ProductPrices.Add(productPrice);
-
 
 
                 product.DateCreated = DateTime.Now;
@@ -104,6 +122,7 @@ namespace PVMTrading_v1.Controllers
                 productInDb.ProductConditionId = product.ProductConditionId;
                 productInDb.SerialNumber = product.SerialNumber;
                 productInDb.Quantity = product.Quantity;
+                productInDb.WarrantyId = product.WarrantyId;
 
 
                 var productInclusionInDb = _context.ProductInclusions.Single(p => p.ProductId == product.Id);
@@ -122,9 +141,10 @@ namespace PVMTrading_v1.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id)
         {
+          
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
 
             var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
@@ -140,13 +160,15 @@ namespace PVMTrading_v1.Controllers
                 Brands = _context.Brands.ToList(),
                 Branches = _context.Branches.ToList(),
                 ProductConditions = _context.ProductConditions.ToList(),
-                ProductCategories = _context.ProductCategories.ToList()
+                ProductCategories = _context.ProductCategories.ToList(),
+                Warranties = _context.Warranty.ToList()
 
             };
 
             return View("New", viewModel);
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
             var product = _context.Products.Single(p => p.Id == id);
