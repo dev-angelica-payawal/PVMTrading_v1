@@ -9,7 +9,7 @@ namespace PVMTrading_v1.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(PVMTrading_v1.Models.ApplicationDbContext context)

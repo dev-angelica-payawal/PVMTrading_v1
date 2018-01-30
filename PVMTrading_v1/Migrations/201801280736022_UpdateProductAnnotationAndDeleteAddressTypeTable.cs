@@ -26,19 +26,19 @@ namespace PVMTrading_v1.Migrations
             AddForeignKey("dbo.ProductInclusions", "ProductId", "dbo.Products", "Id", cascadeDelete: true);
             AddForeignKey("dbo.ProductPrices", "ProductId", "dbo.Products", "Id", cascadeDelete: true);
             AddForeignKey("dbo.Products", "BrandId", "dbo.Brands", "Id");
-            DropTable("dbo.AddressTypes");
+         //   DropTable("dbo.AddressTypes");
         }
         
         public override void Down()
         {
-            CreateTable(
+           /* CreateTable(
                 "dbo.AddressTypes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Label = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id);*/
             
             DropForeignKey("dbo.Products", "BrandId", "dbo.Brands");
             DropForeignKey("dbo.ProductPrices", "ProductId", "dbo.Products");

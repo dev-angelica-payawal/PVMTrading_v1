@@ -309,11 +309,7 @@
     <Compile Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.Designer.cs">
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.cs" />
     <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.Designer.cs">
       <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
@@ -333,27 +329,21 @@
     <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.cs" />
     <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.Designer.cs">
       <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201801281203186_Add.cs" />
-    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
-      <DependentUpon>201801281203186_Add.cs</DependentUpon>
->>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
-=======
-    <Compile Include="Migrations\201801281203186_Add.cs" />
-    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
-      <DependentUpon>201801281203186_Add.cs</DependentUpon>
->>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
-=======
-    <Compile Include="Migrations\201801281203186_Add.cs" />
-    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
-      <DependentUpon>201801281203186_Add.cs</DependentUpon>
->>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
     </Compile>
-=======
->>>>>>> parent of 2332218... Add ProductPrice Fix Customer Table Add table for Cash Transaction and CashtransactionItem
-=======
->>>>>>> parent of c2f1f65... Fix
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+
+    </Compile>
+ <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\archieved\CustomerAddress.cs" />
@@ -394,7 +384,7 @@
     <Compile Include="ViewModels\BrandViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
-  </ItemGroup>
+    </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -778,11 +768,7 @@
     <EmbeddedResource Include="Migrations\201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.resx">
       <DependentUpon>201801280736022_UpdateProductAnnotationAndDeleteAddressTypeTable.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <EmbeddedResource Include="Migrations\201801280759319_AddErrorMessageToProductTables.resx">
       <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
     </EmbeddedResource>
@@ -797,24 +783,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.resx">
       <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
-=======
+</EmbeddedResource>
+
     <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
       <DependentUpon>201801281203186_Add.cs</DependentUpon>
->>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
-=======
+</EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
       <DependentUpon>201801281203186_Add.cs</DependentUpon>
->>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
-=======
+</EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
       <DependentUpon>201801281203186_Add.cs</DependentUpon>
->>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
+
     </EmbeddedResource>
-=======
->>>>>>> parent of 2332218... Add ProductPrice Fix Customer Table Add table for Cash Transaction and CashtransactionItem
-=======
->>>>>>> parent of c2f1f65... Fix
-  </ItemGroup>
+
+ </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
