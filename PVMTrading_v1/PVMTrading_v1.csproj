@@ -317,6 +317,7 @@
     </Compile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.cs" />
     <Compile Include="Migrations\201801280759319_AddErrorMessageToProductTables.Designer.cs">
       <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
@@ -336,6 +337,11 @@
     <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.cs" />
     <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.Designer.cs">
       <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\201801281203186_Add.cs" />
+    <Compile Include="Migrations\201801281203186_Add.Designer.cs">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+>>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
 =======
     <Compile Include="Migrations\201801281203186_Add.cs" />
     <Compile Include="Migrations\201801281203186_Add.Designer.cs">
@@ -783,6 +789,7 @@
     </EmbeddedResource>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201801280759319_AddErrorMessageToProductTables.resx">
       <DependentUpon>201801280759319_AddErrorMessageToProductTables.cs</DependentUpon>
     </EmbeddedResource>
@@ -797,6 +804,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.resx">
       <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
+      <DependentUpon>201801281203186_Add.cs</DependentUpon>
+>>>>>>> c2f1f650904a076e7ecc3a041c54b8f3f83af0b5
 =======
     <EmbeddedResource Include="Migrations\201801281203186_Add.resx">
       <DependentUpon>201801281203186_Add.cs</DependentUpon>
