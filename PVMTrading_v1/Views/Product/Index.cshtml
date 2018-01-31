@@ -15,66 +15,90 @@
                     <div class="table-responsive">
                         <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             <p>
-                                @Html.ActionLink("Add Product", "New")
+                                
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                    Add New Product
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                @{Html.RenderAction("New", "Product");}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </p>
 
                             @if (!Model.Any())
-            {
+                            {
                                 <p>We don't have any customers yet.</p>
                             }
                             else
                             {
                                 <table class="table table-bordered table-hover">
                                     <thead>
-                                        <tr>
-                                            <th>Product Name</th>
-                                            <th>Description</th>
-                                            <th>Serial Number</th>
-                                            <th>Model</th>
-                                            <th>Date Created</th>
-                                            <th>Return</th>
-                                            <th>Price</th>
-                                            <th>Barcode</th>
-                                            <th>Branch</th>
-                                            <th>Brand</th>
-                                            <th>Product Category</th>
-                                            <th>Product Condition</th>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Description</th>
+                                        <th>Serial Number</th>
+                                        <th>Model</th>
+                                        <th>Date Created</th>
+                                        <th>Return</th>
+                                        <th>Price</th>
+                                        <th>Barcode</th>
+                                        <th>Branch</th>
+                                        <th>Brand</th>
+                                        <th>Product Category</th>
+                                        <th>Product Condition</th>
                                            
 
-                                        </tr>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var product in Model)
-                                        {
-                                            <tr>
-                                                <td>@product.Name</td>
-                                                <td>@product.Description</td>
-                                                <td>@product.SerialNumber</td>
-                                                <td>@product.Model</td>
-                                                <td>@product.DateCreated</td>
-                                                <td>@product.IsReturned</td>
-                                                <td>@product.OriginalPrice</td>
-                                                <td>@product.Barcode</td>
-                                                <td>@product.Branch.BranchName</td>
-                                                <td>@product.Brand.BrandName</td>
-                                                <td>@product.ProductCategory.Name</td>
-                                                <td>@product.ProductCondition.Label</td>
-                                                <td>@product.ProductCategory.Name</td>
-                                                <td>@product.ProductCondition.Label</td>
-                                                <td>@Html.ActionLink("Edit", "Edit", new { id = product.Id }, null)</td>
-                                                <td>@Html.ActionLink("Delete", "Delete", new { id = product.Id }, null)</td>
-                                                <td>@Html.ActionLink("Details", "Details", new { id = product.Id }, null)</td>
+                                    @foreach (var product in Model)
+                                    {
+                                        <tr>
+                                            <td>@product.Name</td>
+                                            <td>@product.Description</td>
+                                            <td>@product.SerialNumber</td>
+                                            <td>@product.Model</td>
+                                            <td>@product.DateCreated</td>
+                                            <td>@product.IsReturned</td>
+                                            <td>@product.OriginalPrice</td>
+                                            <td>@product.Barcode</td>
+                                            <td>@product.Branch.BranchName</td>
+                                            <td>@product.Brand.BrandName</td>
+                                            <td>@product.ProductCategory.Name</td>
+                                            <td>@product.ProductCondition.Label</td>
+                                            <td>@product.ProductCategory.Name</td>
+                                            <td>@product.ProductCondition.Label</td>
+                                            <td>@Html.ActionLink("Edit", "Edit", new { id = product.Id }, null)</td>
+                                            <td>@Html.ActionLink("Delete", "Delete", new { id = product.Id }, null)</td>
+                                            <td>@Html.ActionLink("Details", "Details", new { id = product.Id }, null)</td>
 
 
-                                            </tr>
-                                        }
+                                        </tr>
+                                    }
                                     </tbody>
                                 </table>
-
+                                
 
                             }
-                            </div>
+
                         </div>
+                    </div>
                 </div>
             </div>
         </div>

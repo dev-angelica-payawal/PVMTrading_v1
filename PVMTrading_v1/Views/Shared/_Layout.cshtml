@@ -16,6 +16,7 @@
     @Styles.Render("~/bundles/font-awesome")
     @Styles.Render("~/bundles/plugincss")
     @Styles.Render("~/bundles/customstyle")
+    
 </head>
 <body class="sticky-footer bg-light" id="page-top">
     <!-- Navigation-->
@@ -275,9 +276,11 @@
 </div>
 
 
-    <div>
-        @RenderBody()
-    </div>
+<div>
+    @RenderBody()
+</div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/core")
     @Scripts.Render("~/bundles/coreplugin")
     @Scripts.Render("~/bundles/pageplugin")
