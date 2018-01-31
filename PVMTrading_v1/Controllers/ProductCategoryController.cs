@@ -30,6 +30,14 @@ namespace PVMTrading_v1.Controllers
         }
 
 
+     /*   public ActionResult loaddata()
+        {
+            
+                var data = _context.ProductCategories.OrderBy(a => a.Name).ToList();
+                return Json(new {data = data}, JsonRequestBehavior.AllowGet);
+            
+        }*/
+
         public ActionResult New()
         {
             var productCategories = new ProductCategory();
@@ -68,7 +76,7 @@ namespace PVMTrading_v1.Controllers
             {
                 var productCategoryInDb = _context.ProductCategories.Single(p => p.Id == productCategory.Id);
                 productCategoryInDb.Name = productCategory.Name;
-                //        productCategoryInDb.BufferStock = productCategory.BufferStock;
+                //  productCategoryInDb.BufferStock = productCategory.BufferStock;
             }
 
             _context.SaveChanges();

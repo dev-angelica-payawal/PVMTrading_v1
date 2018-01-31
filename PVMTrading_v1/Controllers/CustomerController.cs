@@ -25,6 +25,8 @@ namespace PVMTrading_v1.Controllers
             _context.Dispose();
         }
 
+
+
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.CustomerType)
@@ -35,6 +37,8 @@ namespace PVMTrading_v1.Controllers
             return View(customers);
         }
 
+
+    
         public ActionResult New()
         {
             var customersTypes = _context.CustomerTypes.ToList();

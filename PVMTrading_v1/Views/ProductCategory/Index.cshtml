@@ -9,7 +9,7 @@
         <h2>Product Category</h2>
 
         <p>
-            @Html.ActionLink("Create New", "New")
+            @Html.ActionLink("Create New", "New",null, new { @class = "btn btn-primary" })
         </p>
         @if (!Model.Any())
         {
@@ -17,7 +17,7 @@
         }
         else
         {
-            <table class="table">
+            <table class="table" >
                 <tr>
                     <th>
                         Name
@@ -43,3 +43,6 @@
         }
     </div>
 </div>
+
+
+

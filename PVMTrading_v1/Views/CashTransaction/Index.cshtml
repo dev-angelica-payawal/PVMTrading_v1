@@ -17,66 +17,69 @@
             <h4>CashTransaction</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.CashTransactionDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.CashTransaction.CashTransactionDate, new { Value = DateTime.Today, @disabled = "disabled", @readonly = "readonly" })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.CashTransactionDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.CustomerId, "Customer", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.CashTransaction.CustomerId, new { @disabled = "disabled", @readonly = "readonly" })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.CustomerId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.TotalDiscountedAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.CashTransaction.TotalDiscountedAmount, new { @disabled = "disabled", @readonly = "readonly" })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.TotalDiscountedAmount, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.OriginalTotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.CashTransaction.OriginalTotalAmount, new { @disabled = "disabled", @readonly = "readonly" })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.OriginalTotalAmount, "", new { @class = "text-danger" })
-                </div>
-            </div>
             
+            <div class="col-md-6">
+                @Html.ActionLink("Search Product", "SearchProduct", null, new { @class = "btn btn-primary" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CashTransaction.CashTransactionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CashTransaction.CashTransactionDate, new { Value = DateTime.Now, @disabled = "disabled", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.CashTransaction.CashTransactionDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.TotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CashTransaction.TotalAmount, new { @disabled = "disabled", @readonly = "readonly"  })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.TotalAmount, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CashTransaction.CustomerId, "Customer", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CashTransaction.CustomerId, new { @disabled = "disabled", @readonly = "readonly" }) @Html.ActionLink("Search Customer", "SearchCustomer", null, new { @class = "btn btn-primary" })
+                        @Html.ValidationMessageFor(model => model.CashTransaction.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CashTransaction.TotalDiscountedAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CashTransaction.TotalDiscountedAmount, new { @disabled = "disabled", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.CashTransaction.TotalDiscountedAmount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CashTransaction.OriginalTotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CashTransaction.OriginalTotalAmount, new { @disabled = "disabled", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.CashTransaction.OriginalTotalAmount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CashTransaction.TotalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CashTransaction.TotalAmount, new { @disabled = "disabled", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.CashTransaction.TotalAmount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CashTransaction.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CashTransaction.Remarks, new { @disabled = "disabled", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.CashTransaction.Remarks, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
                 </div>
             </div>
 
-
-
-
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CashTransaction.Remarks, new { @disabled = "disabled", @readonly = "readonly"  })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.Remarks, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
     </div>
 }
 

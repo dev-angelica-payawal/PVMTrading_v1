@@ -36,5 +36,21 @@ namespace PVMTrading_v1.Controllers
 
             return View(viewModels);
         }
+
+        //select customer search
+        public ActionResult SearchCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ActionResult SearchProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ActionResult Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
