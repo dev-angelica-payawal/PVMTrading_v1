@@ -690,6 +690,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\pug\blank.pug" />
@@ -893,7 +895,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ConvertedIndex.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\New.cshtml" />
+    <Content Include="Views\Product\New2.cshtml" />
     <Content Include="Views\Brand\Index.cshtml" />
     <Content Include="Views\ProductCategory\Index.cshtml" />
     <Content Include="Views\Brand\New.cshtml" />
@@ -906,6 +908,8 @@
     <Content Include="Views\ProductPrice\Edit.cshtml" />
     <Content Include="Views\ProductPrice\Index.cshtml" />
     <Content Include="Views\CashTransaction\Index.cshtml" />
+    <Content Include="Views\Product\_PartialNew.cshtml" />
+    <Content Include="Views\Product\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
