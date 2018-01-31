@@ -331,6 +331,10 @@
     <Compile Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.Designer.cs">
       <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801310954307_AddColoumnsForProductsTable.cs" />
+    <Compile Include="Migrations\201801310954307_AddColoumnsForProductsTable.Designer.cs">
+      <DependentUpon>201801310954307_AddColoumnsForProductsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -361,8 +365,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
-    <Compile Include="Models\Productinclusion.cs" />
-    <Compile Include="Models\ProductInventory.cs" />
+    <Compile Include="Models\ProductInclusion.cs" />
     <Compile Include="Models\ProductPrice.cs" />
     <Compile Include="Models\Sex.cs" />
     <Compile Include="Models\Warranty.cs" />
@@ -664,6 +667,7 @@
     <Content Include="Views\Shared\_LayoutPVM.cshtml" />
     <Content Include="Views\ProductPrice\Edit.cshtml" />
     <Content Include="Views\ProductPrice\Index.cshtml" />
+    <Content Include="Views\CashTransaction\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -772,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801301535271_AddCashTransactionAndCashTransactionItemTables.resx">
       <DependentUpon>201801301535271_AddCashTransactionAndCashTransactionItemTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801310954307_AddColoumnsForProductsTable.resx">
+      <DependentUpon>201801310954307_AddColoumnsForProductsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

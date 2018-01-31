@@ -9,7 +9,7 @@ namespace PVMTrading_v1.Models
 {
     public class CashTransaction
     {
-
+        [Key]
         public int Id { get; set; }
 
        
@@ -32,7 +32,6 @@ namespace PVMTrading_v1.Models
         public Customer Customer { get; set; }
         [Display(Name = "Customer Name")]
         [Required]
-        
         public int CustomerId { get; set; }
 
         [Display(Name = "Void Transaction")]

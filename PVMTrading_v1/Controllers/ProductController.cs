@@ -40,7 +40,6 @@ namespace PVMTrading_v1.Controllers
 
         }
 
-        [ValidateAntiForgeryToken]
         public ActionResult New()
         {
             var brands = _context.Brands.ToList();
@@ -123,6 +122,8 @@ namespace PVMTrading_v1.Controllers
                 productInDb.SerialNumber = product.SerialNumber;
                 productInDb.Quantity = product.Quantity;
                 productInDb.WarrantyId = product.WarrantyId;
+                productInDb.AvailableForSelling = product.AvailableForSelling;
+                productInDb.Reserved = product.Reserved;
 
 
                 var productInclusionInDb = _context.ProductInclusions.Single(p => p.ProductId == product.Id);

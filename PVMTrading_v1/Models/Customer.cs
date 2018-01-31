@@ -93,10 +93,9 @@ namespace PVMTrading_v1.Models
         public string Country { get; set; }
 
         [Display(Name = "Zip Code")]
-
         public int? ZipCode { get; set; }
 
         //     public Blob Photo { get; set; }
-
+        
     }
 }

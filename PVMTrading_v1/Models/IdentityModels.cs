@@ -62,26 +62,7 @@ namespace PVMTrading_v1.Models
          }
 
 
-    public class ApiContext : DbContext
-    {
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-
-            modelBuilder.Entity<CashTransactionItem>()
-                .HasRequired(c => c.Product)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Product>()
-                .HasRequired(c => c.Branch)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-
-
-            base.OnModelCreating(modelBuilder);
-        }
-    }
+   
 
 
 }

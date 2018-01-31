@@ -10,8 +10,6 @@ namespace PVMTrading_v1.Models{
 
         public string Label { get; set; }
 
-        //blacklisted
-        //new
-        //regular
+        
     }
 }

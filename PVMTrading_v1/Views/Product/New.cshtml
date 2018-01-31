@@ -1,12 +1,9 @@
-﻿@using PVMTrading_v1.Models
+﻿
 @model PVMTrading_v1.ViewModels.ProductViewModel
-
 @{
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
 
 @using (Html.BeginForm("Save", "Product"))
 {
@@ -17,13 +14,12 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
-                @Html.LabelFor(model => model.Product.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Product.Name, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Product.Name, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -31,7 +27,6 @@
                     @Html.ValidationMessageFor(model => model.Product.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.SerialNumber, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -39,7 +34,6 @@
                     @Html.ValidationMessageFor(model => model.Product.SerialNumber, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.Model, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -47,7 +41,6 @@
                     @Html.ValidationMessageFor(model => model.Product.Model, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.IsReturned, "Returned", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -57,7 +50,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.OriginalPrice, "Original Price", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -65,7 +57,6 @@
                     @Html.ValidationMessageFor(model => model.Product.OriginalPrice, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.Barcode, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -73,7 +64,6 @@
                     @Html.ValidationMessageFor(model => model.Product.Barcode, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.BrandId, "Brand Name", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -81,7 +71,6 @@
                     @Html.ValidationMessageFor(model => model.Product.BrandId, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.BranchId, "Branch Name", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -89,7 +78,6 @@
                     @Html.ValidationMessageFor(model => model.Product.BranchId, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.ProductCategoryId, "Category", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -97,7 +85,6 @@
                     @Html.ValidationMessageFor(model => model.Product.ProductCategoryId, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.ProductConditionId, "Product Condition", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -105,7 +92,6 @@
                     @Html.ValidationMessageFor(model => model.Product.ProductConditionId, "", new { @class = "text-danger" })
                 </div>
             </div>
-
 
             <div> Free Item</div>
             <div class="form-group">
@@ -115,7 +101,7 @@
                     @Html.ValidationMessageFor(model => model.ProductInclusion.FreeItem, "", new { @class = "text-danger" })
                 </div>
             </div>
-            
+
             <div class="form-group">
                 @Html.LabelFor(model => model.ProductInclusion.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -123,8 +109,8 @@
                     @Html.ValidationMessageFor(model => model.ProductInclusion.Quantity, "", new { @class = "text-danger" })
                 </div>
             </div>
-            
-            
+
+
             <div class="form-group">
                 @Html.LabelFor(model => model.ProductPrice.SellingPrice, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -132,15 +118,13 @@
                     @Html.ValidationMessageFor(model => model.ProductPrice.SellingPrice, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.ProductPrice.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.ProductPrice.Remarks, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProductPrice.Remarks,"", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.ProductPrice.Remarks, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.WarrantyId, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -149,6 +133,22 @@
                 </div>
             </div>
 
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Product.AvailableForSelling, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Product.AvailableForSelling, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Product.AvailableForSelling, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Product.Reserved, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Product.Reserved, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Product.Reserved, "", new { @class = "text-danger" })
+                </div>
+            </div>
             @Html.HiddenFor(m => m.Product.Id)
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
@@ -159,11 +159,11 @@
     </div>
 }
 
-
 <div>
     @Html.ActionLink("Back to List", "Index")
-
 </div>
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
