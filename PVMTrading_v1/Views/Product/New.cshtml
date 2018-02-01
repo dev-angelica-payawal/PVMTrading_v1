@@ -1,6 +1,4 @@
-﻿
-
-@model PVMTrading_v1.ViewModels.ProductViewModel
+﻿@model PVMTrading_v1.ViewModels.ProductViewModel
 
 
 @using (Html.BeginForm("Save", "Product"))
@@ -41,8 +39,6 @@
                             @Html.ValidationMessageFor(model => model.Product.Model, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
-
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Product.OriginalPrice, "Original Price", htmlAttributes: new { @class = "control-label col-md-12" })

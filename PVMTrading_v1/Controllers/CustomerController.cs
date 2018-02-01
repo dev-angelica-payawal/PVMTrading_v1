@@ -29,11 +29,23 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.CustomerType)
+           /* List<Customer> customers = new List<Customer>();
+            List<CustomerCompleInfo> customerCompleteInfos = new List<CustomerCompleInfo>();
+*/
+            /*var customers = _context.Customers.Include(c => c.CustomerType)
                                               .Include(p=> p.CivilStatus)
-                                              .Include(s => s.Sex).ToList();
+                                              .Include(s => s.Sex).ToList();*/
+
+            var customers = _context.Customers.Include(s => s.Sex).ToList();
 
 
+
+           /* var customerInfo = from s in customers
+                join st in customerCompleteInfos on s.Id equals st.CustomerId into st2
+                from st in st2.DefaultIfEmpty()
+                select new CustomerViewModel { Customer = s, CustomerCompleInfo = st };
+*/
+            
             return View(customers);
         }
 
@@ -44,12 +56,14 @@ namespace PVMTrading_v1.Controllers
             var customersTypes = _context.CustomerTypes.ToList();
             var civilstatus = _context.CivilStatus.ToList();
             var sex = _context.Sex.ToList();
+            /*var customerCompleInfo = new CustomerCompleInfos();*/
 
             var viewModels = new CustomerViewModel
             {
                 CustomerTypes = customersTypes,
                 CivilStatuses = civilstatus,
-                Sexs = sex
+                Sexs = sex,
+               /* CustomerCompleInfo = customerCompleInfo*/
             };
             
 
@@ -58,13 +72,20 @@ namespace PVMTrading_v1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Customer customer)
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Customer customer,CustomerCompleInfo customerCompleInfo)
         {
 
             if (customer.Id == 0)
             {
                 customer.RegisteredDateCreated = DateTime.Now;
                 _context.Customers.Add(customer);
+
+                if (customerCompleInfo.CivilStatusId !=0 && customerCompleInfo.Id ==0)
+                {
+                     customerCompleInfo.CustomerId = customer.Id;
+                    _context.CustomerCompleInfos.Add(customerCompleInfo);
+                }
             }
             else
             {
@@ -72,23 +93,25 @@ namespace PVMTrading_v1.Controllers
                 customerInDb.FirstName = customer.FirstName;
                 customerInDb.MiddleName = customer.MiddleName;
                 customerInDb.LastName = customer.LastName;
-                customerInDb.NameExtension = customer.NameExtension;
                 customerInDb.Mobile = customer.Mobile;
-                customerInDb.Telephone = customer.Telephone;
-                customerInDb.Email = customer.Email;
-                customerInDb.Birthdate = customer.Birthdate;
-                customerInDb.CivilStatusId = customer.CivilStatusId;
                 customerInDb.Sexid = customer.Sexid;
-                customerInDb.PlaceOfBirth = customer.PlaceOfBirth;
-                customerInDb.Nationality = customer.Nationality;
-                customerInDb.TaxIdentificationNumber = customer.TaxIdentificationNumber;
-                customerInDb.CivilStatusId = customer.CustomerTypeId;
-                customerInDb.LotHouseNumberAndStreet = customer.LotHouseNumberAndStreet;
-                customerInDb.Barangay = customer.Barangay;
-                customerInDb.CityMunicipality= customer.CityMunicipality;
-                customerInDb.Province = customer.Province;
-                customerInDb.Country = customer.Country;
-                customerInDb.ZipCode = customer.ZipCode;
+                customerInDb.NameExtension = customer.NameExtension;
+
+                var customerCompleteInfo = _context.CustomerCompleInfos.Single(i => i.CustomerId == customer.Id);
+                customerCompleteInfo.Telephone = customerCompleInfo.Telephone;
+                customerCompleteInfo.Email = customerCompleInfo.Email;
+                customerCompleteInfo.Birthdate = customerCompleInfo.Birthdate;
+                customerCompleteInfo.CivilStatusId = customerCompleInfo.CivilStatusId;
+                customerCompleteInfo.PlaceOfBirth = customerCompleInfo.PlaceOfBirth;
+                customerCompleteInfo.Nationality = customerCompleInfo.Nationality;
+                customerCompleteInfo.TaxIdentificationNumber = customerCompleInfo.TaxIdentificationNumber;
+                customerCompleteInfo.CivilStatusId = customerCompleInfo.CustomerTypeId;
+                customerCompleteInfo.LotHouseNumberAndStreet = customerCompleInfo.LotHouseNumberAndStreet;
+                customerCompleteInfo.Barangay = customerCompleInfo.Barangay;
+                customerCompleteInfo.CityMunicipality= customerCompleInfo.CityMunicipality;
+                customerCompleteInfo.Province = customerCompleInfo.Province;
+                customerCompleteInfo.Country = customerCompleInfo.Country;
+                customerCompleteInfo.ZipCode = customerCompleInfo.ZipCode;
 
             }
 
@@ -111,7 +134,7 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-
+            var customerCompleteInfo = _context.CustomerCompleInfos.SingleOrDefault(c => c.CustomerId == id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -121,7 +144,7 @@ namespace PVMTrading_v1.Controllers
             { 
 
                 Customer = customer,
- 
+                CustomerCompleInfo = customerCompleteInfo,
                 CustomerTypes =  _context.CustomerTypes.ToList(),
                 CivilStatuses = _context.CivilStatus.ToList(),
                 Sexs = _context.Sex.ToList()
@@ -133,9 +156,11 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Delete(int id)
         {
             var customer = _context.Customers.Single(c => c.Id == id);
+            var customerCompleteInfo = _context.CustomerCompleInfos.Single(c => c.CustomerId == id);
+
             if (customer.Id != 0)
                 _context.Customers.Remove(customer);
-
+            _context.CustomerCompleInfos.Remove(customerCompleteInfo);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
