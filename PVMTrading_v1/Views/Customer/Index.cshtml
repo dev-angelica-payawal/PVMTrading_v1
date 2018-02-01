@@ -15,7 +15,30 @@
                     <div class="table-responsive">
                         <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid">
                             <p>
-                                @Html.ActionLink("Add Customer", "New",null, new {@class = "btn btn-primary"})
+                                
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                    Add New Product
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                @{Html.RenderAction("New", "Customer");}
+                                            </div> 
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </p>
                             @if (!Model.Any())
                             {
@@ -58,7 +81,7 @@
                                                 <td>@customer.Telephone</td>
                                                 <td>@customer.Email</td>
                                                 <td>@customer.Birthdate</td>
-                                               @* <td>@customer.CivilStatus.Label</td>*@
+                                                @* <td>@customer.CivilStatus.Label</td>*@
                                                 <td>@customer.Sex.Label</td>
                                                 <td>@customer.RegisteredDateCreated.ToShortDateString()</td>
                                                 <td>@customer.PlaceOfBirth</td>
@@ -68,7 +91,7 @@
                                                 <td>@customer.LotHouseNumberAndStreet, @customer.Barangay, @customer.CityMunicipality, @customer.Province, @customer.Country</td>"
                                                 <td>@customer.ZipCode</td>
                                                 <td>@Html.ActionLink("Edit", "Edit", new { id = customer.Id }, null) | @Html.ActionLink("Delete", "Delete", new { id = customer.Id }, null) | @Html.ActionLink("Details", "Details", new { id = customer.Id }, null)</td>
-                                        </tr>
+                                            </tr>
                                         }
                                     </tbody>
                                 </table>
@@ -83,12 +106,12 @@
 </div>
 
 
-    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 @section scripts{
 
- 
-      <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#customers').DataTable({/*
@@ -100,7 +123,7 @@
                 "column": [
                     { "autowidth": true },
                     { "ScrollY": (0.6 * $(window).height()) }
-                    
+
                     /* { "data": "FirstName", "autowidth": true },
                      { "data": "MiddleName", "autowidth": true },
                      { "data": "LastName", "autowidth": true },
@@ -115,10 +138,10 @@
                      { "data": "CustomerType", "autowidth": true },
                      { "data": "ZipCode", "autowidth": true }
  */
- 
-                 ]
-               
-                
+
+                ]
+
+
             });
         });
     </script>
