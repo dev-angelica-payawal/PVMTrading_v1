@@ -43,6 +43,8 @@ namespace PVMTrading_v1.Models
         public DbSet<Warranty> Warranty { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<CustomerCompleInfo> CustomerCompleInfos { get; set; }
+
 
         public DbSet<CashTransaction> CashTransactions { get; set; }
         public DbSet<CashTransactionItem> CashTransactionItems { get; set; }

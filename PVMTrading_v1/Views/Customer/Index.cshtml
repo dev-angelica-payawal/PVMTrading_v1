@@ -1,5 +1,6 @@
 ﻿
 @model List<PVMTrading_v1.Models.Customer>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -54,16 +55,21 @@
                                             <th>Last Name</th>
                                             <th>Extension Name</th>
                                             <th>Mobile Number</th>
-                                            <th>Telephone</th>
-                                            <th>Email Address</th>
-                                            <th>Birth Date</th>
-                                            @*<th>Civil Status</th>*@
                                             <th>Sex</th>
                                             <th>Registered Date Created</th>
+                                            @*<th>Address</th>*@
+                                            <th>Manage</th>
+
+                                            @*<th>Telephone</th>
+                                            <th>Email Address</th>
+                                            <th>Birth Date</th>
+                                            <th>Civil Status</th>
+
                                             <th>Place Of Birth</th>
                                             <th>Nationality</th>
                                             <th>Tax Identification Number</th>
                                             <th>Customer Type</th>
+<<<<<<< HEAD
                                             <th>Address</th>
                                             <th>Zip Code</th>
                                             <th>Manageme</th>
@@ -95,21 +101,83 @@
                                         }
                                     </tbody>
                                 </table>
+=======
+                                            <th>Zip Code</th>*@
 
-                            }
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var customer in Model)
+                                            {
+                                                <tr>
+                                                    <td>@customer.FirstName</td>
+                                                    <td>@customer.MiddleName</td>
+                                                    <td>@customer.LastName</td>
+                                                    <td>@customer.NameExtension</td>
+                                                    <td>@customer.Mobile</td>
+                                                    <td>@customer.Sex.Label</td>
+                                                    <td>@customer.RegisteredDateCreated.ToShortDateString()</td>
+                                                    
+                                              @*   <td>@customer.CustomerCompleInfo.LotHouseNumberAndStreet, @customer.CustomerCompleInfo.Barangay, @customer.CustomerCompleInfo.CityMunicipality, @customer.CustomerCompleInfo.Province, @customer.CustomerCompleInfo.Country</td>"
+*@
+                                                    <td>@Html.ActionLink("Edit", "Edit", new { id = customer.Id }, null) | @Html.ActionLink("Delete", "Delete", new { id = customer.Id }, null) | @Html.ActionLink("Details", "Details", new { id = customer.Id }, null)</td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+>>>>>>> 2b1d9ca8308f3506dfc85de1d5d25d3524a95887
+
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
+<<<<<<< HEAD
 <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+=======
+        <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
 
-@section scripts{
+    @section scripts{
 
+
+          <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#customers').DataTable({/*
+                "ajax": {
+                    "url": "/customer/Loaddata",
+                    "type": "GET",
+                    "datatype":"json"
+                },*/
+                    "column": [
+                        { "autowidth": true },
+                        { "ScrollY": (0.6 * $(window).height()) }
+
+                        /* { "data": "FirstName", "autowidth": true },
+                         { "data": "MiddleName", "autowidth": true },
+                         { "data": "LastName", "autowidth": true },
+                         { "data": "NameExtension", "autowidth": true },
+                         { "data": "Mobile", "autowidth": true },
+                          { "data": "Telephone", "autowidth": true },
+                          { "data": "Sex.Label", "autowidth": true },
+                         { "data": "RegisteredDateCreated", "autowidth": true },
+                         { "data": "PlaceOfBirth", "autowidth": true },
+                         { "data": "Nationality", "autowidth": true },
+                         { "data": "TaxIdentificationNumber", "autowidth": true },
+                         { "data": "CustomerType", "autowidth": true },
+                         { "data": "ZipCode", "autowidth": true }
+     */
+
+                     ]
+>>>>>>> 2b1d9ca8308f3506dfc85de1d5d25d3524a95887
+
+
+<<<<<<< HEAD
 
     <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
@@ -142,7 +210,9 @@
                 ]
 
 
+=======
+                });
+>>>>>>> 2b1d9ca8308f3506dfc85de1d5d25d3524a95887
             });
-        });
-    </script>
-}
+        </script>
+    }

@@ -13,5 +13,6 @@ namespace PVMTrading_v1.ViewModels
         public IEnumerable<CustomerType> CustomerTypes { get; set; }
         public IEnumerable<CivilStatus> CivilStatuses { get; set; }
         public IEnumerable<Sex> Sexs { get; set; }
+        public CustomerCompleInfo CustomerCompleInfo { get; set; }
     }
 }
