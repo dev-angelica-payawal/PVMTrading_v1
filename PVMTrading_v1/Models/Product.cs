@@ -40,16 +40,17 @@ namespace PVMTrading_v1.Models
         //   public int CreatedByEmployeeId { get; set; }
 
         [Required(ErrorMessage = "Input the Barcode of the Product.")]
-        public int? Barcode { get; set; }
+        public int Barcode { get; set; }
 
         public Warranty Warranty { get; set; }
+        [Required(ErrorMessage = "Please Input the Warranty of the Product")]
         [Display(Name = "Warranty")]
-        public int? WarrantyId { get; set; }
+        public int WarrantyId { get; set; }
       
 
         public Brand Brand { get; set; }
         [Required(ErrorMessage = "Choose the Brand Name.")]
-        public int? BrandId { get; set; }
+        public int BrandId { get; set; }
         
         public ProductCategory ProductCategory { get; set; }
         [Required(ErrorMessage = "Choose the Category of the Product.")]
