@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace PVMTrading_v1.Models
 {
@@ -40,7 +42,7 @@ namespace PVMTrading_v1.Models
         [Display(Name = "Registered Date Created")]
         public DateTime RegisteredDateCreated { get; set; }
 
-        
+
 
     }
 }

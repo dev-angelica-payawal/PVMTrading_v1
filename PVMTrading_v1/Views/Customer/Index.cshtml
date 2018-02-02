@@ -1,52 +1,53 @@
 ﻿
+<<<<<<< HEAD
 @model List<PVMTrading_v1.Models.Customer>
 @*@model List<PVMTrading_v1.ViewModels.CustomerViewModel>*@
+=======
+@model PVMTrading_v1.Models.CustomerAndCustomerCompleteInfo
+>>>>>>> 726848f0aa73a00c5dd7f07839da72d162470580
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
-    <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h2>Customer's List</h2>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid">
-                            <p>
-                                
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                    Add New Product
-                                </button>
+    <div>
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h2>Customer's List</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid">
+                                <p>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                        Add New Product
+                                    </button>
 
-                                            </div>
-                                            <div class="modal-body">
-                                                @{Html.RenderAction("New", "Customer");}
-                                            </div> 
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                                                </div>
+                                                <div class="modal-body">
+                                                    @{Html.RenderAction("New", "Customer");}
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </p>
-                            @if (!Model.Any())
-                            {
+                                </p>
+                                @if (!Model.Any())
+                                {
                                 <p>We don't have any customers yet.</p>
-                            }
-                            else
-                            {
+                                }
+                                else
+                                {
                                 <table class="table table-bordered" id="customers" style="margin: 0">
                                     <thead>
                                         <tr>
@@ -57,10 +58,17 @@
                                             <th>Mobile Number</th>
                                             <th>Sex</th>
                                             <th>Registered Date Created</th>
-                                            @*<th>Address</th>*@
+                                            @*
+                                            <th>Address</th>*@
                                             <th>Manage</th>
+<<<<<<< HEAD
 @*
                                           <th>Telephone</th>
+=======
+
+                                            @*
+                                            <th>Telephone</th>
+>>>>>>> 726848f0aa73a00c5dd7f07839da72d162470580
                                             <th>Email Address</th>
                                             <th>Birth Date</th>
                                             <th>Civil Status</th>
@@ -78,6 +86,7 @@
                                     <tbody>
                                         @foreach (var customer in Model)
                                         {
+<<<<<<< HEAD
                                             <tr>
                                                 <td>@customer.FirstName</td>
                                                 <td>@customer.MiddleName</td>
@@ -99,10 +108,35 @@
                                                 <td>@Html.ActionLink("Edit", "Edit", new { id = customer.Id }, null) | @Html.ActionLink("Delete", "Delete", new { id = customer.Id }, null) | @Html.ActionLink("Details", "Details", new { id = customer.Id }, null)</td>
                                                @* <td>@Html.ActionLink("OderByCustomer", "OderByCustomer")</td>*@
                                             </tr>
+=======
+                                        <tr>
+                                            <td>@customer.FirstName</td>
+                                            <td>@customer.MiddleName</td>
+                                            <td>@customer.LastName</td>
+                                            <td>@customer.NameExtension</td>
+                                            <td>@customer.Mobile</td>
+
+                                            @*
+                                            <td>@customer.CivilStatus.Label</td>*@
+                                            <td>@customer.Sex.Label</td>
+                                            <td>@customer.RegisteredDateCreated.ToShortDateString()</td>
+                                            @*
+                                            <td>@customer.Telephone</td>
+                                            <td>@customer.Email</td>
+                                            <td>@customer.Birthdate</td>
+                                            <td>@customer.PlaceOfBirth</td>
+                                            <td>@customer.Nationality</td>
+                                            <td>@customer.TaxIdentificationNumber</td>
+                                            <td>@customer.CustomerType.Label</td>
+                                            <td>@customer.LotHouseNumberAndStreet, @customer.Barangay, @customer.CityMunicipality, @customer.Province, @customer.Country</td>"
+                                            <td>@customer.ZipCode</td>*@
+                                            <td>@Html.ActionLink("Edit", "Edit", new { id = customer.Id }, null) | @Html.ActionLink("Delete", "Delete", new { id = customer.Id }, null) | @Html.ActionLink("Details", "Details", new { id = customer.Id }, null)</td>
+                                        </tr>
+>>>>>>> 726848f0aa73a00c5dd7f07839da72d162470580
                                         }
                                     </tbody>
                                 </table>
-                                
+
 
                                 }
                             </div>
@@ -113,11 +147,15 @@
         </div>
     </div>
 
-        <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
- 
 
+
+<<<<<<< HEAD
   @section scripts{
+=======
+    @section scripts{
+>>>>>>> 726848f0aa73a00c5dd7f07839da72d162470580
     <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -153,5 +191,5 @@
 
                 });
             });
-        </script>
+    </script>
     }

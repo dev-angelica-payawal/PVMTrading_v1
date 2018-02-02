@@ -350,6 +350,7 @@
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\CashTransaction.cs" />
     <Compile Include="Models\CashTransactionitem.cs" />
+    <Compile Include="Models\CustomerAndCustomerCompleteInfo.cs" />
     <Compile Include="Models\CustomerCompleInfo.cs" />
     <Compile Include="Models\CustomerType.cs" />
     <Compile Include="Models\archieved\Delivery.cs" />
@@ -855,6 +856,10 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\eflexis\eflexis.dialog.js" />
+    <Content Include="Scripts\eflexis\eflexis.dialog.min.js" />
+    <Content Include="Scripts\eflexis\jquery.eflexis.dialog.js" />
+    <Content Include="Scripts\eflexis\jquery.eflexis.dialog.min.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />

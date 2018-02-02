@@ -9,6 +9,7 @@ using PVMTrading_v1.Migrations;
 using PVMTrading_v1.Models;
 using PVMTrading_v1.ViewModels;
 
+
 namespace PVMTrading_v1.Controllers
 {
     public class CustomerController : Controller
@@ -35,11 +36,16 @@ namespace PVMTrading_v1.Controllers
                                               .Include(p=> p.CivilStatus)
                                               .Include(s => s.Sex).ToList();*/
 
+<<<<<<< HEAD
             var customers = _context.Customers.Include(s => s.Sex).ToList(); 
+=======
+            /*var customers = _context.Customers.Include(s => s.Sex).ToList();*/
+>>>>>>> 726848f0aa73a00c5dd7f07839da72d162470580
 
 
 
             /*var customerInfo = from s in customers
+<<<<<<< HEAD
                 join st in customerCompleteInfos on s.Id equals st.CustomerId into st2
                 from st in st2.DefaultIfEmpty()
                 select new CustomerViewModel { Customer = s, CustomerCompleInfo = st };*/
@@ -47,6 +53,47 @@ namespace PVMTrading_v1.Controllers
             List<CustomerViewModel> customerCompleteList = new List<CustomerViewModel>();
             customerCompleteList = customerInfo.ToList();*/
             return View(customers);
+=======
+                 join st in customerCompleteInfos on s.Id equals st.CustomerId into st2
+                 from st in st2.DefaultIfEmpty()
+                 select new CustomerViewModel { Customer = s, CustomerCompleInfo = st };
+ */
+
+            var details = from customer in _context.Customers
+                join customerCompleInfo in _context.CustomerCompleInfos
+                    on customer.Id equals customerCompleInfo.Id
+                where customerCompleInfo.Id == customer.Id
+                select new
+                {
+                    id = customer.Id,
+                    firstname = customer.FirstName,
+                    middleName = customer.MiddleName,
+                    lastName = customer.LastName,
+                    nameExtension = customer.NameExtension,
+                    mobile = customer.Mobile,
+                    sexid = customer.Sexid,
+                    registeredDateCreated = customer.RegisteredDateCreated,
+                    telephone = customerCompleInfo.Telephone,
+                    customerTypeId = customerCompleInfo.CustomerTypeId,
+                    email = customerCompleInfo.Email,
+                    birthdate = customerCompleInfo.Birthdate,
+                    civilStatusId = customerCompleInfo.CivilStatusId,
+                    placeOfBirth = customerCompleInfo.PlaceOfBirth,
+                    nationality = customerCompleInfo.Nationality,
+                    taxIdentificationNumber = customerCompleInfo.TaxIdentificationNumber,
+                    lotHouseNumberAndStreet = customerCompleInfo.LotHouseNumberAndStreet,
+                    barangay = customerCompleInfo.Barangay,
+                    cityMunicipality = customerCompleInfo.CityMunicipality,
+                    province = customerCompleInfo.Province,
+                    country = customerCompleInfo.Country,
+                    zipCode = customerCompleInfo.ZipCode
+                };
+
+            var info = details.ToList();
+                
+                
+            return View(info);
+>>>>>>> 726848f0aa73a00c5dd7f07839da72d162470580
         }
 
 

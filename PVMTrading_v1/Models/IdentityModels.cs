@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -40,6 +42,12 @@ namespace PVMTrading_v1.Models
         public DbSet<LoanStatus> LoanStatus { get; set; }
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Sex> Sex { get; set; }
+
+        internal static IEnumerable<Customer> SqlQuery<T>(string query)
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Warranty> Warranty { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerType> CustomerTypes { get; set; }

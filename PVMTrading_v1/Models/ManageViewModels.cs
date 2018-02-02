@@ -5,6 +5,13 @@ using Microsoft.Owin.Security;
 
 namespace PVMTrading_v1.Models
 {
+    public class ArchivesViewModel
+    {
+        public IEnumerable<Customer> ModelCustomers { get; set; }
+        public IEnumerable<CustomerCompleInfo> MoCustomerCompleInfos { get; set; }
+    }
+
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }

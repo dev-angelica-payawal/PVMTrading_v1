@@ -1,4 +1,5 @@
-﻿@model PVMTrading_v1.ViewModels.ProductViewModel
+﻿@using PVMTrading_v1.Models
+@model PVMTrading_v1.ViewModels.ProductViewModel
 
 
 @using (Html.BeginForm("Save", "Product"))
@@ -152,9 +153,22 @@
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
-
+            <div class="modal-footer">
+                @Html.HiddenFor(m => m.Product.Id)
+                <div class="form-group">
+                    <button type="submit" value="Create" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" value="Save" class="btn btn-primary">Save changes</button>
+                   
+                
+                </div>
+              
+               
+            </div>
+            
+           
               
         </div>
 
