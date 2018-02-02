@@ -55,7 +55,7 @@ namespace PVMTrading_v1.Controllers
                     FirstName = c.FirstName,
                     MiddleName = c.MiddleName,
                     LastName = c.LastName
-                }).ToList();
+                }).ToList().AsQueryable(); ;
             return View(result);
         }
 

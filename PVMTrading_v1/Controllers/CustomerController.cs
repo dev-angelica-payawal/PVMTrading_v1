@@ -29,23 +29,23 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult Index()
         {
-           /* List<Customer> customers = new List<Customer>();
-            List<CustomerCompleInfo> customerCompleteInfos = new List<CustomerCompleInfo>();
-*/
+            /*List<Customer> customers = new List<Customer>();
+            List<CustomerCompleInfo> customerCompleteInfos = new List<CustomerCompleInfo>();*/
             /*var customers = _context.Customers.Include(c => c.CustomerType)
                                               .Include(p=> p.CivilStatus)
                                               .Include(s => s.Sex).ToList();*/
 
-            var customers = _context.Customers.Include(s => s.Sex).ToList();
+            var customers = _context.Customers.Include(s => s.Sex).ToList(); 
 
 
 
-           /* var customerInfo = from s in customers
+            /*var customerInfo = from s in customers
                 join st in customerCompleteInfos on s.Id equals st.CustomerId into st2
                 from st in st2.DefaultIfEmpty()
-                select new CustomerViewModel { Customer = s, CustomerCompleInfo = st };
-*/
-            
+                select new CustomerViewModel { Customer = s, CustomerCompleInfo = st };*/
+/*
+            List<CustomerViewModel> customerCompleteList = new List<CustomerViewModel>();
+            customerCompleteList = customerInfo.ToList();*/
             return View(customers);
         }
 
@@ -170,5 +170,13 @@ namespace PVMTrading_v1.Controllers
             return Content("Not yet Available");
         }
 
+       /* public ActionResult OderByCustomer()
+        {
+            var oder = from c in _context.Customers
+                orderby c.NameExtension ascending
+                select c;
+
+            return View(oder.ToList());
+        }*/
     }
 }

@@ -663,7 +663,7 @@
     <Content Include="Content\PVMcssandjs\images\ts4.jpg" />
     <Content Include="Content\PVMcssandjs\js\bootstrap-3.1.1.min.js" />
     <Content Include="Content\PVMcssandjs\js\easyResponsiveTabs.js" />
-    <Content Include="Content\PVMcssandjs\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\PVMcssandjs\jquery-1.11.1.min.js" />
     <Content Include="Content\PVMcssandjs\js\jquery.easydropdown.js" />
     <Content Include="Content\PVMcssandjs\js\jquery.etalage.min.js" />
     <Content Include="Content\PVMcssandjs\js\jquery.flexisel.js" />
