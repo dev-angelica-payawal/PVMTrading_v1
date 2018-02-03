@@ -350,7 +350,6 @@
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\CashTransaction.cs" />
     <Compile Include="Models\CashTransactionitem.cs" />
-    <Compile Include="Models\CustomerAndCustomerCompleteInfo.cs" />
     <Compile Include="Models\CustomerCompleInfo.cs" />
     <Compile Include="Models\CustomerType.cs" />
     <Compile Include="Models\archieved\Delivery.cs" />
