@@ -1,0 +1,70 @@
+﻿@model PVMTrading_v1.Models.Customer
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+    </button>
+    <h4 class="modal-title">Details Record</h4>
+</div>
+<div class="modal-body">
+    <div>
+<table class="table table-bordered">
+        <tr>
+           
+            <td>
+                @Html.DisplayNameFor(model => model.Sex.Label)
+                @Html.DisplayFor(model => model.Sex.Label)
+            </td>
+        </tr>
+    <tr>
+           
+        <td>
+            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.FirstName)
+        </td>
+    </tr>
+    <tr>
+           
+        <td>
+            @Html.DisplayNameFor(model => model.MiddleName)
+            @Html.DisplayFor(model => model.MiddleName)
+        </td>
+    </tr>
+    <tr>
+           
+        <td>
+            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayFor(model => model.LastName)
+        </td>
+    </tr>
+    <tr>
+           
+        <td>
+            @Html.DisplayNameFor(model => model.NameExtension)
+            @Html.DisplayFor(model => model.NameExtension)
+        </td>
+    </tr>
+    <tr>
+           
+        <td>
+            @Html.DisplayNameFor(model => model.Mobile)
+            @Html.DisplayFor(model => model.Mobile)
+        </td>
+    </tr>
+    <tr>
+           
+        <td>
+            @Html.DisplayNameFor(model => model.RegisteredDateCreated)
+            @Html.DisplayFor(model => model.RegisteredDateCreated)
+        </td>
+    </tr>
+       
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default"
+            data-dismiss="modal">
+        Close
+    </button>
+</div>

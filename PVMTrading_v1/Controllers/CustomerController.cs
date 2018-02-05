@@ -207,10 +207,12 @@ namespace PVMTrading_v1.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [HttpGet]
         public ActionResult Details(int id)
         {
-            return Content("Not yet Available");
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            return PartialView(customer);
         }
 
        /* public ActionResult OderByCustomer()

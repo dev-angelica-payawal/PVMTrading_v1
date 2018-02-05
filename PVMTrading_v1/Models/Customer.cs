@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace PVMTrading_v1.Models
 {
     public class Customer
     {
-
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -38,7 +39,7 @@ namespace PVMTrading_v1.Models
         [Display(Name = "Sex")]
         public int Sexid { get; set; }
 
-        [DataType(DataType.Date)]
+        [Column(TypeName = "DateTime2")]
         [Display(Name = "Registered Date Created")]
         public DateTime RegisteredDateCreated { get; set; }
 

@@ -8,6 +8,7 @@ namespace PVMTrading_v1.Models
 {
     public class CustomerCompleInfo
     {
+        [Key]
         public int Id { get; set; }
 
         public Customer Customer { get; set; }

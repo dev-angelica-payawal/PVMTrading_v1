@@ -154,7 +154,7 @@ namespace PVMTrading_v1.Controllers
             return RedirectToAction("Index");
         }
 
-        [ValidateAntiForgeryToken]
+//        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id)
         {
           
