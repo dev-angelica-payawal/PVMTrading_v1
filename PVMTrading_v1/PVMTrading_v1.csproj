@@ -936,7 +936,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ConvertedIndex.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\New2.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Brand\Index.cshtml" />
     <Content Include="Views\ProductCategory\Index.cshtml" />
     <Content Include="Views\Brand\New.cshtml" />
@@ -956,8 +956,12 @@
     <Content Include="Views\Product\ProductList.cshtml" />
     <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Shared\_CustomerList.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+=======
+    <Content Include="Views\Product\Details.cshtml" />
+>>>>>>> 638aae6ef5b0c3748aae03cf1e94e403cf64bf0f
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
