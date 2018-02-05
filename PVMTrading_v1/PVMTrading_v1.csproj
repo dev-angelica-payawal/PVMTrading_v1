@@ -945,12 +945,12 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\CashTransaction\Grid.cshtml" />
-<<<<<<< HEAD
+
     <Content Include="Views\Product\ProductList.cshtml" />
-=======
+
     <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
->>>>>>> f974a5aed2ce345146821acac36ac0c1661a45ed
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
