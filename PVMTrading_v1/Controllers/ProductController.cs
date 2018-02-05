@@ -99,16 +99,16 @@ namespace PVMTrading_v1.Controllers
             }*/
 
 
-            if (productInclusion.FreeItem != null &&
-                (productInclusion.Quantity != 0 || productInclusion.Quantity != null))
-            {
-                productInclusion.ProductId = product.Id;
-                _context.ProductInclusions.Add(productInclusion);
-            }
+          
             
             if (product.Id == 0)
             {
-                
+                if (productInclusion.FreeItem != null &&
+                    (productInclusion.Quantity != 0 || productInclusion.Quantity != null))
+                {
+                    productInclusion.ProductId = product.Id;
+                    _context.ProductInclusions.Add(productInclusion);
+                }
                 productPrice.ProductId = product.Id;
                 productPrice.DateCreated = DateTime.Now;
                 productPrice.UnitPrice = product.OriginalPrice;
@@ -142,7 +142,7 @@ namespace PVMTrading_v1.Controllers
 
 
                 var productInclusionInDb = _context.ProductInclusions.Single(p => p.ProductId == product.Id);
-                if (productInclusionInDb != null)
+                if (productInclusionInDb.ProductId != 0)
                 {
                     productInclusionInDb.FreeItem = productInclusion.FreeItem;
                     productInclusion.Quantity = productInclusion.Quantity;
@@ -157,35 +157,33 @@ namespace PVMTrading_v1.Controllers
             return RedirectToAction("Index");
         }
 
-<<<<<<< HEAD
+
 //        [ValidateAntiForgeryToken]
-=======
-        
->>>>>>> 638aae6ef5b0c3748aae03cf1e94e403cf64bf0f
+
         public ActionResult Edit(int id)
         {
-          
-            var product = _context.Products.SingleOrDefault(p => p.Id == id);
 
-            var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
+             var product = _context.Products.SingleOrDefault(p => p.Id == id);
 
-            var viewModel = new ProductViewModel
-            {
-                Product = product,
-                ProductInclusion = productInclsion,
-                Brands = _context.Brands.ToList(),
-                Branches = _context.Branches.ToList(),
-                ProductConditions = _context.ProductConditions.ToList(),
-                ProductCategories = _context.ProductCategories.ToList(),
-                Warranties = _context.Warranty.ToList()
+             var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
+             if (product == null)
+             {
+                 return HttpNotFound();
+             }
 
-            };
+             var viewModel = new ProductViewModel
+             {
+                 Product = product,
+                 ProductInclusion = productInclsion,
+                 Brands = _context.Brands.ToList(),
+                 Branches = _context.Branches.ToList(),
+                 ProductConditions = _context.ProductConditions.ToList(),
+                 ProductCategories = _context.ProductCategories.ToList(),
+                 Warranties = _context.Warranty.ToList()
 
-            return View( viewModel);
+             };
+            return View(viewModel);
+            
         }
 
         [ValidateAntiForgeryToken]

@@ -956,12 +956,9 @@
     <Content Include="Views\Product\ProductList.cshtml" />
     <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Shared\_CustomerList.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
-=======
     <Content Include="Views\Product\Details.cshtml" />
->>>>>>> 638aae6ef5b0c3748aae03cf1e94e403cf64bf0f
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1093,6 +1090,9 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
@@ -1113,6 +1113,9 @@
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:7186/" workingDir="" />
+          </servers>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
