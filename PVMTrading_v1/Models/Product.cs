@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Web;
 
 namespace PVMTrading_v1.Models
 {
@@ -36,11 +31,6 @@ namespace PVMTrading_v1.Models
         [DataType(DataType.Currency)]
         public double OriginalPrice { get; set; }
         
-        //   public int LastChangeByEmployeeId { get; set; }
-        //   public int CreatedByEmployeeId { get; set; }
-
-        [Required(ErrorMessage = "Input the Barcode of the Product.")]
-        public int Barcode { get; set; }
 
         public Warranty Warranty { get; set; }
         [Required(ErrorMessage = "Please Input the Warranty of the Product")]
@@ -78,6 +68,9 @@ namespace PVMTrading_v1.Models
         
         public string Image { get; set; }
 
+
+        //   public int LastChangeByEmployeeId { get; set; }
+        //   public int CreatedByEmployeeId { get; set; }
 
 
     }

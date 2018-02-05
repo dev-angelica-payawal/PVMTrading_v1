@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Web;
 using System.Web.Mvc;
 using PVMTrading_v1.Models;
 using PVMTrading_v1.ViewModels;
@@ -85,9 +78,6 @@ namespace PVMTrading_v1.Controllers
                  return View("New", viewModel);
              }*/
 
-          /*  string convert = product.Image.Replace("data:image/png;base64,", String.Empty);
-
-            byte[] image64 = Convert.FromBase64String(convert);*/
 
 
             if (productInclusion.FreeItem != null &&
@@ -125,7 +115,7 @@ namespace PVMTrading_v1.Controllers
                 var productInDb = _context.Products.Single(p => p.Id == product.Id);
                 productInDb.Name = product.Name;
                 productInDb.Description = product.Description;
-                productInDb.Barcode = product.Barcode;
+              
                 productInDb.BranchId = product.BranchId;
                 productInDb.BrandId = product.BrandId;
                 productInDb.ProductCategoryId = product.ProductCategoryId;

@@ -5,10 +5,14 @@
 @using (Html.BeginForm("Save", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Product</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+    </div>
     <div class="modal-body">
         <div class="form-horizontal">
-            <h4>Product</h4>
-            <hr />
+          
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="row">
                 <div class="column">
@@ -55,13 +59,7 @@
                             @Html.ValidationMessageFor(model => model.Product.OriginalPrice, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Product.Barcode, htmlAttributes: new { @class = "control-label col-md-12" })
-                        <div class="col-md-12">
-                            @Html.EditorFor(model => model.Product.Barcode, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Product.Barcode, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         @Html.LabelFor(model => model.Product.BrandId, "Brand Name", htmlAttributes: new { @class = "control-label col-md-12" })
                         <div class="col-md-12">
