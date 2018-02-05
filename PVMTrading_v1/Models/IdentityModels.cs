@@ -69,7 +69,8 @@ namespace PVMTrading_v1.Models
             return new ApplicationDbContext();
         }
 
-         }
+        public System.Data.Entity.DbSet<PVMTrading_v1.Models.archieved.ProductReturnReason> ProductReturnReasons { get; set; }
+    }
 
 
    

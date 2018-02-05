@@ -1,8 +1,8 @@
-﻿@using PVMTrading_v1.Models
+﻿
 @model PVMTrading_v1.ViewModels.ProductViewModel
 
 
-@using (Html.BeginForm("Save", "Product"))
+@using (Html.BeginForm("Save", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="modal-body">
@@ -19,6 +19,13 @@
                             @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.Product.Image, new { @class = "control-label col-md-12" })
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(model => model.Product.Image, new { id="file",type = "file" , accept = "image/x-png,image/gif,image/jpeg" })
+                            @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
+                        </div>
+                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label col-md-12" })
                         <div class="col-md-12">

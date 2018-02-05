@@ -78,6 +78,7 @@ namespace PVMTrading_v1.Models
         [Display(Name = "Zip Code")]
         public int? ZipCode { get; set; }
 
-     /*   public byte[] Photo { get; set; }*/
+     
+        public string Image { get; set; }
     }
 }

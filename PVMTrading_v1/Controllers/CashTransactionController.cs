@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -28,22 +29,20 @@ namespace PVMTrading_v1.Controllers
         // GET: CashTransaction
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
-
-            var viewModels = new CashTransactionViewModel
-            {
-                Customer = customers
-            };
+           
 
 
-            return View(viewModels);
+            return View();
         }
 
         //select customer search
         public ActionResult SearchCustomer()
         {
-          
-            return View();
+            var customers = _context.Customers.Include(c => c.Sex);
+
+            var customersList = customers.ToList();
+
+            return View(customersList);
         }
 
         public ActionResult Grid()
@@ -79,7 +78,11 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult SearchProduct()
         {
-            throw new NotImplementedException();
+            var product = _context.Products.Include(c=> c.Brand)
+                                            .Include(p => p.ProductCategory);
+
+            var productList = product.ToList();
+            return View(productList);
         }
 
         public ActionResult Save()
