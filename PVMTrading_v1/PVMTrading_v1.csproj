@@ -548,6 +548,7 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\hovercard.css" />
     <Content Include="Content\js\sb-admin-charts.js" />
     <Content Include="Content\js\sb-admin-charts.min.js" />
     <Content Include="Content\js\sb-admin-datatables.js" />
@@ -932,6 +933,7 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\CashTransaction\Grid.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

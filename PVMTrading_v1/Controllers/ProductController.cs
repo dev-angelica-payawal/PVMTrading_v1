@@ -59,6 +59,14 @@ namespace PVMTrading_v1.Controllers
             };
             return View(viewModels);
         }
+        public ActionResult ProductList()
+        {
+
+            
+
+            return View();
+
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
