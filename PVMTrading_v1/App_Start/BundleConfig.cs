@@ -88,8 +88,11 @@ namespace PVMTrading_v1
                     "~/Content/PVMcssandjs/js/script.js",
                     "~/Content/PVMcssandjs/js/easyResponsiveTabs.js",
                     "~/Content/PVMcssandjs/js/bootstrap-3.1.1.min.js"));
-            //Custom Theme Files
-
+            //Hover Card
+            bundles.Add((new StyleBundle("~/css/hovercard")
+                .Include("~/Content/hovercard.css")
+            
+            ));
 
         }
     }
