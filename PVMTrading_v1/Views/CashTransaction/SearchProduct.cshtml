@@ -1,0 +1,61 @@
+﻿@model List<PVMTrading_v1.Models.Product>
+
+    <!-- Modal Title-->
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Select Product</h4>
+    </div>
+    <!-- Modal Body-->
+    <div class="modal-body">
+
+        <table class="table table-responsive table-bordered" id="product">
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Model</th>
+                <th>Original</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Model</td>
+                    <td>@product.OriginalPrice</td>
+                    <td>@product.Brand.BrandName</td>
+                    <td>@product.ProductCategory.Name</td>
+                    <td>@Html.ActionLink("Select", "Select", new {id = product.Id}, null)</td>
+                 </tr>
+            }
+        </table>
+
+
+    </div>
+    <!-- Modal Footer-->
+    <div class="form-group modal-footer">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+
+
+@*<link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+@section scripts{
+
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#product').DataTable({
+          
+                "column": [
+                    { "autowidth": true },
+                    { "ScrollY": (0.6 * $(window).height()) }
+                          ]
+            });
+        });
+    </script>
+}*@

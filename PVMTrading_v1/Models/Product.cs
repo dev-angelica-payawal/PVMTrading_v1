@@ -66,7 +66,7 @@ namespace PVMTrading_v1.Models
 
         [Required]
         public int Quantity { get; set; }
-        //public blob Photo { get; set; }
+       
 
         [Required]
         public int Reserved { get; set; }
@@ -74,6 +74,9 @@ namespace PVMTrading_v1.Models
         [Required]
         [Display(Name = "Available For Selling")]
         public int AvailableForSelling { get; set; }
+
+        
+        public string Image { get; set; }
 
 
 

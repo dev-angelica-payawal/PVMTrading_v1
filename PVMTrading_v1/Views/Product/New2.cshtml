@@ -2,12 +2,12 @@
 @model PVMTrading_v1.ViewModels.ProductViewModel
 
 
-@using (Html.BeginForm("Save", "Product"))
+@using (Html.BeginForm("Save", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="modal-body">
         <div class="form-horizontal">
-            <h4>Product</h4>
+         
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
@@ -17,6 +17,7 @@
                     @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
                 </div>
             </div>
+           
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

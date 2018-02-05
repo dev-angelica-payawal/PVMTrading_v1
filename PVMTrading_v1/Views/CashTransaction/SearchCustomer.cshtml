@@ -1,0 +1,36 @@
+﻿@model List<PVMTrading_v1.Models.Customer>
+
+<!-- Modal Title-->
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Search Customer</h4>
+</div>
+<!-- Modal Body-->
+<div class="modal-body">
+
+<table class="table table-responsive">
+    <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.MiddleName</td>
+            <td>@item.LastName</td>
+            <td> @Html.ActionLink("Edit", "Edit", new { id = item.Id }) </td>
+        </tr>
+    }
+
+</table>
+
+</div>
+<!-- Modal Footer-->
+<div class="modal-footer">
+    <div class="col-md-offset-2 col-md-10">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>

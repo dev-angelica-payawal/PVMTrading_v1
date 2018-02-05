@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using PVMTrading_v1.Models;
@@ -60,6 +63,10 @@ namespace PVMTrading_v1.Controllers
             return View(viewModels);
         }
 
+
+    
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Product product, ProductInclusion productInclusion, ProductPrice productPrice)
@@ -77,6 +84,12 @@ namespace PVMTrading_v1.Controllers
 
                  return View("New", viewModel);
              }*/
+
+          /*  string convert = product.Image.Replace("data:image/png;base64,", String.Empty);
+
+            byte[] image64 = Convert.FromBase64String(convert);*/
+
+
             if (productInclusion.FreeItem != null &&
                 (productInclusion.Quantity != 0 || productInclusion.Quantity != null))
             {
@@ -97,12 +110,13 @@ namespace PVMTrading_v1.Controllers
             }
             if (product.Id == 0)
             {
+
                 productPrice.ProductId = product.Id;
                 productPrice.DateCreated = DateTime.Now;
                 productPrice.UnitPrice = product.OriginalPrice;
                 _context.ProductPrices.Add(productPrice);
 
-
+                
                 product.DateCreated = DateTime.Now;
                 _context.Products.Add(product);
             }

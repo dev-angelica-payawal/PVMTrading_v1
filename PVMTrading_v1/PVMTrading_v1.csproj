@@ -345,12 +345,23 @@
     <Compile Include="Migrations\201802010748460_AddCustomerCompleteInfoTable.Designer.cs">
       <DependentUpon>201802010748460_AddCustomerCompleteInfoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802030420281_AddWarrantyColumnToProducts.cs" />
+    <Compile Include="Migrations\201802030420281_AddWarrantyColumnToProducts.Designer.cs">
+      <DependentUpon>201802030420281_AddWarrantyColumnToProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802031034591_AddImageColumnToProductTableAndCustomerTable.cs" />
+    <Compile Include="Migrations\201802031034591_AddImageColumnToProductTableAndCustomerTable.Designer.cs">
+      <DependentUpon>201802031034591_AddImageColumnToProductTableAndCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802050246305_Addcolumn.cs" />
+    <Compile Include="Migrations\201802050246305_Addcolumn.Designer.cs">
+      <DependentUpon>201802050246305_Addcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\CashTransaction.cs" />
     <Compile Include="Models\CashTransactionitem.cs" />
-    <Compile Include="Models\CustomerAndCustomerCompleteInfo.cs" />
     <Compile Include="Models\CustomerCompleInfo.cs" />
     <Compile Include="Models\CustomerType.cs" />
     <Compile Include="Models\archieved\Delivery.cs" />
@@ -365,7 +376,7 @@
     <Compile Include="Models\ProductCondition.cs" />
     <Compile Include="Models\archieved\ProductReturn.cs" />
     <Compile Include="Models\archieved\ProductReturnReason.cs" />
-    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Scripts\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\CivilStatus.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -933,6 +944,8 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\CashTransaction\Grid.cshtml" />
+    <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
+    <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1043,6 +1056,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802010748460_AddCustomerCompleteInfoTable.resx">
       <DependentUpon>201802010748460_AddCustomerCompleteInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802030420281_AddWarrantyColumnToProducts.resx">
+      <DependentUpon>201802030420281_AddWarrantyColumnToProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802031034591_AddImageColumnToProductTableAndCustomerTable.resx">
+      <DependentUpon>201802031034591_AddImageColumnToProductTableAndCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802050246305_Addcolumn.resx">
+      <DependentUpon>201802050246305_Addcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
