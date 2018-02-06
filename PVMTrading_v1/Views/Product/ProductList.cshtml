@@ -1,99 +1,73 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<div>
-    <div class="content-wrapper">
+﻿@model PVMTrading_v1.ViewModels.ProductViewModel
 
-        <div class="services">
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h2>Product's List</h2>
-                </div>
-                <div class="card-body">
-                    <div class="">
-                        
-                            <div class="col-md-4">
-                                <figure class="snip1174 navy col-md-4">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Տեսականի</h2>
-                                        <p>
-                                            Մեր տեասկանին սպասում է Ձեզ
-                                        </p>
-                                        <a href="/main/page/production">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-md-4">
-                                <figure class="snip1174 red col-md-4">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Ակցիաներ</h2>
-                                        <p>
-                                            Թարմացվող ակցիաներ մեր հաճախորդների համար
-                                        </p>
-                                        <a href="/main/page/auction">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        
-                        
-                            <div class="col-md-4">
-                                <figure class="snip1174 navy col-md-4">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Մեր մասին</h2>
-                                        <p>
-                                            Մեր ընկերության մաին ծանոթացեք այստեղ
-                                        </p>
-                                        <a href="/main/page/company">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-md-4">
-                                <figure class="snip1174 red col-md-4">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Բաղադրատոմսեր</h2>
-                                        <p>
-                                            Պատրաստման հարցում Դուք ունեք Ձեր խորհրդատուն
-                                        </p>
-                                        <a href="/main/page/recipe">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        
-                       
-                        <div class="col-md-4">
-                            <figure class="snip1174 navy col-md-4">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                <figcaption>
-                                    <h2>Խանութների ցանկ</h2>
-                                    <p>
-                                        Մեր խանութների ցանկին այստեղ
-                                    </p>
-                                    <a href="/main/page/map">Ավելին</a>
-                                </figcaption>
-                            </figure>
+@{
+    ViewBag.Title = "Product List";
+}   
+<div class="content-wrapper">
+
+    <!---->
+    <div class="new">
+        <div class="container">
+            <h3>specially designed for Furnyish</h3>
+            <div class="new-products">
+                <div class="new-items">
+                    <div class="item1">
+                      <img src="~/Resources/images/s1.jpg" alt="" /><!--Product Image-->
+                        <div class="item-info">
+                            <h4>Brown Furny Seater</h4><!--Product Name-->
+                            <span>ID: SR5421</span><!--Product Id-->
+                            <a href="single.html">Buy Now</a><!--Buy now Button-->
                         </div>
-                        <div class="col-md-4">
-                            <figure class="snip1174 red col-md-4">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                <figcaption>
-                                    <h2>Նորություններ</h2>
-                                    <p>
-                                        Ծանոթացեք մեր նորություններին այստեղ
-                                    </p>
-                                    <a href="/main/page/news">Ավելին</a>
-                                </figcaption>
-                            </figure>
+                    </div>
+                    <div class="item4">
+                       <img src="~/Resources/images/s4.jpg" alt="" />
+                        <div class="item-info4">
+                            <h4>Dream Furniture Bed</h4>
+                            <span>ID: SR5421</span>
+                            <a href="single.html">Buy Now</a>
                         </div>
-                        
                     </div>
                 </div>
+                <div class="new-items new_middle">
+                    <div class="item2">
+                        <div class="item-info2">
+                            <h4><a href="products.html">Georgia Sofa Set</a></h4>
+                            <span>ID: GS7641</span>
+                            <a href="single.html">Buy Now</a>
+                        </div>
+                        <a href="products.html"><img src="~/Resources/images/s2.jpg" alt="" /></a>
+                    </div>
+                    <div class="item5">
+                        <a href="products.html"><img src="~/Resources/images/s5.jpg" alt="" /></a>
+                        <div class="item-info5">
+                            <h4><a href="products.html">BlackBurn Law Set</a></h4>
+                            <span>ID: SR5421</span>
+                            <a href="single.html">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-items new_last">
+                    <div class="item3">
+                        <a href="products.html"><img src="~/Resources/images/s3.jpg" alt="" /></a>
+                        <div class="item-info3">
+                            <h4><a href="products.html">Shefan Dinning Set</a></h4>
+                            <span>ID: SR5421</span>
+                            <a href="single.html">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="item6">
+                        <a href="products.html"><img src="~/Resources/images/s6.jpg" alt="" /></a>
+                        <div class="item-info6">
+                            <h4><a href="products.html">Irony Sofa Set</a></h4>
+                            <span>ID: SR5421</span>
+                            <a href="single.html">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
+    </div>
 
     </div>
 
-</div>
