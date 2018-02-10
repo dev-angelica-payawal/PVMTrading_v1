@@ -9,6 +9,11 @@ namespace PVMTrading_v1
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+
+
         }
+
+       
     }
 }

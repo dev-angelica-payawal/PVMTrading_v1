@@ -25,8 +25,8 @@ namespace PVMTrading_v1.Controllers
         // GET: ProductCategory
         public ActionResult Index()
         {
-            var productCategory = _context.ProductCategories.ToList();
-            return View(productCategory);
+            var productCategory = _context.ProductCategories;
+            return View(productCategory.ToList());
         }
 
 

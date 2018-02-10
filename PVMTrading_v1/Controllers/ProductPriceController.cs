@@ -25,6 +25,7 @@ namespace PVMTrading_v1.Controllers
         // GET: ProductPrice
         public ViewResult Index()
         {
+            
             var productPrices = _context.ProductPrices.Include(p => p.Product).ToList();
 
             return View(productPrices);
@@ -33,6 +34,9 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult Edit(int id)
         {
+            
+
+
             var productPrice = _context.ProductPrices.SingleOrDefault(p => p.Id == id);
 
             if (productPrice == null)
@@ -63,5 +67,9 @@ namespace PVMTrading_v1.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+
+
     }
 }

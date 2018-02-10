@@ -43,10 +43,10 @@ namespace PVMTrading_v1.Models
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Sex> Sex { get; set; }
 
-        internal static IEnumerable<Customer> SqlQuery<T>(string query)
+        /*internal static IEnumerable<Customer> SqlQuery<T>(string query)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         public DbSet<Warranty> Warranty { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -56,6 +56,10 @@ namespace PVMTrading_v1.Models
 
         public DbSet<CashTransaction> CashTransactions { get; set; }
         public DbSet<CashTransactionItem> CashTransactionItems { get; set; }
+
+
+      
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

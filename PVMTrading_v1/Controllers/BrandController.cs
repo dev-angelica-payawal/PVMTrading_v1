@@ -61,10 +61,12 @@ namespace PVMTrading_v1.Controllers
             };
             return View("New", viewModels);
         }
+
+
         [HttpPost]
         public ActionResult Save(Brand brand)
         {
-            if (!ModelState.IsValid)
+           /* if (!ModelState.IsValid)
             {
                 var viewModel = new BrandViewModel
                 {
@@ -72,20 +74,20 @@ namespace PVMTrading_v1.Controllers
                     BrandTypes = _context.BrandTypes.ToList()
                 };
 
-                if (brand.Id == 0)
-                {
-                    _context.Brands.Add(brand);
-                }
-                else
-                {
-                    var brandInDb = _context.Brands.Single(b => b.Id == brand.Id);
-                    brandInDb.BrandName = brand.BrandName;
-                    brandInDb.BrandTypeId = brand.BrandTypeId;
-                }
+               
                 return View("New", viewModel);
+            }*/
+
+            if (brand.Id == 0)
+            {
+                _context.Brands.Add(brand);
             }
-
-
+            else
+            {
+                var brandInDb = _context.Brands.Single(b => b.Id == brand.Id);
+                brandInDb.BrandName = brand.BrandName;
+                brandInDb.BrandTypeId = brand.BrandTypeId;
+            }
 
             _context.SaveChanges();
             return RedirectToAction("Index");

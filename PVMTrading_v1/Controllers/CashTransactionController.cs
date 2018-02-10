@@ -76,14 +76,7 @@ namespace PVMTrading_v1.Controllers
             
         }*/
 
-        public ActionResult SearchProduct()
-        {
-            var product = _context.Products.Include(c=> c.Brand)
-                                            .Include(p => p.ProductCategory);
-
-            var productList = product.ToList();
-            return View(productList);
-        }
+       
 
         public ActionResult Save()
         {
