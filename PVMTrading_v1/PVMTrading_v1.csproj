@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductPriceController.cs" />
+    <Compile Include="Controllers\SearchProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -365,6 +366,14 @@
     <Compile Include="Migrations\201802051859358_UpdateCostumerColumn.Designer.cs">
       <DependentUpon>201802051859358_UpdateCostumerColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802071701251_AddORNumberToCashTransaction.cs" />
+    <Compile Include="Migrations\201802071701251_AddORNumberToCashTransaction.Designer.cs">
+      <DependentUpon>201802071701251_AddORNumberToCashTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802081106306_SeedUsers.cs" />
+    <Compile Include="Migrations\201802081106306_SeedUsers.Designer.cs">
+      <DependentUpon>201802081106306_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -378,12 +387,15 @@
     <Compile Include="Models\archieved\LoadApplicant.cs" />
     <Compile Include="Models\archieved\LoadApplicantSouceOfIncom.cs" />
     <Compile Include="Models\archieved\LoadDuePayment.cs" />
+    <Compile Include="Models\LayAwayTransaction.cs" />
+    <Compile Include="Models\LayawayTransactionReceipt.cs" />
     <Compile Include="Models\LoanStatus.cs" />
     <Compile Include="Models\ModeOfPayment.cs" />
     <Compile Include="Models\archieved\Preferences.cs" />
     <Compile Include="Models\ProductCondition.cs" />
     <Compile Include="Models\archieved\ProductReturn.cs" />
     <Compile Include="Models\archieved\ProductReturnReason.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Scripts\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\CivilStatus.cs" />
@@ -403,9 +415,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
+    <Compile Include="ViewModels\CashTransactionListViewModel.cs" />
     <Compile Include="ViewModels\CashTransactionViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\SearchProductViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\sb-admin.css" />
@@ -723,6 +737,59 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Resources\css\bootstrap.css" />
+    <Content Include="Resources\css\etalage.css" />
+    <Content Include="Resources\css\form.css" />
+    <Content Include="Resources\css\jquery-ui.css" />
+    <Content Include="Resources\css\megamenu.css" />
+    <Content Include="Resources\css\style.css" />
+    <Content Include="Resources\images\b-arrow.png" />
+    <Content Include="Resources\images\bag.png" />
+    <Content Include="Resources\images\banner1.jpg" />
+    <Content Include="Resources\images\banner2.jpg" />
+    <Content Include="Resources\images\banner3.jpg" />
+    <Content Include="Resources\images\close.png" />
+    <Content Include="Resources\images\do.png" />
+    <Content Include="Resources\images\find.png" />
+    <Content Include="Resources\images\img-sprite-left-right.png" />
+    <Content Include="Resources\images\img-sprite.png" />
+    <Content Include="Resources\images\left.png" />
+    <Content Include="Resources\images\logo.png" />
+    <Content Include="Resources\images\p1.jpg" />
+    <Content Include="Resources\images\p2.jpg" />
+    <Content Include="Resources\images\p3.jpg" />
+    <Content Include="Resources\images\p4.jpg" />
+    <Content Include="Resources\images\p5.jpg" />
+    <Content Include="Resources\images\p6.jpg" />
+    <Content Include="Resources\images\p7.jpg" />
+    <Content Include="Resources\images\p8.jpg" />
+    <Content Include="Resources\images\p9.jpg" />
+    <Content Include="Resources\images\r2.jpg" />
+    <Content Include="Resources\images\r3.jpg" />
+    <Content Include="Resources\images\r4.jpg" />
+    <Content Include="Resources\images\r5.jpg" />
+    <Content Include="Resources\images\right.png" />
+    <Content Include="Resources\images\s1.jpg" />
+    <Content Include="Resources\images\s2.jpg" />
+    <Content Include="Resources\images\s3.jpg" />
+    <Content Include="Resources\images\s4.jpg" />
+    <Content Include="Resources\images\s5.jpg" />
+    <Content Include="Resources\images\s6.jpg" />
+    <Content Include="Resources\images\search1.png" />
+    <Content Include="Resources\images\social2.png" />
+    <Content Include="Resources\images\ss1.jpg" />
+    <Content Include="Resources\images\ss2.jpg" />
+    <Content Include="Resources\images\ss33.jpg" />
+    <Content Include="Resources\images\ss4.jpg" />
+    <Content Include="Resources\images\ss44.jpg" />
+    <Content Include="Resources\images\star.png" />
+    <Content Include="Resources\images\t1.jpg" />
+    <Content Include="Resources\images\t2.jpg" />
+    <Content Include="Resources\images\ts1.jpg" />
+    <Content Include="Resources\images\ts11.jpg" />
+    <Content Include="Resources\images\ts2.jpg" />
+    <Content Include="Resources\images\ts3.jpg" />
+    <Content Include="Resources\images\ts4.jpg" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -948,24 +1015,27 @@
     <Content Include="Views\Shared\_LayoutPVM.cshtml" />
     <Content Include="Views\ProductPrice\Edit.cshtml" />
     <Content Include="Views\ProductPrice\Index.cshtml" />
-    <Content Include="Views\CashTransaction\Index.cshtml" />
+    <Content Include="Views\CashTransaction\FinalProcess.cshtml" />
     <Content Include="Views\Product\New.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\CashTransaction\Grid.cshtml" />
-    <Content Include="Views\Product\ProductList.cshtml" />
     <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
     <Content Include="Views\Shared\_CustomerList.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\AddQuantityToProduct.cshtml" />
+    <Content Include="Views\CashTransaction\CashTransactionList.cshtml" />
+    <Content Include="Views\SearchProduct\SearchProduct.cshtml" />
+    <Content Include="Views\Product\ReadOnlyView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801160226120_InitialModel.resx">
@@ -1084,6 +1154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802051859358_UpdateCostumerColumn.resx">
       <DependentUpon>201802051859358_UpdateCostumerColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802071701251_AddORNumberToCashTransaction.resx">
+      <DependentUpon>201802071701251_AddORNumberToCashTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081106306_SeedUsers.resx">
+      <DependentUpon>201802081106306_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

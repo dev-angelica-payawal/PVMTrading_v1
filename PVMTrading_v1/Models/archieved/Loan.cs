@@ -10,7 +10,7 @@ namespace PVMTrading_v1.Models
         public int Id { get; set; }
         public int LoadAppplicantId { get; set; }
         public double Downpayment { get; set; }
-        public double LoadAmount { get; set; }
+        public double LoanAmount { get; set; }
         public int ModeOfPaymentId { get; set; }
         public int Terms { get; set; }
         public int InterestRate { get; set; }

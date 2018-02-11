@@ -7,6 +7,7 @@ using PVMTrading_v1.ViewModels;
 
 namespace PVMTrading_v1.Controllers
 {
+    /*[AllowAnonymous]*/
     public class ProductController : Controller
     {
         private ApplicationDbContext _context;
@@ -24,18 +25,23 @@ namespace PVMTrading_v1.Controllers
         // GET: Product
         public ViewResult Index()
         {
-
             var products = _context.Products.Include(c => c.Brand)
-                                            .Include(q => q.Branch)
-                                            .Include(w => w.ProductCategory)
-                                            .Include(e => e.ProductCondition)
-                                            .Include(w => w.Warranty).ToList();
-                        
+                .Include(q => q.Branch)
+                .Include(w => w.ProductCategory)
+                .Include(e => e.ProductCondition)
+                .Include(w => w.Warranty).ToList();
 
-            return View(products);
+
+            /* For UserRoles Limiting Users who can manage Products*/
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View(products);
+
+
+            return View("ReadOnlyView",products);
 
         }
 
+        [Authorize (Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var brands = _context.Brands.ToList();
@@ -158,8 +164,8 @@ namespace PVMTrading_v1.Controllers
         }
 
 
-//        [ValidateAntiForgeryToken]
-
+        //        [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
 
@@ -186,7 +192,9 @@ namespace PVMTrading_v1.Controllers
             
         }
 
+
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Delete(int id)
         {
             var product = _context.Products.Single(p => p.Id == id);
@@ -204,8 +212,8 @@ namespace PVMTrading_v1.Controllers
             return RedirectToAction("Index");
         }
 
-      
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Details(int id)
         {
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
@@ -214,6 +222,7 @@ namespace PVMTrading_v1.Controllers
             {
                 return HttpNotFound();
             }
+
 
 
             var viewModel = new ProductViewModel
@@ -231,6 +240,9 @@ namespace PVMTrading_v1.Controllers
             return View(viewModel);
         }
 
+
+
+        
 
     }
 }

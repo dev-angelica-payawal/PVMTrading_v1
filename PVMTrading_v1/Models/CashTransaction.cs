@@ -41,6 +41,6 @@ namespace PVMTrading_v1.Models
         public string Remarks { get; set; }
 
    //     public int? DeliveryChargedId { get; set; }
-
+        public int OR { get; set; }
     }
 }
