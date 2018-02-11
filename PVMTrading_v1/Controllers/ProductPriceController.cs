@@ -61,7 +61,8 @@ namespace PVMTrading_v1.Controllers
             var productInDb = _context.ProductPrices.Single(p => p.Id == productPrice.Id);
             if (Convert.ToInt64(productInDb.SellingPrice) != Convert.ToInt64(productPrice.SellingPrice))
             {
-                productPrice.ProductId = productInDb.ProductId;
+
+            productPrice.ProductId = productInDb.ProductId;
             productPrice.DateCreated = DateTime.Now;
             _context.ProductPrices.Add(productPrice);
             _context.SaveChanges();
