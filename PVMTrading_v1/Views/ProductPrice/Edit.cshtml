@@ -22,9 +22,9 @@
                         @Html.HiddenFor(model => model.Id)
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Product.Name, "Product Name", new {@class = "control-label col-md-2"})
+                            @Html.LabelFor(model => model.ProductId, "Product Name", new {@class = "control-label col-md-2"})
                             <div class="col-md-10">
-                                @Html.TextBoxFor(model => model.Product.Name, new {@disabled = "disabled", @readonly = "readonly"})
+                                @Html.TextBoxFor(model => model.ProductId, new {@disabled = "disabled", @readonly = "readonly"})
                             </div>
                         </div>
 

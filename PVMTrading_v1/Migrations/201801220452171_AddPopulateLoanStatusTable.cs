@@ -7,6 +7,7 @@ namespace PVMTrading_v1.Migrations
     {
         public override void Up()
         {
+            Sql("INSERT INTO LoanStatus VALUES('Pending')");
             Sql("INSERT INTO LoanStatus VALUES('Approved')");
             Sql("INSERT INTO LoanStatus VALUES('Disapproved')");
         }

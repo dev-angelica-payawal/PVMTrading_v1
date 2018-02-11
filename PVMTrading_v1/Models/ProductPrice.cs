@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
+using System.Security.Permissions;
 using System.Web;
 
 namespace PVMTrading_v1.Models
@@ -10,8 +12,9 @@ namespace PVMTrading_v1.Models
     {
 
         public int Id { get; set; }
-
+       
         public Product Product { get; set; }
+        [Required]
         public int ProductId { get; set; }
 
         [Required]

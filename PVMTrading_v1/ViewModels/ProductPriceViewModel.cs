@@ -6,11 +6,9 @@ using PVMTrading_v1.Models;
 
 namespace PVMTrading_v1.ViewModels
 {
-    public class SearchProductViewModels 
+    public class ProductPriceViewModel
     {
-         public Product Product { get; set; }
-         public ProductPrice ProductPrice { get; set; }
-
-       
+        public ProductPrice ProductPrices { get; set; }
+        public Product Products { get; set; }
     }
 }

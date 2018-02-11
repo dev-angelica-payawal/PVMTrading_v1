@@ -374,6 +374,14 @@
     <Compile Include="Migrations\201802081106306_SeedUsers.Designer.cs">
       <DependentUpon>201802081106306_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802101745210_AddProductPrice.cs" />
+    <Compile Include="Migrations\201802101745210_AddProductPrice.Designer.cs">
+      <DependentUpon>201802101745210_AddProductPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802101909198_AddProductPriceId.cs" />
+    <Compile Include="Migrations\201802101909198_AddProductPriceId.Designer.cs">
+      <DependentUpon>201802101909198_AddProductPriceId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -418,6 +426,7 @@
     <Compile Include="ViewModels\CashTransactionListViewModel.cs" />
     <Compile Include="ViewModels\CashTransactionViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\ProductPriceViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SearchProductViewModels.cs" />
   </ItemGroup>
@@ -1030,6 +1039,7 @@
     <Content Include="Views\CashTransaction\CashTransactionList.cshtml" />
     <Content Include="Views\SearchProduct\SearchProduct.cshtml" />
     <Content Include="Views\Product\ReadOnlyView.cshtml" />
+    <Content Include="Views\SearchProduct\SearchProd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1160,6 +1170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802081106306_SeedUsers.resx">
       <DependentUpon>201802081106306_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802101745210_AddProductPrice.resx">
+      <DependentUpon>201802101745210_AddProductPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802101909198_AddProductPriceId.resx">
+      <DependentUpon>201802101909198_AddProductPriceId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

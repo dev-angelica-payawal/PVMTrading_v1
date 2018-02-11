@@ -1,28 +1,22 @@
-﻿@{
+﻿
+
+@*@model List<PVMTrading_v1.ViewModels.SearchProductViewModels>*@
+@{
     ViewBag.Title = "SearchProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<div class="content-wrapper">
-         
 
-                @*@for (int i = 1; i < ViewBag.productCounts; i++)
-                    {
-
-                    }*@
-
-              @*  <table>
+    @*<table>
                     @foreach (var product in Model)
-                    {
+                    { 
+      
+                       
                         <tr>
                             <td> @product.Product.Name</td>
                             <td>  @product.Product.Model</td>
-                            <td>  @product.ProductPrice.SellingPrice</td>
-                        </tr>
-                    }
+                            <td>  @product.SellingPrice</td>
+                        }
 
                 </table>*@
-              
-            </div>
-        

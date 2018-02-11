@@ -10,7 +10,7 @@ using PVMTrading_v1.Models.archieved;
 namespace PVMTrading_v1.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser 
     {
 
 
@@ -61,7 +61,7 @@ namespace PVMTrading_v1.Models
       
 
 
-        public ApplicationDbContext()
+        public ApplicationDbContext() 
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
@@ -76,8 +76,8 @@ namespace PVMTrading_v1.Models
         public System.Data.Entity.DbSet<PVMTrading_v1.Models.archieved.ProductReturnReason> ProductReturnReasons { get; set; }
     }
 
+    
 
-   
 
 
 }

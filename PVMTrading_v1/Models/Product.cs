@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Permissions;
 
 namespace PVMTrading_v1.Models
 {
     public class Product
     {
-
+       
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Input the Name of the Product.")]
@@ -67,6 +69,7 @@ namespace PVMTrading_v1.Models
 
         
         public string Image { get; set; }
+
 
 
         //   public int LastChangeByEmployeeId { get; set; }

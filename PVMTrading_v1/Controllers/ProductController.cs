@@ -159,7 +159,7 @@ namespace PVMTrading_v1.Controllers
 
 
             _context.SaveChanges();
-
+            Dispose();
             return RedirectToAction("Index");
         }
 
