@@ -1,66 +1,160 @@
-﻿@model PVMTrading_v1.Models.Customer
+﻿@model PVMTrading_v1.ViewModels.CustomerViewModel
 
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-    </button>
-    <h4 class="modal-title">Details Record</h4>
-</div>
 <div class="modal-body">
-    <div>
-<table class="table table-bordered">
-        <tr>
-           
-            <td>
-                @Html.DisplayNameFor(model => model.Sex.Label)
-                @Html.DisplayFor(model => model.Sex.Label)
-            </td>
-        </tr>
-    <tr>
-           
-        <td>
-            @Html.DisplayNameFor(model => model.FirstName)
-            @Html.DisplayFor(model => model.FirstName)
-        </td>
-    </tr>
-    <tr>
-           
-        <td>
-            @Html.DisplayNameFor(model => model.MiddleName)
-            @Html.DisplayFor(model => model.MiddleName)
-        </td>
-    </tr>
-    <tr>
-           
-        <td>
-            @Html.DisplayNameFor(model => model.LastName)
-            @Html.DisplayFor(model => model.LastName)
-        </td>
-    </tr>
-    <tr>
-           
-        <td>
-            @Html.DisplayNameFor(model => model.NameExtension)
-            @Html.DisplayFor(model => model.NameExtension)
-        </td>
-    </tr>
-    <tr>
-           
-        <td>
-            @Html.DisplayNameFor(model => model.Mobile)
-            @Html.DisplayFor(model => model.Mobile)
-        </td>
-    </tr>
-    <tr>
-           
-        <td>
-            @Html.DisplayNameFor(model => model.RegisteredDateCreated)
-            @Html.DisplayFor(model => model.RegisteredDateCreated)
-        </td>
-    </tr>
-       
-        </table>
-    </div>
+    
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Customer Information</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Customer.FirstName)
+                        @Html.DisplayFor(model => model.Customer.FirstName)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Customer.MiddleName)
+                        @Html.DisplayFor(model => model.Customer.MiddleName)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Customer.LastName)
+                        @Html.DisplayFor(model => model.Customer.LastName)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Customer.NameExtension)
+                        @Html.DisplayFor(model => model.Customer.NameExtension)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Customer.Mobile)
+                        @Html.DisplayFor(model => model.Customer.Mobile)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Customer.RegisteredDateCreated)
+                        @Html.DisplayFor(model => model.Customer.RegisteredDateCreated)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Telephone)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Telephone)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Email)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Email)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Birthdate)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Birthdate)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.CivilStatusId)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.CivilStatusId)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.PlaceOfBirth)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.PlaceOfBirth)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Nationality)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Nationality)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.TaxIdentificationNumber)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.TaxIdentificationNumber)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.LotHouseNumberAndStreet)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.LotHouseNumberAndStreet)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Barangay)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Barangay)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.CityMunicipality)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.CityMunicipality)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Province)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Province)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Country)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Country)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.ZipCode)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.ZipCode)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.CustomerCompleInfo.Image)
+                        @Html.DisplayFor(model => model.CustomerCompleInfo.Image)
+                    </td>
+                </tr>
+
+
+
+            </table>
+            </div>
+        </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-default"

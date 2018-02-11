@@ -49,8 +49,11 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Save(ProductPrice productPrice)
         {
             var productInDb = _context.ProductPrices.Single(p => p.Id == productPrice.Id);
+            var oldprice = _context.ProductPrices.SqlQuery("ALTER TABLE ProductPrices ADD oldprice'+@DateTime.Now+' VarChar(9999)");
             if (Convert.ToInt64(productInDb.SellingPrice) != Convert.ToInt64(productPrice.SellingPrice))
-            { 
+            {
+             
+            oldprice.   
             productInDb.DateCreated = DateTime.Now;
             _context.ProductPrices.Add(productPrice);
             _context.SaveChanges();

@@ -85,6 +85,52 @@ namespace PVMTrading_v1.Controllers
             return View(productList);
         }
 
+        public ActionResult ProductInfo(int id)
+        {
+
+            var product = _context.Products.SingleOrDefault(c => c.Id == id);
+            /*if (product == null)
+            {
+                return HttpNotFound();
+            }
+            var productInfo = new ProductViewModel()
+            {
+                Product = product
+
+            };
+
+
+            return PartialView(productInfo);*/
+
+            /*var order = (Product)Session["Order"];
+            return PartialView(order.Model);*/
+
+            return View(product);
+        }
+
+ /*       public ActionResult ProductView()
+        {
+            var product = _context.Products.ToList();
+
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            var Productsview = new CashTransactionViewModel()
+            {
+                Product = product,
+                CustomerCompleInfo = customerInfo,
+                CustomerTypes = _context.CustomerTypes.ToList(),
+                CivilStatuses = _context.CivilStatus.ToList()
+            };
+
+
+            return PartialView(Productsview);
+
+        }*/
+
+
+
         public ActionResult Save()
         {
             throw new NotImplementedException();
