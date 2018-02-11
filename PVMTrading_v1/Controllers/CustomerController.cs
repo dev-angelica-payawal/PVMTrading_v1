@@ -26,7 +26,15 @@ namespace PVMTrading_v1.Controllers
             _context.Dispose();
         }
 
+/*
+        public ViewResult CosCount(int id)
+        {
 
+            var C = _context.Customers.SqlQuery("SELECT COUNT Id FROM dbo.Customers");
+
+            return View(C);
+        }
+*/
 
         public ActionResult Index()
         {
@@ -37,8 +45,11 @@ namespace PVMTrading_v1.Controllers
                                               .Include(s => s.Sex).ToList();*/
 
 
-               var customers = _context.Customers.Include(s => s.Sex).ToList();
+            var customer = _context.Customers.Include(s => s.Sex).ToList();
 
+           
+
+            
             /*var customers = _context.Customers.Include(s => s.Sex).ToList();*/
 
 
@@ -52,7 +63,7 @@ namespace PVMTrading_v1.Controllers
 
             List<CustomerViewModel> customerCompleteList = new List<CustomerViewModel>();
             customerCompleteList = customerInfo.ToList();   */
-            return View(customers);   
+            return View(customer);   
 
 
             /* var details = from customer in _context.Customers
@@ -211,8 +222,21 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var customerInfo = _context.CustomerCompleInfos.SingleOrDefault(ci => ci.CustomerId == id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            var customerComplete = new CustomerViewModel
+            { 
+                    Customer = customer,
+                    CustomerCompleInfo = customerInfo,
+                CustomerTypes = _context.CustomerTypes.ToList(),
+                CivilStatuses = _context.CivilStatus.ToList()
+            };
 
-            return PartialView(customer);
+
+            return PartialView(customerComplete);
         }
 
        /* public ActionResult OderByCustomer()

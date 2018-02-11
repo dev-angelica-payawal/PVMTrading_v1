@@ -43,7 +43,6 @@ namespace PVMTrading_v1.Models
         [Display(Name = "Registered Date Created")]
         public DateTime RegisteredDateCreated { get; set; }
 
-
-
+        /*public int Count { get; set; }*/
     }
 }

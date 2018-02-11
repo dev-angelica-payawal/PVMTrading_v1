@@ -81,5 +81,7 @@ namespace PVMTrading_v1.Models
 
      
         public string Image { get; set; }
+
+        
     }
 }
