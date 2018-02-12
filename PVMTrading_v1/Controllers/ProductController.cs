@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using PVMTrading_v1.Models;
 using PVMTrading_v1.ViewModels;
 
@@ -63,6 +64,9 @@ namespace PVMTrading_v1.Controllers
         }
         public ActionResult ProductList()
         {
+            //Eto yung gagamitin mong query
+            var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
+            ViewBag.productCounts = _context.Products.Count();
 
             var product = _context.Products.Include(p => p.ProductCategory);
 

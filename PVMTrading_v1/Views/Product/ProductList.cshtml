@@ -1,3 +1,37 @@
+@*
+        Eto yung ayusin mong nang view ipasok mo lang mga value sa ginawa mong view
+
+
+        @model List<PVMTrading_v1.Models.ProductPrice>
+
+    @{
+        ViewBag.Title = "SearchProduct";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <h2>Product Price</h2>
+
+            <table class="table table-responsive" id="productPrice">
+
+                @foreach (var product in Model)
+                {
+
+                    <tr>
+                        <td> @product.Product.Name</td>
+                        <td> @product.Product.Model</td>
+                        <td> @product.SellingPrice</td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+
+*@
+
 @model List<PVMTrading_v1.Models.Product>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
