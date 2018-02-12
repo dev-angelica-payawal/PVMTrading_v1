@@ -1,384 +1,208 @@
-<<<<<<< HEAD
-﻿@model List<PVMTrading_v1.Models.Product>
+@model List<PVMTrading_v1.Models.Product>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
-    <div class="content-wrapper">
-=======
-﻿@model PVMTrading_v1.ViewModels.ProductViewModel
->>>>>>> f8d2c483cac23b3fb8dd456a6401cb0ea5755a7e
 
-@{
-    ViewBag.Title = "Product List";
-}   
 <div class="content-wrapper">
 
-    
-    <div class="new">
-        <div class="container">
-            <h3>specially designed for Furnyish</h3>
-            <div class="new-products">
-                <div class="new-items">
-                    <div class="item1">
-                      <img src="~/Resources/images/s1.jpg" alt="" /><!--Product Image-->
-                        <div class="item-info">
-                            <h4>Brown Furny Seater</h4><!--Product Name-->
-                            <span>ID: SR5421</span><!--Product Id-->
-                            <a href="single.html">Buy Now</a><!--Buy now Button-->
-                        </div>
-                    </div>
-                    <div class="item4">
-                       <img src="~/Resources/images/s4.jpg" alt="" />
-                        <div class="item-info4">
-                            <h4>Dream Furniture Bed</h4>
-                            <span>ID: SR5421</span>
-                            <a href="single.html">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="new-items new_middle">
-                    <div class="item2">
-                        <div class="item-info2">
-                            <h4><a href="products.html">Georgia Sofa Set</a></h4>
-                            <span>ID: GS7641</span>
-                            <a href="single.html">Buy Now</a>
-                        </div>
-                        <a href="products.html"><img src="~/Resources/images/s2.jpg" alt="" /></a>
-                    </div>
-                    <div class="item5">
-                        <a href="products.html"><img src="~/Resources/images/s5.jpg" alt="" /></a>
-                        <div class="item-info5">
-                            <h4><a href="products.html">BlackBurn Law Set</a></h4>
-                            <span>ID: SR5421</span>
-                            <a href="single.html">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-<<<<<<< HEAD
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                            <a href="single.html">
-                                <div class="more-product"><span> </span></div>
-                                <div class="b-wrapper">
-                                    <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                    <div class="">
-                                      </div>
-                                </div>
-                            </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 product-model-sec">
-                        <a href="single.html"></a><div class="card col-md-12">
-                            <div class="">
-                                <a href="single.html">
-                                    <div class="more-product"><span> </span></div>
-                                    <div class="b-wrapper">
-                                        <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt="">
-                                        <div class="">
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-info simpleCart_shelfItem">
-                                    <div class="product-info-cust prt_name">
-                                        <h4>5 Seater sofa set</h4>
-                                        <p>ID: SR4598</p>
-                                        <span class="item_price">P187.95</span>
-                                        <input class="item_quantity" value="1" type="text">
-                                        <input class="item_add items" value="ADD" type="button">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        @*   <div class="col-lg-4">
-                                <figure class="snip1174 navy col-md-9">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Տեսականի</h2>
-                                        <p>
-                                            Մեր տեասկանին սպասում է Ձեզ
-                                        </p>
-                                        <a href="/main/page/production">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-lg-4">
-                                <figure class="snip1174 red col-md-9">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Ակցիաներ</h2>
-                                        <p>
-                                            Թարմացվող ակցիաներ մեր հաճախորդների համար
-                                        </p>
-                                        <a href="/main/page/auction">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        
-                        
-                            <div class="col-lg-4">
-                                <figure class="snip1174 navy col-md-9">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Մեր մասին</h2>
-                                        <p>
-                                            Մեր ընկերության մաին ծանոթացեք այստեղ
-                                        </p>
-                                        <a href="/main/page/company">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="col-lg-4">
-                                <figure class="snip1174 red col-md-9">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                    <figcaption>
-                                        <h2>Բաղադրատոմսեր</h2>
-                                        <p>
-                                            Պատրաստման հարցում Դուք ունեք Ձեր խորհրդատուն
-                                        </p>
-                                        <a href="/main/page/recipe">Ավելին</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        
-                       
-                        <div class="col-lg-4">
-                            <figure class="snip1174 navy col-md-9">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                <figcaption>
-                                    <h2>Խանութների ցանկ</h2>
-                                    <p>
-                                        Մեր խանութների ցանկին այստեղ
-                                    </p>
-                                    <a href="/main/page/map">Ավելին</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-lg-4">
-                            <figure class="snip1174 red col-md-9">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
-                                <figcaption>
-                                    <h2>Նորություններ</h2>
-                                    <p>
-                                        Ծանոթացեք մեր նորություններին այստեղ
-                                    </p>
-                                    <a href="/main/page/news">Ավելին</a>
-                                </figcaption>
-                            </figure>
-                        </div>*@
 
-                    
-=======
-                <div class="new-items new_last">
-                    <div class="item3">
-                        <a href="products.html"><img src="~/Resources/images/s3.jpg" alt="" /></a>
-                        <div class="item-info3">
-                            <h4><a href="products.html">Shefan Dinning Set</a></h4>
-                            <span>ID: SR5421</span>
-                            <a href="single.html">Buy Now</a>
-                        </div>
+            <div class="container-fluid">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h2>Product List</h2>
                     </div>
-                    <div class="item6">
-                        <a href="products.html"><img src="~/Resources/images/s6.jpg" alt="" /></a>
-                        <div class="item-info6">
-                            <h4><a href="products.html">Irony Sofa Set</a></h4>
-                            <span>ID: SR5421</span>
-                            <a href="single.html">Buy Now</a>
-                        </div>
-                    </div>
->>>>>>> f8d2c483cac23b3fb8dd456a6401cb0ea5755a7e
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
+                    <div class="card-body">
 
-    </div>
+                        <div class="new">
+                            <div class="container">
+
+
+
+
+                                <div class="card-body">
+                                    <div class="row" id="product">
+                                        @if (!Model.Any())
+                                        {
+                                            <p>We don't have any customers yet.</p>
+                                        }
+                                        else
+                                        {
+
+                                            foreach (var product in Model)
+                                            {
+                                                <div class="col-lg-4 product-model-sec">
+                                                    <a href="single.html"></a>
+                                                    <div class="card col-md-12">
+                                                        <div class="">
+                                                            <a href="single.html">
+                                                                <div class="more-product"><span> </span></div>
+                                                                <div class="b-wrapper">
+                                                                    <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt=""><!--Product Image-->
+                                                                    <div class="">
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="product-info simpleCart_shelfItem">
+                                                                <div class="product-info-cust prt_name">
+                                                                    <h4>@product.Name</h4><!--Buy now Button-->
+                                                                    <p>@product.Model</p><!--Product Id-->
+                                                                    <span class="item_price">@product.OriginalPrice</span>
+                                                                    <a href="single.html">Buy Now</a><!--Buy now Button-->
+                                                                </div>
+                                                                <div class="clearfix"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+
+                                        }
+
+
+
+                                        @*   <div class="col-lg-4">
+                                                    <figure class="snip1174 navy col-md-9">
+                                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
+                                                        <figcaption>
+                                                            <h2>Տեսականի</h2>
+                                                            <p>
+                                                                Մեր տեասկանին սպասում է Ձեզ
+                                                            </p>
+                                                            <a href="/main/page/production">Ավելին</a>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <figure class="snip1174 red col-md-9">
+                                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
+                                                        <figcaption>
+                                                            <h2>Ակցիաներ</h2>
+                                                            <p>
+                                                                Թարմացվող ակցիաներ մեր հաճախորդների համար
+                                                            </p>
+                                                            <a href="/main/page/auction">Ավելին</a>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+
+
+                                                <div class="col-lg-4">
+                                                    <figure class="snip1174 navy col-md-9">
+                                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
+                                                        <figcaption>
+                                                            <h2>Մեր մասին</h2>
+                                                            <p>
+                                                                Մեր ընկերության մաին ծանոթացեք այստեղ
+                                                            </p>
+                                                            <a href="/main/page/company">Ավելին</a>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <figure class="snip1174 red col-md-9">
+                                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
+                                                        <figcaption>
+                                                            <h2>Բաղադրատոմսեր</h2>
+                                                            <p>
+                                                                Պատրաստման հարցում Դուք ունեք Ձեր խորհրդատուն
+                                                            </p>
+                                                            <a href="/main/page/recipe">Ավելին</a>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+
+
+                                            <div class="col-lg-4">
+                                                <figure class="snip1174 navy col-md-9">
+                                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
+                                                    <figcaption>
+                                                        <h2>Խանութների ցանկ</h2>
+                                                        <p>
+                                                            Մեր խանութների ցանկին այստեղ
+                                                        </p>
+                                                        <a href="/main/page/map">Ավելին</a>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <figure class="snip1174 red col-md-9">
+                                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample33.jpg" alt="sq-sample33" />
+                                                    <figcaption>
+                                                        <h2>Նորություններ</h2>
+                                                        <p>
+                                                            Ծանոթացեք մեր նորություններին այստեղ
+                                                        </p>
+                                                        <a href="/main/page/news">Ավելին</a>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>*@
+
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+
+                @section scripts{
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js">
+                    </script>
+                    <script>
+                        function createModal(url) {
+                            $('#modelContent').load(url);
+                            $('#myModal').modal('show');
+                        }
+                    </script>
+                    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            $('#product').DataTable({/*
+            "ajax": {
+                "url": "/customer/Loaddata",
+                "type": "GET",
+                "datatype":"json"
+            },*/
+                                "column": [
+                                    { "autowidth": true },
+                                    { "ScrollY": (0.6 * $(window).height()) },
+
+
+                                    /* { "data": "FirstName", "autowidth": true },
+                                     { "data": "MiddleName", "autowidth": true },
+                                     { "data": "LastName", "autowidth": true },
+                                     { "data": "NameExtension", "autowidth": true },
+                                     { "data": "Mobile", "autowidth": true },
+                                      { "data": "Telephone", "autowidth": true },
+                                      { "data": "Sex.Label", "autowidth": true },
+                                     { "data": "RegisteredDateCreated", "autowidth": true },
+                                     { "data": "PlaceOfBirth", "autowidth": true },
+                                     { "data": "Nationality", "autowidth": true },
+                                     { "data": "TaxIdentificationNumber", "autowidth": true },
+                                     { "data": "CustomerType", "autowidth": true },
+                                     { "data": "ZipCode", "autowidth": true }
+                 */
+
+                                ]
+
+
+
+                            });
+                        });
+                    </script>
+                }
 
