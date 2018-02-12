@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PVMTrading_v1.Models;
+using PVMTrading_v1.ViewModels;
 
 namespace PVMTrading_v1.Controllers
 {
@@ -66,7 +67,6 @@ namespace PVMTrading_v1.Controllers
         public async Task<ActionResult> Edit(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);
-            await RoleManager.CreateAsync(role);
             return View(new RoleViewModel(role));
         }
 

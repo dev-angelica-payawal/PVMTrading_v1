@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -17,6 +18,8 @@ namespace PVMTrading_v1.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+       
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
@@ -156,11 +159,16 @@ namespace PVMTrading_v1.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+
+        
             List<SelectListItem> list = new List<SelectListItem>();
             foreach (var role in RoleManager.Roles)
                 list.Add(new SelectListItem(){Value = role.Name, Text = role.Name});
             ViewBag.Roles = list;
+
+           
             
+
             return View();
         }
 
@@ -173,7 +181,20 @@ namespace PVMTrading_v1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var branch = 0;
+                switch (model.BranchId)
+                {
+                    case "First Branch": branch = 1;
+                        break;
+                    case "Main Branch":
+                        branch = 1;
+                        break;
+                    default: branch = 3;
+                        break;
+                }
+              
+                //check database if role is save and branch
+                var user = new ApplicationUser { BranchId = branch ,UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

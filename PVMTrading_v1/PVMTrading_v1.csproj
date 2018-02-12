@@ -396,6 +396,18 @@
     <Compile Include="Migrations\201802120758177_AddDiscriminator.Designer.cs">
       <DependentUpon>201802120758177_AddDiscriminator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802121402452_RoleViewModelMoveToViewModel.cs" />
+    <Compile Include="Migrations\201802121402452_RoleViewModelMoveToViewModel.Designer.cs">
+      <DependentUpon>201802121402452_RoleViewModelMoveToViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121740411_AddBranchColumnToASPNETUsers.cs" />
+    <Compile Include="Migrations\201802121740411_AddBranchColumnToASPNETUsers.Designer.cs">
+      <DependentUpon>201802121740411_AddBranchColumnToASPNETUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802121848518_DeleteForeignKeyBranchFromAspNetUser.cs" />
+    <Compile Include="Migrations\201802121848518_DeleteForeignKeyBranchFromAspNetUser.Designer.cs">
+      <DependentUpon>201802121848518_DeleteForeignKeyBranchFromAspNetUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -418,7 +430,7 @@
     <Compile Include="Models\archieved\ProductReturn.cs" />
     <Compile Include="Models\archieved\ProductReturnReason.cs" />
     <Compile Include="Models\RoleName.cs" />
-    <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
     <Compile Include="Scripts\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\CivilStatus.cs" />
@@ -1204,6 +1216,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802120758177_AddDiscriminator.resx">
       <DependentUpon>201802120758177_AddDiscriminator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121402452_RoleViewModelMoveToViewModel.resx">
+      <DependentUpon>201802121402452_RoleViewModelMoveToViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121740411_AddBranchColumnToASPNETUsers.resx">
+      <DependentUpon>201802121740411_AddBranchColumnToASPNETUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802121848518_DeleteForeignKeyBranchFromAspNetUser.resx">
+      <DependentUpon>201802121848518_DeleteForeignKeyBranchFromAspNetUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
