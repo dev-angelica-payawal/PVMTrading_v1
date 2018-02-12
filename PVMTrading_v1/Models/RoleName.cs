@@ -10,8 +10,8 @@ namespace PVMTrading_v1.Models
 
         public const string Admin = "Admin";
         public const string SalesClerk = "Sales Clerk";
-        public const string Cashier = "CreateTransactions";
-        public const string Customer = "ViewOnly";
-        public const string Delivery = "ViewListDelivery";
+        public const string Cashier = "Cashier";
+        public const string Customer = "Customer";
+        public const string Delivery = "Delivery Personnel";
     }
 }

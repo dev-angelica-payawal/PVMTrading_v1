@@ -70,7 +70,7 @@ namespace PVMTrading_v1.Controllers
 
             var product = _context.Products.Include(p => p.ProductCategory);
 
-            return View(product.ToList());
+            return View(prod.ToList());
 
         }
 
