@@ -41,7 +41,7 @@ namespace PVMTrading_v1.Controllers
 
         }
 
-        [Authorize (Roles = RoleName.Admin)]
+        [CustomAuthorize(Roles = RoleName.Admin)]
         public ActionResult New()
         {
             var brands = _context.Brands.ToList();
@@ -165,7 +165,7 @@ namespace PVMTrading_v1.Controllers
 
 
         //        [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.Admin)]
+        [CustomAuthorize(Roles = RoleName.Admin)]
         public ActionResult Edit(int id)
         {
 
@@ -194,7 +194,7 @@ namespace PVMTrading_v1.Controllers
 
 
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.Admin)]
+        [CustomAuthorize(Roles = RoleName.Admin)]
         public ActionResult Delete(int id)
         {
             var product = _context.Products.Single(p => p.Id == id);

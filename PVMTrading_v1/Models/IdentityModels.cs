@@ -26,7 +26,7 @@ namespace PVMTrading_v1.Models
     public class ApplicationRole : IdentityRole
     {
         public ApplicationRole() : base() { }
-        public ApplicationRole(string roleName) : base() { }
+        public ApplicationRole(string roleName) : base(roleName) { }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -80,6 +80,8 @@ namespace PVMTrading_v1.Models
         }
 
         public System.Data.Entity.DbSet<PVMTrading_v1.Models.archieved.ProductReturnReason> ProductReturnReasons { get; set; }
+
+        public System.Data.Entity.DbSet<PVMTrading_v1.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 
     

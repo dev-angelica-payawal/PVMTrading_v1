@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -18,15 +19,29 @@ namespace PVMTrading_v1.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;
+        }
+
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set 
+            { 
+                _roleManager = value; 
+            }
         }
 
         public ApplicationSignInManager SignInManager
@@ -35,11 +50,12 @@ namespace PVMTrading_v1.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
+
 
         public ApplicationUserManager UserManager
         {
@@ -140,6 +156,11 @@ namespace PVMTrading_v1.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem(){Value = role.Name, Text = role.Name});
+            ViewBag.Roles = list;
+            
             return View();
         }
 
@@ -162,6 +183,8 @@ namespace PVMTrading_v1.Controllers
                     var roleManager = new RoleManager<IdentityRole>(roleStore);
                     await roleManager.CreateAsync(new IdentityRole("CanMangeProducts"));
                     await UserManager.AddToRoleAsync(user.Id, "CanMangeProducts");*/
+
+                    result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
 
                     /*Sign if already after registration*/
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

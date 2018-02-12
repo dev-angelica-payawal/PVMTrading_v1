@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductPriceController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SearchProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -386,6 +387,14 @@
     <Compile Include="Migrations\201802120205161_DeleteEmployeeRole.Designer.cs">
       <DependentUpon>201802120205161_DeleteEmployeeRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802120608207_Role.cs" />
+    <Compile Include="Migrations\201802120608207_Role.Designer.cs">
+      <DependentUpon>201802120608207_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802120758177_AddDiscriminator.cs" />
+    <Compile Include="Migrations\201802120758177_AddDiscriminator.Designer.cs">
+      <DependentUpon>201802120758177_AddDiscriminator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -408,6 +417,7 @@
     <Compile Include="Models\archieved\ProductReturn.cs" />
     <Compile Include="Models\archieved\ProductReturnReason.cs" />
     <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Scripts\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\CivilStatus.cs" />
@@ -1042,6 +1052,12 @@
     <Content Include="Views\SearchProduct\SearchProduct.cshtml" />
     <Content Include="Views\Product\ReadOnlyView.cshtml" />
     <Content Include="Views\SearchProduct\SearchProd.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1181,6 +1197,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802120205161_DeleteEmployeeRole.resx">
       <DependentUpon>201802120205161_DeleteEmployeeRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802120608207_Role.resx">
+      <DependentUpon>201802120608207_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802120758177_AddDiscriminator.resx">
+      <DependentUpon>201802120758177_AddDiscriminator.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
