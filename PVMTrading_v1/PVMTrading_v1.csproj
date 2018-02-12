@@ -408,6 +408,10 @@
     <Compile Include="Migrations\201802121848518_DeleteForeignKeyBranchFromAspNetUser.Designer.cs">
       <DependentUpon>201802121848518_DeleteForeignKeyBranchFromAspNetUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802122026109_AddForeignKeyBranchToUsers.cs" />
+    <Compile Include="Migrations\201802122026109_AddForeignKeyBranchToUsers.Designer.cs">
+      <DependentUpon>201802122026109_AddForeignKeyBranchToUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -455,6 +459,7 @@
     <Compile Include="ViewModels\ProductPriceViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SearchProductViewModels.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\sb-admin.css" />
@@ -1225,6 +1230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802121848518_DeleteForeignKeyBranchFromAspNetUser.resx">
       <DependentUpon>201802121848518_DeleteForeignKeyBranchFromAspNetUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802122026109_AddForeignKeyBranchToUsers.resx">
+      <DependentUpon>201802122026109_AddForeignKeyBranchToUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
