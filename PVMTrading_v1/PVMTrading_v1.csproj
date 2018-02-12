@@ -49,11 +49,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GitSharp, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -385,6 +385,10 @@
     <Compile Include="Migrations\201802120205161_DeleteEmployeeRole.cs" />
     <Compile Include="Migrations\201802120205161_DeleteEmployeeRole.Designer.cs">
       <DependentUpon>201802120205161_DeleteEmployeeRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802120632253_Add.cs" />
+    <Compile Include="Migrations\201802120632253_Add.Designer.cs">
+      <DependentUpon>201802120632253_Add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1181,6 +1185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802120205161_DeleteEmployeeRole.resx">
       <DependentUpon>201802120205161_DeleteEmployeeRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802120632253_Add.resx">
+      <DependentUpon>201802120632253_Add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

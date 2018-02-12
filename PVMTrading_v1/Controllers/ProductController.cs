@@ -64,9 +64,9 @@ namespace PVMTrading_v1.Controllers
         public ActionResult ProductList()
         {
 
-            
+            var product = _context.Products.Include(p => p.ProductCategory);
 
-            return View();
+            return View(product.ToList());
 
         }
 

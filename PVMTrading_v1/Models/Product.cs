@@ -7,7 +7,8 @@ namespace PVMTrading_v1.Models
 {
     public class Product
     {
-       
+
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Input the Name of the Product.")]
