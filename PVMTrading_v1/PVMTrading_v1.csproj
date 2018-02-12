@@ -382,6 +382,10 @@
     <Compile Include="Migrations\201802101909198_AddProductPriceId.Designer.cs">
       <DependentUpon>201802101909198_AddProductPriceId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802120205161_DeleteEmployeeRole.cs" />
+    <Compile Include="Migrations\201802120205161_DeleteEmployeeRole.Designer.cs">
+      <DependentUpon>201802120205161_DeleteEmployeeRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -408,7 +412,6 @@
     <Compile Include="Models\BrandType.cs" />
     <Compile Include="Models\CivilStatus.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\EmployeeRole.cs" />
     <Compile Include="Models\archieved\DeliveryCharge.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\archieved\LoadProductItem.cs" />
@@ -1031,7 +1034,6 @@
     <Content Include="Views\CashTransaction\Grid.cshtml" />
     <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
-    <Content Include="Views\Shared\_CustomerList.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
@@ -1176,6 +1178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802101909198_AddProductPriceId.resx">
       <DependentUpon>201802101909198_AddProductPriceId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802120205161_DeleteEmployeeRole.resx">
+      <DependentUpon>201802120205161_DeleteEmployeeRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

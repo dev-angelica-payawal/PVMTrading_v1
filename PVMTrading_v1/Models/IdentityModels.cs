@@ -23,6 +23,12 @@ namespace PVMTrading_v1.Models
         }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string roleName) : base() { }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
@@ -38,7 +44,7 @@ namespace PVMTrading_v1.Models
         public DbSet<CivilStatus> CivilStatus { get; set; }
 
 
-        public DbSet<EmployeeRole> EmployeeRoles { get; set; }
+      
         public DbSet<LoanStatus> LoanStatus { get; set; }
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Sex> Sex { get; set; }

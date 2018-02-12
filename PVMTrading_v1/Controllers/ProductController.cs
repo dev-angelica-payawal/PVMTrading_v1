@@ -33,7 +33,7 @@ namespace PVMTrading_v1.Controllers
 
 
             /* For UserRoles Limiting Users who can manage Products*/
-            if (User.IsInRole(RoleName.CanManageMovies))
+            if (User.IsInRole(RoleName.Admin))
                 return View(products);
 
 
@@ -41,7 +41,7 @@ namespace PVMTrading_v1.Controllers
 
         }
 
-        [Authorize (Roles = RoleName.CanManageMovies)]
+        [Authorize (Roles = RoleName.Admin)]
         public ActionResult New()
         {
             var brands = _context.Brands.ToList();
@@ -165,7 +165,7 @@ namespace PVMTrading_v1.Controllers
 
 
         //        [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.Admin)]
         public ActionResult Edit(int id)
         {
 
@@ -194,7 +194,7 @@ namespace PVMTrading_v1.Controllers
 
 
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.Admin)]
         public ActionResult Delete(int id)
         {
             var product = _context.Products.Single(p => p.Id == id);
@@ -213,7 +213,7 @@ namespace PVMTrading_v1.Controllers
         }
 
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        
         public ActionResult Details(int id)
         {
             var product = _context.Products.SingleOrDefault(p => p.Id == id);
