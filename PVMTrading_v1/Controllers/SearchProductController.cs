@@ -86,7 +86,7 @@ namespace PVMTrading_v1.Controllers
 				}).ToList();
 
 			var ss = _context.ProductPrices.Include(s => s.Product).ToList();
-        */    /*  var price = _context.Products.Join(_context.ProductPrices, product => product.Id, p => p.ProductId,
+		*/    /*  var price = _context.Products.Join(_context.ProductPrices, product => product.Id, p => p.ProductId,
 				  (p, pp) => new
 				  {
 					  Product = p,
@@ -96,21 +96,21 @@ namespace PVMTrading_v1.Controllers
 
 		  */
 
-		    
-          
-            var prodList = _context.Database.SqlQuery<SearchProductViewModels>(@"SELECT Products.*, 
+			
+		  
+			var prodList = _context.Database.SqlQuery<SearchProductViewModels>(@"SELECT Products.*, 
 												 Amount = (Select top 1 ProductPrices.SellingPrice 
 												From ProductPrices
 												Where ProductPrices.ProductId = Products.Id
 												Order by ProductPrices.Id Desc )
 										FROM Products").ToList<SearchProductViewModels>();
 
-            /*   var sample =_context.Database.SqlQuery<SearchProductViewModels>(@"Select Distinct Products.Name, Products.Model, Products.Id SellingPrice 
-                                                           From Products Join  ProductPrices 
-                                                           on Products.Id=ProductPrices.ProductId ");
-            */
-		    var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
-		  		ViewBag.productCounts = _context.Products.Count();
+			/*   var sample =_context.Database.SqlQuery<SearchProductViewModels>(@"Select Distinct Products.Name, Products.Model, Products.Id SellingPrice 
+														   From Products Join  ProductPrices 
+														   on Products.Id=ProductPrices.ProductId ");
+			*/
+			var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
+				ViewBag.productCounts = _context.Products.Count();
 
 		
 			return View(prod.ToList());

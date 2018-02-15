@@ -202,12 +202,14 @@
     <Compile Include="Controllers\CashTransactionController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Item.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductPriceController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SearchProductController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="CustomAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -412,9 +414,30 @@
     <Compile Include="Migrations\201802122026109_AddForeignKeyBranchToUsers.Designer.cs">
       <DependentUpon>201802122026109_AddForeignKeyBranchToUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802141429148_UpdateUsers.cs" />
+    <Compile Include="Migrations\201802141429148_UpdateUsers.Designer.cs">
+      <DependentUpon>201802141429148_UpdateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802141526552_UpdateAspNetRoles.cs" />
+    <Compile Include="Migrations\201802141526552_UpdateAspNetRoles.Designer.cs">
+      <DependentUpon>201802141526552_UpdateAspNetRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802141937239_AddCartTable.cs" />
+    <Compile Include="Migrations\201802141937239_AddCartTable.Designer.cs">
+      <DependentUpon>201802141937239_AddCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802141943337_AddColumnForCartTable.cs" />
+    <Compile Include="Migrations\201802141943337_AddColumnForCartTable.Designer.cs">
+      <DependentUpon>201802141943337_AddColumnForCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802151650028_Update.cs" />
+    <Compile Include="Migrations\201802151650028_Update.Designer.cs">
+      <DependentUpon>201802151650028_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CashTransaction.cs" />
     <Compile Include="Models\CashTransactionitem.cs" />
     <Compile Include="Models\CustomerCompleInfo.cs" />
@@ -434,6 +457,9 @@
     <Compile Include="Models\archieved\ProductReturn.cs" />
     <Compile Include="Models\archieved\ProductReturnReason.cs" />
     <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="ViewModels\CartRemoveModel.cs" />
+    <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\RoleViewModel.cs" />
     <Compile Include="Scripts\Brand.cs" />
     <Compile Include="Models\BrandType.cs" />
@@ -722,6 +748,7 @@
     <Content Include="Content\PVMcssandjs\images\s5.jpg" />
     <Content Include="Content\PVMcssandjs\images\s6.jpg" />
     <Content Include="Content\PVMcssandjs\images\search1.png" />
+    <Content Include="Content\PVMcssandjs\images\shoping_cart.png" />
     <Content Include="Content\PVMcssandjs\images\social2.png" />
     <Content Include="Content\PVMcssandjs\images\ss1.jpg" />
     <Content Include="Content\PVMcssandjs\images\ss2.jpg" />
@@ -1076,12 +1103,17 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+    <Content Include="Views\Product\CartSummary.cshtml" />
+    <Content Include="Views\Product\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801160226120_InitialModel.resx">
@@ -1233,6 +1265,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802122026109_AddForeignKeyBranchToUsers.resx">
       <DependentUpon>201802122026109_AddForeignKeyBranchToUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802141429148_UpdateUsers.resx">
+      <DependentUpon>201802141429148_UpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802141526552_UpdateAspNetRoles.resx">
+      <DependentUpon>201802141526552_UpdateAspNetRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802141937239_AddCartTable.resx">
+      <DependentUpon>201802141937239_AddCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802141943337_AddColumnForCartTable.resx">
+      <DependentUpon>201802141943337_AddColumnForCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802151650028_Update.resx">
+      <DependentUpon>201802151650028_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

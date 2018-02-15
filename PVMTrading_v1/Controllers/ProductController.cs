@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -243,10 +244,29 @@ namespace PVMTrading_v1.Controllers
 
             return View(viewModel);
         }
+        private ApplicationDbContext de = new ApplicationDbContext();
+
+        public ActionResult BuyNow(int id)
+        {
+            if (Session["cart"] == null)
+            {
+                List<Item> cart = new List<Item>();
+                cart.Add(new Item(de.Products.Find(id), 1));
+                Session["cart"] = cart;
+            }
+            else
+            {
+                List<Item> cart = (List<Item>) Session["cart"];
+                cart.Add(new Item(de.Products.Find(id), 1));
+                Session["cart"] = cart;
+            }
+            return View("Cart");
+        }
 
 
 
-        
+
+
 
     }
 }
