@@ -1,0 +1,59 @@
+﻿
+@using PVMTrading_v1.Controllers
+@model PVMTrading_v1.Controllers.Item
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+
+
+
+
+
+<div class="container-fluid">
+<div class="card mb-3">
+<div class="card-header">
+    <h2>Product List</h2>
+</div> 
+<div class="card-body">
+
+<div class="new">
+<div class="container">
+
+
+    @foreach (Item item in (List<Item>) Session["cart"])
+    {
+        <div class="col-lg-4 product-model-sec">
+            <a href="single.html"></a>
+            <div class="card col-md-12">
+                <div class="">
+                    <a href="single.html">
+                        <div class="more-product"><span> </span></div>
+                        <div class="b-wrapper">
+                            <img src="@Url.Content("~/Content/PVMcssandjs/images/1.jpg")" class="img-responsive" alt=""><!--Product Image-->
+                            <div class="">
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-info simpleCart_shelfItem">
+                        <div class="product-info-cust prt_name">
+                            <h4>@item.Product.Name</h4><!--Buy now Button-->
+                            <p>@item.Product.Model</p><!--Product Id-->
+                            <span class="item_price">@item.Product.OriginalPrice</span>
+                           
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -72,7 +72,7 @@ namespace PVMTrading_v1.Models
         public string Image { get; set; }
 
 
-
+       // public PvMCart Cart { get; set; }
         //   public int LastChangeByEmployeeId { get; set; }
         //   public int CreatedByEmployeeId { get; set; }
 
