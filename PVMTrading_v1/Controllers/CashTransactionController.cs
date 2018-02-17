@@ -38,10 +38,9 @@ namespace PVMTrading_v1.Controllers
         //select customer search
         public ActionResult SearchCustomer()
         {
-            var customers = _context.Customers.Include(c => c.Sex);
+            var customers = _context.Customers;
 
             var customersList = customers.ToList();
-
             return View(customersList);
         }
 
@@ -127,6 +126,12 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Save()
         {
             throw new NotImplementedException();
+        }
+
+        public ActionResult Select(int id)
+        {
+           var selectCustomer =  _context.Customers.SingleOrDefault(c => c.Id == id);
+            return View(selectCustomer);
         }
     }
 }

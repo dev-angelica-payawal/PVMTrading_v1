@@ -65,7 +65,8 @@ namespace PVMTrading_v1.Controllers
         }
         public ActionResult ProductList()
         {
-            //Eto yung gagamitin mong query
+            
+            //selection of product by branch query missing
             var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
             ViewBag.productCounts = _context.Products.Count();
 
@@ -83,6 +84,10 @@ namespace PVMTrading_v1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Product product, ProductInclusion productInclusion, ProductPrice productPrice)
         {
+          var isProductExist = _context.Products.Count(c => c.Name == product.Name);
+
+
+            
             /* if (!ModelState.IsValid)
              {
                  var viewModel = new ProductViewModel
@@ -114,6 +119,7 @@ namespace PVMTrading_v1.Controllers
             
             if (product.Id == 0)
             {
+                if(isProductExist == 0) { 
                 if (productInclusion.FreeItem != null &&
                     (productInclusion.Quantity != 0 || productInclusion.Quantity != null))
                 {
@@ -129,7 +135,20 @@ namespace PVMTrading_v1.Controllers
                 product.Quantity = product.AvailableForSelling + product.Reserved;
                 product.DateCreated = DateTime.Now;
                 _context.Products.Add(product);
-
+                }
+                else
+                {
+                    
+                    var viewModel = new ProductViewModel
+                    {
+                        Product = product,
+                        Brands = _context.Brands.ToList(),
+                        Branches = _context.Branches.ToList(),
+                        ProductCategories = _context.ProductCategories.ToList(),
+                        ProductConditions = _context.ProductConditions.ToList(),
+                    };
+                    return View("New", viewModel);
+                }
             }
             else
             {
