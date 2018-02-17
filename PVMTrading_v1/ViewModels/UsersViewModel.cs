@@ -9,7 +9,7 @@ namespace PVMTrading_v1.ViewModels
 {
     public class UsersViewModel
     {
-        public ApplicationUser Users { set; get; }
-        public List<string> Roles { set; get; }
+        public ApplicationUser Users { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

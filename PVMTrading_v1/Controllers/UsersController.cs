@@ -34,6 +34,8 @@ namespace PVMTrading_v1.Controllers
         {
             var userList = _application.Users.ToList();
 
+
+
             return View(userList);
         }
         

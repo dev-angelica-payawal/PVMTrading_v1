@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PVMTrading_v1.Models.archieved;
@@ -14,9 +15,14 @@ namespace PVMTrading_v1.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser 
     {
-/*        public Branch Branch { get; set; }
-        [Display(Name = "Branch Name"),Required]
-        */public int BranchId { get; set; }
+        /*        public Branch Branch { get; set; }
+                [Display(Name = "Branch Name"),Required]
+                */
+         
+/*        public ApplicationUser = new SelectList(
+            
+            Produc)*/
+        public int BranchId { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

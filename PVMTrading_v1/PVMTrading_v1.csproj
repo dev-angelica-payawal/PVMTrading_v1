@@ -1103,16 +1103,12 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
-
     <Content Include="Views\Product\CartSummary.cshtml" />
     <Content Include="Views\Product\Cart.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
-
-    <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Product\CartSummary.cshtml" />
     <Content Include="Views\Product\Cart.cshtml" />
     <Content Include="Views\CashTransaction\Index.cshtml" />
-
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
