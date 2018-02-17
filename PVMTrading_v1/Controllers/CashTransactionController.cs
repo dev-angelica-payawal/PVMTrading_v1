@@ -29,10 +29,11 @@ namespace PVMTrading_v1.Controllers
         // GET: CashTransaction
         public ActionResult Index()
         {
-           
+
+            var cashtransact = _context.CashTransactions.Include(c => c.Customer).ToList();
 
 
-            return View();
+            return View(cashtransact);
         }
 
         //select customer search

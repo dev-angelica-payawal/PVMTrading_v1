@@ -1103,9 +1103,16 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Product\CartSummary.cshtml" />
     <Content Include="Views\Product\Cart.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+=======
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Product\CartSummary.cshtml" />
+    <Content Include="Views\Product\Cart.cshtml" />
+    <Content Include="Views\CashTransaction\Index.cshtml" />
+>>>>>>> 5b650b0da78e7947ad874a10bb60b268b57f562e
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
