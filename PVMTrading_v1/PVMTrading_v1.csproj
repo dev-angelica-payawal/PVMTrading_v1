@@ -1106,8 +1106,18 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fb331b3295d116255adc96fb842d43eeff1f97e
+>>>>>>> 3c2fb58dcdd47fd2663a87a2ac5f44a9e9786829
     <Content Include="Views\Users\Index.cshtml" />
 
     <Content Include="Views\Product\CartSummary.cshtml" />
