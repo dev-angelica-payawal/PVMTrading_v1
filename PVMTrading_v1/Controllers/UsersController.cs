@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using PVMTrading_v1.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace PVMTrading_v1.Controllers
 {
@@ -14,24 +16,25 @@ namespace PVMTrading_v1.Controllers
 
     public class UsersController : Controller
     {
-        private ApplicationUserManager _userManager;
-        private ApplicationDbContext _context;
+       
+        private ApplicationDbContext _application;
 
-        public UsersController()
+        public UsersController(ApplicationDbContext application)
         {
-            _context = new ApplicationDbContext();
+
+            _application = application;
         }
 
         protected override void Dispose(bool disposing)
         {
-            _context.Dispose();
+            _application.Dispose();
         }
         // GET: Users
         public ActionResult Index()
         {
-            
-            
-            return View();
+            var userList = _application.Users.ToList();
+
+            return View(userList);
         }
         
     }

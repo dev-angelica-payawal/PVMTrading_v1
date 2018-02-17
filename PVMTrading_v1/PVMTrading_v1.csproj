@@ -209,11 +209,8 @@
     <Compile Include="Controllers\ProductPriceController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SearchProductController.cs" />
-
     <Compile Include="Controllers\UsersController.cs" />
-
     <Compile Include="Controllers\ShoppingCartController.cs" />
-
     <Compile Include="CustomAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1106,13 +1103,9 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
-
-    <Content Include="Views\Users\Index.cshtml" />
-
     <Content Include="Views\Product\CartSummary.cshtml" />
-
     <Content Include="Views\Product\Cart.cshtml" />
-
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
