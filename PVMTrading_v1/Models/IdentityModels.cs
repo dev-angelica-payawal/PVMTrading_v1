@@ -73,7 +73,7 @@ namespace PVMTrading_v1.Models
         public DbSet<CashTransaction> CashTransactions { get; set; }
         public DbSet<CashTransactionItem> CashTransactionItems { get; set; }
 
-        public DbSet<PvMCart> Product { get; set; }
+        public DbSet<TempCart> TempCarts { get; set; }
 
 
 

@@ -23,7 +23,7 @@ namespace PVMTrading_v1.ViewModels
 
         public virtual Product Product { get; set; }*/
         [Key]
-        public List<PvMCart> CartItems { get; set; }
+        public List<TempCart> CartItems { get; set; }
         public decimal CartTotal { get; set; }
 
 

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="">
+
     <div class="card-title"><h2>CashTransactionList</h2></div>
 
 @if (!Model.Any())
@@ -42,7 +42,7 @@ else
                     <td>@cash.CashTransaction.OR</td>
                     <td>
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalEdit">Edit</button> |
-                        @Html.ActionLink("Delete", "Delete", new { id = product.Id }, null) |
+                        @Html.ActionLink("Delete", "Delete", new { id = cash.CashTransaction.Id }, null) |
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalDisplay">
                             Details
                         </button>
@@ -53,7 +53,7 @@ else
                                     }
         </tbody>
     </table>
-        </div>
+      
 
 
 

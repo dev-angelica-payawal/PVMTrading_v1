@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PVMTrading_v1.Models;
 using System.Data.Entity;
+using PVMTrading_v1.ViewModels;
 
 namespace PVMTrading_v1.Controllers
 {
@@ -17,12 +18,12 @@ namespace PVMTrading_v1.Controllers
             return View();
         }
 
-        public ActionResult BuyNow(int id)
+        public ActionResult BuyNow(int id,double price)
         {
             if (Session["cart"] == null)
             {
                 List<Item> cart = new List<Item>();
-                cart.Add(new Item(de.Products.Find(id), 1));
+                cart.Add(new Item(de.Products.Find(id), 1,price));
                 Session["cart"] = cart;
             }
             else

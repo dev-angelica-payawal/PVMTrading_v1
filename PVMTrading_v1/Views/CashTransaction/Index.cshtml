@@ -10,45 +10,12 @@
         <div class="container-fluid">
             <div class="card mb-3">
                 <div class="card-header">
-                    <h2>Product List</h2>
+                    <h4>Search Cash Transactions</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid">
-                            <p>
-
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                    Add New Product
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-
-
-                                            @{Html.RenderAction("New", "Product");}
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </p>
-                            <div class="card-header">
-                                <h4>Search Cash Transactions</h4>
-                            </div>
-                            <p>
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-                                    Id Number
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-                                    Date
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-                                    Customer
-                                </button>
+                            
                                 <!-- Modal -->
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
@@ -62,14 +29,12 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-                                    Search
-                                </button>
-                            </p>
+                               @Html.ActionLink("New Cash Transaction","ProductList","SearchProduct",new {@class="btn btn-primary"},null)
+                           
 
                             @if (!Model.Any())
                             {
-                                <p>We don't have any Products available yet.</p>
+                                <p>We don't have any Transaction available yet.</p>
                             }
                             else
                             {

@@ -28,14 +28,158 @@ namespace PVMTrading_v1.Controllers
 		}
 
 
-		// GET: SearchProduct
-		public ActionResult Index()
-		{
-			return View();
-		}
+        public ActionResult ProductList()
+	    {
+
+	        //selection of product by branch query missing
+	        var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
+	        ViewBag.productCounts = _context.Products.Count();
+
+	        var product = _context.Products.Include(p => p.ProductCategory);
+
+	        return View(prod.ToList());
+
+	    }
+
+
+	    // GET: SearchProduct
+	    public ActionResult Index()
+	    {
+	        var tempCartList = _context.TempCarts.Include(c => c.Product).ToList();
+	        ViewBag.CountofProducts = _context.TempCarts.Count();
+	        return View("Cart", tempCartList);
+	    }
+
+
+        public ActionResult BuyNow(int id,double price)
+	    {
+            var tempCart = new TempCart();
+	      
+	        var isProduct = _context.TempCarts.Count(p => p.ProductId == id);
+	        
+	        if (isProduct == 0)
+	        {
+	            tempCart.ProductId = id;
+	            tempCart.Quantity = 1;
+	            tempCart.ProductPrice = price;
+	            _context.TempCarts.Add(tempCart);
+	        }
+	        else
+	        {
+	            tempCart.Quantity++;
+	        }
+
+	        _context.SaveChanges();
+	       return RedirectToAction("Index");
+	    }
+
+	    public ActionResult DeleteFromCart(int id)
+	    {
+	        var deleteItem = _context.TempCarts.SingleOrDefault(c => c.Id == id);
+            if(deleteItem != null)
+	        _context.TempCarts.Remove(deleteItem);
+	        _context.SaveChanges();
+	        return RedirectToAction("Index");
+	    }
+
+	    public ActionResult DeleteAllProdsInCart()
+	    {
+	        var deleteAll = _context.TempCarts.ToList();
+
+	        foreach (var d in deleteAll)
+	        {
+	            _context.TempCarts.Remove(d);
+	        }
+	       
+	        return View();
+	    }
 
 	 
-		public ActionResult SearchProd()
+
+
+	    public ActionResult AddQuantity(int id,int quantity)
+	    {
+	        var tempCart = _context.TempCarts.SingleOrDefault(p => p.Id == id);
+            if(tempCart != null && tempCart.Quantity <= quantity)
+                ++tempCart.Quantity;
+	        _context.SaveChanges();
+
+	        return RedirectToAction("Index");
+        }
+
+        public ActionResult LessQuantity(int id,int quantity)
+	    {
+	        var tempCart = _context.TempCarts.SingleOrDefault(p => p.Id == id);
+	        if (tempCart != null && tempCart.Quantity >0 )
+	            --tempCart.Quantity;
+            _context.SaveChanges();
+
+	        return RedirectToAction("Index");
+        }
+        /*public ActionResult BuyNow(int id, double price)
+	    {
+	        if (Session["cart"] == null)
+	        {
+	            List<Item> cart = new List<Item>();
+	            cart.Add(new Item(_context.Products.Find(id), 1, price));
+	            Session["cart"] = cart;
+	        }
+
+	        /* else
+             {
+                 List<Item> cart = (List<Item>)Session["cart"];
+                 cart.Add(new Item(_context.Products.Find(id), 1));
+                 Session["cart"] = cart;
+             }
+   #1#
+	        else
+	        {
+	            List<Item> cart = (List<Item>)Session["cart"];
+	            int index = IsExisting(id);
+	            if (index == -1)
+	                cart.Add(new Item(_context.Products.Find(id), 1, price));
+	            else
+	            {
+	                cart[index].Quantity++;
+	            }
+	            Session["cart"] = cart;
+	        }
+	        return View("Cart");
+	    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*public ActionResult SearchProd()
 		{
 			/*var product = _context.Products.SingleOrDefault(p => p.Id == id);
 			var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
@@ -45,8 +189,8 @@ namespace PVMTrading_v1.Controllers
 			{
 				return HttpNotFound();
 			}
-			*/
-			/* Need to get dynamically all prices base to its product id and get only their newest price*/
+			#1#
+			/* Need to get dynamically all prices base to its product id and get only their newest price#1#
 
 
 			/*
@@ -73,9 +217,9 @@ namespace PVMTrading_v1.Controllers
 							 {
 
 							 });
-			 #1#
+			 #2#
 						var countProducts =;
-					   */
+					   #1#
 
 			//  _context.ProductPrices.SqlQuery("Select * From ProductPrices,Products Where Products.Id = ProductPrices.ProductId");
 		/*   var productPrices= _context.Products.Join(_context.ProductPrices, c => c.Id, p => p.ProductId,
@@ -86,7 +230,7 @@ namespace PVMTrading_v1.Controllers
 				}).ToList();
 
 			var ss = _context.ProductPrices.Include(s => s.Product).ToList();
-		*/    /*  var price = _context.Products.Join(_context.ProductPrices, product => product.Id, p => p.ProductId,
+		#1#    /*  var price = _context.Products.Join(_context.ProductPrices, product => product.Id, p => p.ProductId,
 				  (p, pp) => new
 				  {
 					  Product = p,
@@ -94,7 +238,7 @@ namespace PVMTrading_v1.Controllers
 
 			  var priceList = price.OrderByDescending(p => p.ProductPrice.DateCreated).FirstOrDefault();
 
-		  */
+		  #1#
 
 			
 		  
@@ -108,7 +252,7 @@ namespace PVMTrading_v1.Controllers
 			/*   var sample =_context.Database.SqlQuery<SearchProductViewModels>(@"Select Distinct Products.Name, Products.Model, Products.Id SellingPrice 
 														   From Products Join  ProductPrices 
 														   on Products.Id=ProductPrices.ProductId ");
-			*/
+			#1#
 			var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
 				ViewBag.productCounts = _context.Products.Count();
 
@@ -117,6 +261,8 @@ namespace PVMTrading_v1.Controllers
 
 
 	  
-		}
-	}
+		}*/
+
+
+    }
 }

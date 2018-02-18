@@ -5,6 +5,7 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using PVMTrading_v1.Migrations;
 using PVMTrading_v1.Models;
 using PVMTrading_v1.ViewModels;
@@ -38,6 +39,10 @@ namespace PVMTrading_v1.Controllers
 
         public ActionResult Index()
         {
+
+            var customer = _context.Customers.Include(s => s.Sex).ToList();
+
+            return View(customer);
             /*List<Customer> customers = new List<Customer>();
             List<CustomerCompleInfo> customerCompleteInfos = new List<CustomerCompleInfo>();*/
             /*var customers = _context.Customers.Include(c => c.CustomerType)
@@ -45,16 +50,11 @@ namespace PVMTrading_v1.Controllers
                                               .Include(s => s.Sex).ToList();*/
 
 
-            var customer = _context.Customers.Include(s => s.Sex).ToList();
 
-           
 
-            
+
             /*var customers = _context.Customers.Include(s => s.Sex).ToList();*/
-
-
-
-
+            
             /*var customerInfo = from s in customers
 
                 join st in customerCompleteInfos on s.Id equals st.CustomerId into st2
@@ -63,7 +63,7 @@ namespace PVMTrading_v1.Controllers
 
             List<CustomerViewModel> customerCompleteList = new List<CustomerViewModel>();
             customerCompleteList = customerInfo.ToList();   */
-            return View(customer);   
+
 
 
             /* var details = from customer in _context.Customers
@@ -129,9 +129,19 @@ namespace PVMTrading_v1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer,CustomerCompleInfo customerCompleInfo)
         {
-
+            var isCustomerExist =
+                _context.Customers.Count(c => c.FirstName == customer.FirstName && c.LastName == customer.LastName);
             if (customer.Id == 0)
             {
+                if (isCustomerExist != 0)
+                {
+                    TempData["notice"] = "Successfully registered";
+                    return RedirectToAction("New");
+                }
+                else
+                {
+                    
+                
                 customer.RegisteredDateCreated = DateTime.Now;
                 _context.Customers.Add(customer);
 
@@ -139,6 +149,7 @@ namespace PVMTrading_v1.Controllers
                 {
                      customerCompleInfo.CustomerId = customer.Id;
                     _context.CustomerCompleInfos.Add(customerCompleInfo);
+                }
                 }
             }
             else
@@ -246,6 +257,51 @@ namespace PVMTrading_v1.Controllers
                 select c;
 
             return View(oder.ToList());
+     
         }*/
+
+
+        public ActionResult CustomerReg()
+        {
+            
+            var viewModel = new CustomerViewModel
+            {
+                Sexs = _context.Sex.ToList(),
+                
+            };
+            return View(viewModel);
+        }
+
+        public ActionResult CustomerReg(Customer customer,CustomerCompleInfo customerCompleInfo)
+        {
+
+            var isCustomerExist =
+                 _context.Customers.Count(c => c.FirstName == customer.FirstName && c.LastName == customer.LastName);
+            if (customer.Id == 0)
+            {
+                if (isCustomerExist != 0)
+                {
+                    TempData["notice"] = "Successfully registered";
+                    return RedirectToAction("New");
+                }
+                else
+                {
+                    
+                    customer.RegisteredDateCreated = DateTime.Now;
+                    _context.Customers.Add(customer);
+
+                    if (customerCompleInfo.Id == 0)
+                    {
+                        customerCompleInfo.CustomerId = customer.Id;
+                        _context.CustomerCompleInfos.Add(customerCompleInfo);
+                    }
+                }
+            }
+
+            _context.SaveChanges();
+          
+
+            return View();
+        }
     }
 }

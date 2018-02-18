@@ -15,34 +15,7 @@
         <div class="form-horizontal">
 
 
-            <h4>CashTransaction</h4>
-            <hr />
-            <!-- Modal -->
-            <div class="modal fade modal-lg" id="myModal" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        @{
-                            Html.RenderAction("SearchProduct", "CashTransaction");
-                        }
-                    </div>
-                </div>
-            </div>
-            @*
-                Modal for search product trigger open modal
-            *@
-            <div class="form-group">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Search Product</button>
-            </div>
-            
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.CashTransaction.CashTransactionDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.CashTransaction.CashTransactionDate, new { Value = DateTime.Now, @disabled = "disabled", @readonly = "readonly" })
-                    @Html.ValidationMessageFor(model => model.CashTransaction.CashTransactionDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            
+            <h4>Cash Transaction</h4>
             <!-- Modal -->
             <div class="modal fade" id="myModalcustomer" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog">
@@ -54,6 +27,19 @@
                 </div>
             </div>
          
+          
+           
+            
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.CashTransaction.CashTransactionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.CashTransaction.CashTransactionDate, new { Value = DateTime.Now, @disabled = "disabled", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.CashTransaction.CashTransactionDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+          
         
             <div class="form-group">
                 @Html.LabelFor(model => model.CashTransaction.CustomerId, "Customer", htmlAttributes: new { @class = "control-label col-md-2" })

@@ -202,7 +202,12 @@
     <Compile Include="Controllers\CashTransactionController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Item.cs" />
+    <Compile Include="Migrations\201802181038462_TempCart.cs" />
+    <Compile Include="Migrations\201802181038462_TempCart.Designer.cs">
+      <DependentUpon>201802181038462_TempCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeOfTransaction.cs" />
+    <Compile Include="ViewModels\Item.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -438,7 +443,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
-    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\TempCart.cs" />
     <Compile Include="Models\CashTransaction.cs" />
     <Compile Include="Models\CashTransactionitem.cs" />
     <Compile Include="Models\CustomerCompleInfo.cs" />
@@ -1091,7 +1096,7 @@
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
-    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\SearchProduct\ProductList.cshtml" />
     <Content Include="Views\Product\AddQuantityToProduct.cshtml" />
     <Content Include="Views\CashTransaction\CashTransactionList.cshtml" />
     <Content Include="Views\SearchProduct\SearchProduct.cshtml" />
@@ -1104,11 +1109,12 @@
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
     <Content Include="Views\Product\CartSummary.cshtml" />
-    <Content Include="Views\Product\Cart.cshtml" />
+    <Content Include="Views\SearchProduct\Cart.cshtml" />
     <Content Include="Views\Product\CartSummary.cshtml" />
     <Content Include="Views\Product\Cart.cshtml" />
     <Content Include="Views\CashTransaction\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Customer\CustomerReg.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1284,6 +1290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802151650028_Update.resx">
       <DependentUpon>201802151650028_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802181038462_TempCart.resx">
+      <DependentUpon>201802181038462_TempCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

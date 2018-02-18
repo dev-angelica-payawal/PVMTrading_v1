@@ -63,23 +63,6 @@ namespace PVMTrading_v1.Controllers
             };
             return View(viewModels);
         }
-        public ActionResult ProductList()
-        {
-            
-            //selection of product by branch query missing
-            var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
-            ViewBag.productCounts = _context.Products.Count();
-
-            var product = _context.Products.Include(p => p.ProductCategory);
-
-            return View(prod.ToList());
-
-        }
-
-
-    
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Product product, ProductInclusion productInclusion, ProductPrice productPrice)
@@ -263,24 +246,8 @@ namespace PVMTrading_v1.Controllers
 
             return View(viewModel);
         }
-        private ApplicationDbContext de = new ApplicationDbContext();
 
-        public ActionResult BuyNow(int id)
-        {
-            if (Session["cart"] == null)
-            {
-                List<Item> cart = new List<Item>();
-                cart.Add(new Item(de.Products.Find(id), 1));
-                Session["cart"] = cart;
-            }
-            else
-            {
-                List<Item> cart = (List<Item>) Session["cart"];
-                cart.Add(new Item(de.Products.Find(id), 1));
-                Session["cart"] = cart;
-            }
-            return View("Cart");
-        }
+
 
 
 
