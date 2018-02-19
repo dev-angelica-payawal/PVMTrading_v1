@@ -768,6 +768,8 @@
     <Content Include="Content\PVMcssandjs\images\ts2.jpg" />
     <Content Include="Content\PVMcssandjs\images\ts3.jpg" />
     <Content Include="Content\PVMcssandjs\images\ts4.jpg" />
+    <Content Include="Content\PVMcssandjs\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="Content\PVMcssandjs\jquery-ui-1.12.1\jquery-ui.js" />
     <Content Include="Content\PVMcssandjs\js\bootstrap-3.1.1.min.js" />
     <Content Include="Content\PVMcssandjs\js\easyResponsiveTabs.js" />
     <Content Include="Content\PVMcssandjs\jquery-1.11.1.min.js" />
@@ -781,6 +783,8 @@
     <Content Include="Content\PVMcssandjs\js\responsiveslides.min.js" />
     <Content Include="Content\PVMcssandjs\js\script.js" />
     <Content Include="Content\PVMcssandjs\js\simpleCart.min.js" />
+    <Content Include="Content\textext.core.css" />
+    <Content Include="Content\textext.plugin.autocomplete.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -937,6 +941,7 @@
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="Scripts\jquery-1.10.2.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -1028,7 +1033,9 @@
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\jquery-ui.cache" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.ui.all.css" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1036,6 +1043,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\textext.core.js" />
+    <Content Include="Scripts\textext.plugin.autocomplete.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1087,7 +1096,7 @@
     <Content Include="Views\Shared\_LayoutPVM.cshtml" />
     <Content Include="Views\ProductPrice\Edit.cshtml" />
     <Content Include="Views\ProductPrice\Index.cshtml" />
-    <Content Include="Views\CashTransaction\FinalProcess.cshtml" />
+    <Content Include="Views\CashTransaction\CashTransactionSummary.cshtml" />
     <Content Include="Views\Product\New.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
