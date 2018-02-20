@@ -49,7 +49,11 @@
                                             <th>Date</th>
                                             <th>Remarks</th>
                                             <td>OR Number</td>
+                                            
+                                            <th>Is Void</th>
+                                            <th>OR</th>
                                             <th></th>
+
 
 
                                         </tr>
@@ -66,12 +70,13 @@
                                                 <td>@cash.TotalAmount</td>
                                                 <td>@cash.CashTransactionDate</td>
                                                 <td>@cash.Remarks</td>
+
                                                 <td>@cash.OR</td>
                                                 <td>@Html.ActionLink("Edit", "Edit", new { id = cash.Id }) | @Html.ActionLink("Edit", "Edit", new { id = cash.Id }) | @Html.ActionLink("Edit", "Edit", new { id = cash.Id })|
-                                                </td>
-                                                
-                                            </tr>
-                                                                }
+                                            </td>
+                                            
+                                                </tr>
+                                        }
                                     </tbody>
                                 </table>
                                                                 }

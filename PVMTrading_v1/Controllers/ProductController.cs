@@ -199,6 +199,14 @@ namespace PVMTrading_v1.Controllers
             
         }
 
+        public ActionResult AddImage()
+        {
+           Product p = new Product();
+            return View(p);
+        }
+
+
+
 
         [ValidateAntiForgeryToken]
         [CustomAuthorize(Roles = RoleName.Admin)]

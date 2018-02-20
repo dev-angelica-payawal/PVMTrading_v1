@@ -9,6 +9,7 @@ namespace PVMTrading_v1.Models
     public class CashTransactionItem
     {
 
+        [Key]
         public int Id { get; set; }
 
         public CashTransaction CashTransaction { get; set; }
