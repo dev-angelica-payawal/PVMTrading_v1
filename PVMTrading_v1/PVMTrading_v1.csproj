@@ -201,6 +201,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CashTransactionController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingPageController.cs" />
@@ -220,17 +221,9 @@
     <Compile Include="Migrations\201802190617213_ChangeTableTransactionItem.Designer.cs">
       <DependentUpon>201802190617213_ChangeTableTransactionItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802200438321_updateStringToIntForeignKey.cs" />
-    <Compile Include="Migrations\201802200438321_updateStringToIntForeignKey.Designer.cs">
-      <DependentUpon>201802200438321_updateStringToIntForeignKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802200443403_AddCashTransactionTable.cs" />
-    <Compile Include="Migrations\201802200443403_AddCashTransactionTable.Designer.cs">
-      <DependentUpon>201802200443403_AddCashTransactionTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802200444387_AddCashTransactionItemTable.cs" />
-    <Compile Include="Migrations\201802200444387_AddCashTransactionItemTable.Designer.cs">
-      <DependentUpon>201802200444387_AddCashTransactionItemTable.cs</DependentUpon>
+    <Compile Include="Migrations\201802200534466_Update1.cs" />
+    <Compile Include="Migrations\201802200534466_Update1.Designer.cs">
+      <DependentUpon>201802200534466_Update1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\TypeOfTransaction.cs" />
     <Compile Include="ViewModels\Item.cs" />
@@ -689,6 +682,8 @@
     <Content Include="Content\js\sb-admin-datatables.min.js" />
     <Content Include="Content\js\sb-admin.js" />
     <Content Include="Content\js\sb-admin.min.js" />
+    <Content Include="Content\loginImage\1.jpg" />
+    <Content Include="Content\loginImage\2.jpg" />
     <Content Include="Content\PVMcssandjs\css\bootstrap.css" />
     <Content Include="Content\PVMcssandjs\css\etalage.css" />
     <Content Include="Content\PVMcssandjs\css\fasthover.css" />
@@ -1346,14 +1341,8 @@
     <EmbeddedResource Include="Migrations\201802190617213_ChangeTableTransactionItem.resx">
       <DependentUpon>201802190617213_ChangeTableTransactionItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802200438321_updateStringToIntForeignKey.resx">
-      <DependentUpon>201802200438321_updateStringToIntForeignKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802200443403_AddCashTransactionTable.resx">
-      <DependentUpon>201802200443403_AddCashTransactionTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802200444387_AddCashTransactionItemTable.resx">
-      <DependentUpon>201802200444387_AddCashTransactionItemTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802200534466_Update1.resx">
+      <DependentUpon>201802200534466_Update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
