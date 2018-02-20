@@ -10,13 +10,12 @@ namespace PVMTrading_v1.ViewModels
     {
         public CashTransaction CashTransaction { get; set; }
 
-        public CashTransactionItem CashTransactionItem { get; set; }
+        public List<CashTransactionItem> CashTransactionItem { get; set; }
 
         public Product Product { get; set; }
 
         public List<Customer> Customer { get; set; }
-        public ProductPrice ProductPrice { get; set; }
-
+        
       
       
 

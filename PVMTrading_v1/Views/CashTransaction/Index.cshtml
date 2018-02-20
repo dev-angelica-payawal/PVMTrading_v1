@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="card mb-3">
                 <div class="card-header">
-                    <h4>Search Cash Transactions</h4>
+                    <h4>Cash Transactions</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -43,11 +43,17 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Customer</th>
-                                            <th>Total Amount</th>
+                                            <td>Total Amount</td>
+                                            <td>Discount</td>
+                                            <th>Total Amount w/ Discount</th>
                                             <th>Date</th>
                                             <th>Remarks</th>
+                                            <td>OR Number</td>
+                                            
                                             <th>Is Void</th>
                                             <th>OR</th>
+                                            <th></th>
+
 
 
                                         </tr>
@@ -59,13 +65,17 @@
                                             <tr>
                                                 <td>@cash.Id</td>
                                                 <td>@cash.Customer</td>
+                                                <td>@cash.OriginalTotalAmount</td>
+                                                <td>@cash.TotalDiscountedAmount</td>
                                                 <td>@cash.TotalAmount</td>
                                                 <td>@cash.CashTransactionDate</td>
                                                 <td>@cash.Remarks</td>
-                                                <td>@cash.IsVoid</td>
+
                                                 <td>@cash.OR</td>
-                                                <span class="btn btn-xs btn-primary" id="edit_@cash.Id" onclick="createModal('@Url.Action("Edit", "CashTransaction" , new {id=cash.Id })')">Edit</span> | @Html.ActionLink("Delete", "Delete", new { id = cash.Id }, null) | @*@Html.ActionLink("Details", "Details", "Customer", new { id = customer.Id }, null)*@  <span class="btn btn-xs btn-primary" id="edit_@cash.Id" onclick="createModal('@Url.Action("Details", "CashTransaction" , new {id=cash.Id })')">Details</span>
-                                            </tr>
+                                                <td>@Html.ActionLink("Edit", "Edit", new { id = cash.Id }) | @Html.ActionLink("Edit", "Edit", new { id = cash.Id }) | @Html.ActionLink("Edit", "Edit", new { id = cash.Id })|
+                                            </td>
+                                            
+                                                </tr>
                                         }
                                     </tbody>
                                 </table>
