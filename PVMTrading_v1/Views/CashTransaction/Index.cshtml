@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="card mb-3">
                 <div class="card-header">
-                    <h4>Search Cash Transactions</h4>
+                    <h4>Cash Transactions</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -43,10 +43,12 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Customer</th>
-                                            <th>Total Amount</th>
+                                            <td>Total Amount</td>
+                                            <td>Discount</td>
+                                            <th>Total Amount w/ Discount</th>
                                             <th>Date</th>
                                             <th>Remarks</th>
-                                            <th>Is Void</th>
+                                            <td>OR Number</td>
                                             <th></th>
 
 
@@ -59,10 +61,14 @@
                                             <tr>
                                                 <td>@cash.Id</td>
                                                 <td>@cash.Customer</td>
+                                                <td>@cash.OriginalTotalAmount</td>
+                                                <td>@cash.TotalDiscountedAmount</td>
                                                 <td>@cash.TotalAmount</td>
                                                 <td>@cash.CashTransactionDate</td>
                                                 <td>@cash.Remarks</td>
-                                                <td>@cash.IsVoid</td>
+                                                <td>@cash.OR</td>
+                                                <td>@Html.ActionLink("Edit", "Edit", new { id = cash.Id }) | @Html.ActionLink("Edit", "Edit", new { id = cash.Id }) | @Html.ActionLink("Edit", "Edit", new { id = cash.Id })|
+                                                </td>
                                                 
                                             </tr>
                                                                 }

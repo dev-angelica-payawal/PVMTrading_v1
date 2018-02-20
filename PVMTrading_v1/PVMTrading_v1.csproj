@@ -206,6 +206,18 @@
     <Compile Include="Migrations\201802181038462_TempCart.Designer.cs">
       <DependentUpon>201802181038462_TempCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802190553417_stringIdCashTransaction.cs" />
+    <Compile Include="Migrations\201802190553417_stringIdCashTransaction.Designer.cs">
+      <DependentUpon>201802190553417_stringIdCashTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802190601457_ChangeDataTypeForeignKeyCashtransactionId.cs" />
+    <Compile Include="Migrations\201802190601457_ChangeDataTypeForeignKeyCashtransactionId.Designer.cs">
+      <DependentUpon>201802190601457_ChangeDataTypeForeignKeyCashtransactionId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802190617213_ChangeTableTransactionItem.cs" />
+    <Compile Include="Migrations\201802190617213_ChangeTableTransactionItem.Designer.cs">
+      <DependentUpon>201802190617213_ChangeTableTransactionItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TypeOfTransaction.cs" />
     <Compile Include="ViewModels\Item.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1101,7 +1113,7 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\CashTransaction\Grid.cshtml" />
-    <Content Include="Views\CashTransaction\SearchProduct.cshtml" />
+    <Content Include="Views\CashTransaction\CashTransactionSummaryItemList.cshtml" />
     <Content Include="Views\CashTransaction\SearchCustomer.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
@@ -1302,6 +1314,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802181038462_TempCart.resx">
       <DependentUpon>201802181038462_TempCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802190553417_stringIdCashTransaction.resx">
+      <DependentUpon>201802190553417_stringIdCashTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802190601457_ChangeDataTypeForeignKeyCashtransactionId.resx">
+      <DependentUpon>201802190601457_ChangeDataTypeForeignKeyCashtransactionId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802190617213_ChangeTableTransactionItem.resx">
+      <DependentUpon>201802190617213_ChangeTableTransactionItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

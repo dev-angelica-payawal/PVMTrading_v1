@@ -1,0 +1,51 @@
+﻿@model List<PVMTrading_v1.Models.CashTransactionItem>
+
+@{
+    ViewBag.Title = "Product List";
+}
+
+
+
+   <div class="new">
+            <div class="container">
+                <h3>ProductList</h3>
+                <div class="new-products">
+                <table>
+                    @foreach (var product in Model)
+                                        {
+                                            <tr>
+                                            <td> @product.Product.Name</td>
+                                            <td> @product.Product.Model</td>
+                                            <td> @product.ProductPrice</td>
+                                                <td> @product.Quantity</td>
+                                                <td>(@product.ProductPrice + @product.Quantity)</td>
+                                            </tr>
+                                                }
+
+                    </table>
+                                           
+</div>
+            </div>
+        </div>
+
+
+
+
+
+@*<link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    @section scripts{
+
+        <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#product').DataTable({
+
+                    "column": [
+                        { "autowidth": true },
+                        { "ScrollY": (0.6 * $(window).height()) }
+                              ]
+                });
+            });
+        </script>
+    }*@
