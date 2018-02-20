@@ -97,85 +97,156 @@ namespace PVMTrading_v1.Controllers
             return Json(namelist, JsonRequestBehavior.AllowGet);
     }*/
 
-    /*  public ActionResult Grid()
-      {
-          var result = (from c in _context.Customers
-              select new Customer
+        /*  public ActionResult Grid()
+          {
+              var result = (from c in _context.Customers
+                  select new Customer
+                  {
+                      Id = c.Id,
+                      FirstName = c.FirstName,
+                      MiddleName = c.MiddleName,
+                      LastName = c.LastName
+                  }).ToList().AsQueryable(); ;
+              return View(result);
+          }
+    */
+        /*  protected string RenderRazorViewToString(string viewName, object model)
+          {
+              if (model != null)
               {
-                  Id = c.Id,
-                  FirstName = c.FirstName,
-                  MiddleName = c.MiddleName,
-                  LastName = c.LastName
-              }).ToList().AsQueryable(); ;
-          return View(result);
-      }
-*/
-    /*  protected string RenderRazorViewToString(string viewName, object model)
-      {
-          if (model != null)
+                  ViewData.Model = model;
+              }
+
+              using (var sw = new StringWriter())
+              {
+                  var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                  var viewContext = new ViewContext(ControllerContext,viewResult.View,ViewData,TempData,sw);
+                  viewResult.View.Render(viewContext,sw);
+                  viewResult.ViewEngine.ReleaseView(ControllerContext,viewResult.View);
+                  return sw.GetStringBuilder().ToString();
+              }
+
+          }*/
+
+
+
+        /*  public ActionResult ProductInfo(int id)
           {
-              ViewData.Model = model;
-          }
 
-          using (var sw = new StringWriter())
-          {
-              var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
-              var viewContext = new ViewContext(ControllerContext,viewResult.View,ViewData,TempData,sw);
-              viewResult.View.Render(viewContext,sw);
-              viewResult.ViewEngine.ReleaseView(ControllerContext,viewResult.View);
-              return sw.GetStringBuilder().ToString();
-          }
+              var product = _context.Products.SingleOrDefault(c => c.Id == id);
+              /*if (product == null)
+              {
+                  return HttpNotFound();
+              }
+              var productInfo = new ProductViewModel()
+              {
+                  Product = product
 
-      }*/
+              };
 
 
+              return PartialView(productInfo);#1#
 
-    /*  public ActionResult ProductInfo(int id)
-      {
+              /*var order = (Product)Session["Order"];
+              return PartialView(order.Model);#1#
 
-          var product = _context.Products.SingleOrDefault(c => c.Id == id);
-          /*if (product == null)
-          {
-              return HttpNotFound();
-          }
-          var productInfo = new ProductViewModel()
-          {
-              Product = product
+              return View(product);
+          }*/
 
-          };
-
-
-          return PartialView(productInfo);#1#
-
-          /*var order = (Product)Session["Order"];
-          return PartialView(order.Model);#1#
-
-          return View(product);
-      }*/
-
-    /*       public ActionResult ProductView()
-           {
-               var product = _context.Products.ToList();
-
-               if (product == null)
+        /*       public ActionResult ProductView()
                {
-                   return HttpNotFound();
-               }
-               var Productsview = new CashTransactionViewModel()
-               {
-                   Product = product,
-                   CustomerCompleInfo = customerInfo,
-                   CustomerTypes = _context.CustomerTypes.ToList(),
-                   CivilStatuses = _context.CivilStatus.ToList()
-               };
+                   var product = _context.Products.ToList();
+
+                   if (product == null)
+                   {
+                       return HttpNotFound();
+                   }
+                   var Productsview = new CashTransactionViewModel()
+                   {
+                       Product = product,
+                       CustomerCompleInfo = customerInfo,
+                       CustomerTypes = _context.CustomerTypes.ToList(),
+                       CivilStatuses = _context.CivilStatus.ToList()
+                   };
 
 
-               return PartialView(Productsview);
+                   return PartialView(Productsview);
 
-           }*/
+               }*/
+
+        public ActionResult Edit(int id/*,int productId*/)
+        {
 
 
 
+            var cashtransact = _context.CashTransactions.Single(p => p.Id == id);
+            var cashtransactItem = _context.CashTransactionItems.Single(p => p.ProductId == id);
+            /* var product = _context.Products.SingleOrDefault(p => p.Id == prodid);
 
-}
+             var viewModels = new ProductPriceViewModel
+             {
+                 ProductPrices =  productPrice,
+                 Products =  product
+             };
+ */
+            if (cashtransact == null)
+            {
+                return HttpNotFound();
+            }
+
+            var vModels = new CashTransactionViewModel()
+            {
+                CashTransaction = cashtransact,
+                CashTransactionItem = cashtransactItem,
+                Product = _context.Products.SingleOrDefault(p => p.Id == id),
+                ProductPrice = _context.ProductPrices.SingleOrDefault(p => p.Id == id),
+                Customer = _context.Customers.ToList()
+
+
+            };
+
+            return View(vModels);
+        }
+
+        [ValidateAntiForgeryToken]
+        [CustomAuthorize(Roles = RoleName.Admin)]
+        public ActionResult Delete(int id)
+        {
+            var cashtransact = _context.CashTransactions.Single(p => p.Id == id);
+            var cashtransactItem = _context.CashTransactionItems.Single(p => p.ProductId == id);
+            
+            if (cashtransact.Id != 0)
+            {
+                _context.CashTransactionItems.Remove(cashtransactItem);
+                _context.CashTransactions.Remove(cashtransact);
+               
+            }
+
+
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Details(int id)
+        {
+            var cashTransact = _context.CashTransactions.SingleOrDefault(p => p.Id == id);
+            var cashTransactItem = _context.CashTransactionItems.SingleOrDefault(p => p.ProductId == id);
+            if (cashTransact == null)
+            {
+                return HttpNotFound();
+            }
+
+
+
+            var viewModel = new CashTransactionViewModel()
+            {
+                CashTransaction = cashTransact,
+                CashTransactionItem = cashTransactItem,
+                
+
+            };
+
+            return View(viewModel);
+        }
+
+    }
 }

@@ -28,124 +28,124 @@ namespace PVMTrading_v1.Controllers
 		}
 
 
-        public ActionResult ProductList()
-	    {
+		public ActionResult ProductList()
+		{
 
-	        //selection of product by branch query missing
-	        var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
-	        ViewBag.productCounts = _context.Products.Count();
+			//selection of product by branch query missing
+			var prod = _context.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
+			ViewBag.productCounts = _context.Products.Count();
 
-	        var product = _context.Products.Include(p => p.ProductCategory);
+			var product = _context.Products.Include(p => p.ProductCategory);
 
-	        return View(prod.ToList());
+			return View(prod.ToList());
 
-	    }
-
-
-	    // GET: SearchProduct
-	    public ActionResult Index()
-	    {
-	        var tempCartList = _context.TempCarts.Include(c => c.Product).ToList();
-	        ViewBag.CountofProducts = _context.TempCarts.Count();
-	        return View("Cart", tempCartList);
-	    }
+		}
 
 
-        public ActionResult BuyNow(int id,double price)
-	    {
-            var tempCart = new TempCart();
-	      
-	        var isProduct = _context.TempCarts.Count(p => p.ProductId == id);
-	        
-	        if (isProduct == 0)
-	        {
-	            tempCart.ProductId = id;
-	            tempCart.Quantity = 1;
-	            tempCart.ProductPrice = price;
-	            _context.TempCarts.Add(tempCart);
-	        }
-	        else
-	        {
-	            tempCart.Quantity++;
-	        }
+		// GET: SearchProduct
+		public ActionResult Index()
+		{
+			var tempCartList = _context.TempCarts.Include(c => c.Product).ToList();
+			ViewBag.CountofProducts = _context.TempCarts.Count();
+			return View("Cart", tempCartList);
+		}
 
-	        _context.SaveChanges();
-	       return RedirectToAction("Index");
-	    }
 
-	    public ActionResult DeleteFromCart(int id)
-	    {
-	        var deleteItem = _context.TempCarts.SingleOrDefault(c => c.Id == id);
-            if(deleteItem != null)
-	        _context.TempCarts.Remove(deleteItem);
-	        _context.SaveChanges();
-	        return RedirectToAction("Index");
-	    }
+		public ActionResult BuyNow(int id,double price)
+		{
+			var tempCart = new TempCart();
+		  
+			var isProduct = _context.TempCarts.Count(p => p.ProductId == id);
+			
+			if (isProduct == 0)
+			{
+				tempCart.ProductId = id;
+				tempCart.Quantity = 1;
+				tempCart.ProductPrice = price;
+				_context.TempCarts.Add(tempCart);
+			}
+			else
+			{
+				tempCart.Quantity++;
+			}
 
-	    public ActionResult DeleteAllProdsInCart()
-	    {
-	        var deleteAll = _context.TempCarts.ToList();
+			_context.SaveChanges();
+		   return RedirectToAction("Index");
+		}
 
-	        foreach (var d in deleteAll)
-	        {
-	            _context.TempCarts.Remove(d);
-	        }
-	       
-	        return View();
-	    }
+		public ActionResult DeleteFromCart(int id)
+		{
+			var deleteItem = _context.TempCarts.SingleOrDefault(c => c.Id == id);
+			if(deleteItem != null)
+			_context.TempCarts.Remove(deleteItem);
+			_context.SaveChanges();
+			return RedirectToAction("Index");
+		}
+
+		public ActionResult DeleteAllProdsInCart()
+		{
+			var deleteAll = _context.TempCarts.ToList();
+
+			foreach (var d in deleteAll)
+			{
+				_context.TempCarts.Remove(d);
+			}
+		   
+			return View();
+		}
 
 	 
 
 
-	    public ActionResult AddQuantity(int id,int quantity)
-	    {
-	        var tempCart = _context.TempCarts.SingleOrDefault(p => p.Id == id);
-            if(tempCart != null && tempCart.Quantity <= quantity)
-                ++tempCart.Quantity;
-	        _context.SaveChanges();
+		public ActionResult AddQuantity(int id,int quantity)
+		{
+			var tempCart = _context.TempCarts.SingleOrDefault(p => p.Id == id);
+			if(tempCart != null && tempCart.Quantity <= quantity)
+				++tempCart.Quantity;
+			_context.SaveChanges();
 
-	        return RedirectToAction("Index");
-        }
+			return RedirectToAction("Index");
+		}
 
-        public ActionResult LessQuantity(int id,int quantity)
-	    {
-	        var tempCart = _context.TempCarts.SingleOrDefault(p => p.Id == id);
-	        if (tempCart != null && tempCart.Quantity >0 )
-	            --tempCart.Quantity;
-            _context.SaveChanges();
+		public ActionResult LessQuantity(int id,int quantity)
+		{
+			var tempCart = _context.TempCarts.SingleOrDefault(p => p.Id == id);
+			if (tempCart != null && tempCart.Quantity >0 )
+				--tempCart.Quantity;
+			_context.SaveChanges();
 
-	        return RedirectToAction("Index");
-        }
-        /*public ActionResult BuyNow(int id, double price)
-	    {
-	        if (Session["cart"] == null)
-	        {
-	            List<Item> cart = new List<Item>();
-	            cart.Add(new Item(_context.Products.Find(id), 1, price));
-	            Session["cart"] = cart;
-	        }
+			return RedirectToAction("Index");
+		}
+		/*public ActionResult BuyNow(int id, double price)
+		{
+			if (Session["cart"] == null)
+			{
+				List<Item> cart = new List<Item>();
+				cart.Add(new Item(_context.Products.Find(id), 1, price));
+				Session["cart"] = cart;
+			}
 
-	        /* else
-             {
-                 List<Item> cart = (List<Item>)Session["cart"];
-                 cart.Add(new Item(_context.Products.Find(id), 1));
-                 Session["cart"] = cart;
-             }
+			/* else
+			 {
+				 List<Item> cart = (List<Item>)Session["cart"];
+				 cart.Add(new Item(_context.Products.Find(id), 1));
+				 Session["cart"] = cart;
+			 }
    #1#
-	        else
-	        {
-	            List<Item> cart = (List<Item>)Session["cart"];
-	            int index = IsExisting(id);
-	            if (index == -1)
-	                cart.Add(new Item(_context.Products.Find(id), 1, price));
-	            else
-	            {
-	                cart[index].Quantity++;
-	            }
-	            Session["cart"] = cart;
-	        }
-	        return View("Cart");
-	    }*/
+			else
+			{
+				List<Item> cart = (List<Item>)Session["cart"];
+				int index = IsExisting(id);
+				if (index == -1)
+					cart.Add(new Item(_context.Products.Find(id), 1, price));
+				else
+				{
+					cart[index].Quantity++;
+				}
+				Session["cart"] = cart;
+			}
+			return View("Cart");
+		}*/
 
 
 
@@ -179,7 +179,7 @@ namespace PVMTrading_v1.Controllers
 
 
 
-        /*public ActionResult SearchProd()
+		/*public ActionResult SearchProd()
 		{
 			/*var product = _context.Products.SingleOrDefault(p => p.Id == id);
 			var productInclsion = _context.ProductInclusions.SingleOrDefault(p => p.ProductId == id);
@@ -264,5 +264,5 @@ namespace PVMTrading_v1.Controllers
 		}*/
 
 
-    }
+	}
 }

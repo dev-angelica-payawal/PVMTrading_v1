@@ -28,8 +28,10 @@ namespace PVMTrading_v1.Controllers
         public ActionResult Index()
         {
             var customer = _context.Customers.Include(s => s.Sex).ToList();
-
-
+            var cus = _context.Customers.Count();
+            var prod = _context.Products.Count();
+            ViewBag.CusCount = cus;
+            ViewBag.ProductCount = prod;
 
             return View(customer);
         }

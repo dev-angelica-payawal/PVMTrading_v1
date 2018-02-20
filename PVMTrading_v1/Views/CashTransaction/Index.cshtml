@@ -47,7 +47,7 @@
                                             <th>Date</th>
                                             <th>Remarks</th>
                                             <th>Is Void</th>
-                                            <th></th>
+                                            <th>OR</th>
 
 
                                         </tr>
@@ -63,9 +63,10 @@
                                                 <td>@cash.CashTransactionDate</td>
                                                 <td>@cash.Remarks</td>
                                                 <td>@cash.IsVoid</td>
-                                                
+                                                <td>@cash.OR</td>
+                                                <span class="btn btn-xs btn-primary" id="edit_@cash.Id" onclick="createModal('@Url.Action("Edit", "CashTransaction" , new {id=cash.Id })')">Edit</span> | @Html.ActionLink("Delete", "Delete", new { id = cash.Id }, null) | @*@Html.ActionLink("Details", "Details", "Customer", new { id = customer.Id }, null)*@  <span class="btn btn-xs btn-primary" id="edit_@cash.Id" onclick="createModal('@Url.Action("Details", "CashTransaction" , new {id=cash.Id })')">Details</span>
                                             </tr>
-                                                                }
+                                        }
                                     </tbody>
                                 </table>
                                                                 }
