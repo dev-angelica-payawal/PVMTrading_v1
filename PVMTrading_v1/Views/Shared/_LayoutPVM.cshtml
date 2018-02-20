@@ -13,8 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/pvm/core")
-    @Scripts.Render("~/pvm/plugin")
+    @*    @Styles.Render("~/bootstrap/cssmin")
+    @Scripts.Render("~/bootstrap/jsss")*@
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <script src="~/Content/jquery.min.js"></script>
+    <script src="~/Content/bootstrap.min.js"></script>
     @Styles.Render("~/pvm/customtheme")
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     @Styles.Render("~/pvm/customthemess")
@@ -371,6 +377,18 @@
         @RenderBody()
     </div>
 @Html.Partial("_Footer")
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 1200
+            });
+        });
+    </script>
+}
     @RenderSection("scripts", required: false)
 
 </body>

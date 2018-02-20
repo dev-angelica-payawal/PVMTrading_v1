@@ -68,7 +68,8 @@ namespace PVMTrading_v1
                 .Include("~/Content/PVMcssandjs/css/bootstrap.css"));
             //pvmjs script
             bundles.Add(new ScriptBundle("~/pvm/plugin")
-                .Include("~/Content/PVMcssandjs/js/jquery-1.11.1.min.js"));
+                .Include("~/Content/PVMcssandjs/js/jquery-1.11.1.min.js",
+                    "~/Content/PVMcssandjs/js/bootstrap-3.1.1.min.js"));
 
             bundles.Add(new StyleBundle("~/pvm/customtheme")
                 .Include("~/Content/PVMcssandjs/css/style.css",
@@ -86,13 +87,19 @@ namespace PVMTrading_v1
                     "~/Content/PVMcssandjs/js/simpleCart.min.js",
                     "~/Content/PVMcssandjs/js/responsiveslides.min.js",
                     "~/Content/PVMcssandjs/js/script.js",
-                    "~/Content/PVMcssandjs/js/easyResponsiveTabs.js",
-                    "~/Content/PVMcssandjs/js/bootstrap-3.1.1.min.js"));
+                    "~/Content/PVMcssandjs/js/easyResponsiveTabs.js"
+                    ));
             //Hover Card
-            bundles.Add((new StyleBundle("~/css/hovercard")
-                .Include("~/Content/hovercard.css")
-            
-            ));
+            bundles.Add(new StyleBundle("~/css/hovercard")
+                .Include("~/Content/hovercard.css"));
+
+
+            //new bootstrap and jquery js and bootstrap css
+            bundles.Add(new StyleBundle("~/bootstrap/cssmin")
+                .Include("~/Content/bootstrap.min.css"));
+            bundles.Add(new ScriptBundle("~/bootstrap/jsss")
+                .Include("~/Content/jquery.min.js", "~/Content/bootstrap.min.js"));
+
 
         }
     }
