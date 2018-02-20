@@ -13,7 +13,7 @@ namespace PVMTrading_v1.Models
         public int Id { get; set; }
 
         public CashTransaction CashTransaction { get; set; }
-        public string CashTransactionId { get; set; }
+        public int CashTransactionId { get; set; }
 
         public Product Product { get; set; }
         [Display(Name = "Product")]
