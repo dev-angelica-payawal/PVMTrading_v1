@@ -15,14 +15,14 @@ namespace PVMTrading_v1.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser 
     {
-        /*        public Branch Branch { get; set; }
+                public Branch Branch { get; set; }
                 [Display(Name = "Branch Name"),Required]
-                */
-         
-/*        public ApplicationUser = new SelectList(
-            
-            Produc)*/
+
         public int BranchId { get; set; }
+        /*        public ApplicationUser = new SelectList(
+
+                    Produc)*/
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -70,31 +70,31 @@ namespace PVMTrading_v1.Models
         public DbSet<CustomerCompleInfo> CustomerCompleInfos { get; set; }
 
 
-        public DbSet<CashTransaction> CashTransactions { get; set; }
+            public DbSet<CashTransaction> CashTransactions { get; set; }
         public DbSet<CashTransactionItem> CashTransactionItems { get; set; }
 
         public DbSet<TempCart> TempCarts { get; set; }
 
 
 
-        public ApplicationDbContext() 
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
+  public ApplicationDbContext() 
+      : base("DefaultConnection", throwIfV1Schema: false)
+  {
+  }
 
 
-       
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+ 
+  public static ApplicationDbContext Create()
+  {
+      return new ApplicationDbContext();
+  }
 
-        public System.Data.Entity.DbSet<PVMTrading_v1.Models.archieved.ProductReturnReason> ProductReturnReasons { get; set; }
+  public System.Data.Entity.DbSet<PVMTrading_v1.Models.archieved.ProductReturnReason> ProductReturnReasons { get; set; }
 
-       
-    }
+ 
+}
 
-    
+
 
 
 

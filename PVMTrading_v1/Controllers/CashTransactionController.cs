@@ -51,7 +51,7 @@ namespace PVMTrading_v1.Controllers
             var count = _context.CashTransactions.Count();
             var cashId = Convert.ToString(DateTime.Today.Year) + "0" + Convert.ToString(count) + "00" + Convert.ToString(DateTime.Today.Day);
 
-            var currentTransaction = _context.CashTransactions.SingleOrDefault(c => c.Id == cashId);
+            var currentTransaction = _context.CashTransactions.SingleOrDefault(c => c.Id == Convert.ToInt16(cashId));
 
             var viewModel = new CashTransactionViewModel
             {   CashTransaction = currentTransaction,
@@ -69,7 +69,7 @@ namespace PVMTrading_v1.Controllers
         {
             var count = _context.CashTransactions.Count();
             var cashId = Convert.ToString(DateTime.Today.Year) + "0" + Convert.ToString(count) + "00" + Convert.ToString(DateTime.Today.Day);
-            var productList = _context.CashTransactionItems.Where(c => c.CashTransactionId == cashId).ToList();
+            var productList = _context.CashTransactionItems.Where(c => c.CashTransactionId == Convert.ToInt16(cashId)).ToList();
 
             return View(productList);
         }
@@ -96,7 +96,7 @@ namespace PVMTrading_v1.Controllers
 
                 foreach (var g in temps)
                 {
-                    cashTransacItem.CashTransactionId = cashId;
+                    cashTransacItem.CashTransactionId = Convert.ToInt16(cashId);
                     cashTransacItem.ProductId = g.ProductId;
                     cashTransacItem.Quantity = g.Quantity;
                     cashTransacItem.ProductPrice=g.ProductPrice;
@@ -104,7 +104,7 @@ namespace PVMTrading_v1.Controllers
                     
                 }
                 
-              cashTransaction.Id = cashId;
+              cashTransaction.Id = Convert.ToInt16(cashId);
             cashTransaction.CustomerId = selectCustomer.Id;
             cashTransaction.OriginalTotalAmount = totalPrice;
             cashTransaction.TotalDiscountedAmount = 0;
@@ -209,7 +209,7 @@ namespace PVMTrading_v1.Controllers
 
                }*/
 
-        public ActionResult Edit(int id/*,int productId*/)
+       /* public ActionResult Edit(int id/*,int productId#1#)
         {
 
 
@@ -223,7 +223,7 @@ namespace PVMTrading_v1.Controllers
                  ProductPrices =  productPrice,
                  Products =  product
              };
- */
+ #1#
             if (cashtransact == null)
             {
                 return HttpNotFound();
@@ -282,6 +282,6 @@ namespace PVMTrading_v1.Controllers
 
             return View(viewModel);
         }
-
+*/
     }
 }
