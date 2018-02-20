@@ -22,6 +22,7 @@ namespace PVMTrading_v1.Controllers
             de = new ApplicationDbContext();
         }
         // GET: LandingPage
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var prod = de.ProductPrices.Include(p => p.Product).OrderByDescending(p => p.Id).DistinctBy(p => p.ProductId);
